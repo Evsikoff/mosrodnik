@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗелАО-2-08",
+  "spring_id": "ЗелАО-2",
+  "user_id": "sample-user-07",
+  "kind": "cleanliness",
+  "value": "litter",
+  "comment": "Образец: Унесли две пустые бутылки. Ниже по ручью ещё есть пластик среди веток.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-20T06:58:35.002Z"
+}

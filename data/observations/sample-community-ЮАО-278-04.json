@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-278-04",
+  "spring_id": "ЮАО-278",
+  "user_id": "sample-user-19",
+  "kind": "flow",
+  "value": "weak",
+  "comment": "Образец: Вода идёт у самой стенки трубы, с дорожки её почти не заметно.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-19T19:58:35.002Z"
+}

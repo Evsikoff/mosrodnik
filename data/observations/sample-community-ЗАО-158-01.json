@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-158-01",
+  "spring_id": "ЗАО-158",
+  "user_id": "sample-user-04",
+  "kind": "flow",
+  "value": "dry",
+  "comment": "Образец: Возможно, течение восстановится после дождей. Сегодня родник сухой.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T16:27:35.002Z"
+}

@@ -15,6 +15,7 @@
     "build": "npm run build -w web && npm run build -w server",
     "start": "node server/dist/index.js",
     "test": "npm run test -w server",
+    "demo:seed": "node server/scripts/generate-demo-content.mjs",
     "lint": "node scripts/lint-no-emoji.mjs && npm run typecheck -w server && npm run typecheck -w web",
     "sync": "tsx --env-file-if-exists=.env.local server/scripts/run-sync.ts"
   },

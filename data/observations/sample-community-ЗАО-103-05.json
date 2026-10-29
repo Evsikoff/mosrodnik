@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-103-05",
+  "spring_id": "ЗАО-103",
+  "user_id": "sample-user-19",
+  "kind": "access",
+  "value": "cleared",
+  "comment": "Образец: Основной спуск проходим, ступени видны. К самому роднику лучше подходить пешком.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T17:17:35.002Z"
+}

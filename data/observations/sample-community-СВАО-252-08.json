@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СВАО-252-08",
+  "spring_id": "СВАО-252",
+  "user_id": "sample-user-05",
+  "kind": "cleanliness",
+  "value": "clean",
+  "comment": "Образец: В прошлый раз у скамейки был мусор. Сейчас всё убрано.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-25T01:58:35.002Z"
+}

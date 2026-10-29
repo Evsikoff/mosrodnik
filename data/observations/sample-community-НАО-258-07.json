@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-258-07",
+  "spring_id": "НАО-258",
+  "user_id": "sample-user-04",
+  "kind": "cleanliness",
+  "value": "litter",
+  "comment": "Образец: На месте нет урны, но мусор всё равно оставляют рядом с родником.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-27T01:58:35.002Z"
+}

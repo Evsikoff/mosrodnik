@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ТАО-182-09",
+  "spring_id": "ТАО-182",
+  "user_id": "sample-user-18",
+  "kind": "visit",
+  "value": "visited",
+  "comment": "Образец: Зашли во время прогулки. Посмотрели на родник и пошли дальше по тропе.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-27T01:58:35.002Z"
+}

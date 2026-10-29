@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-104-08",
+  "spring_id": "НАО-104",
+  "user_id": "sample-user-23",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: Проход к площадке закрыт ограждением. До родника не дошли.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-19T04:58:35.002Z"
+}

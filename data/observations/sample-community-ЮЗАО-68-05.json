@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮЗАО-68-05",
+  "spring_id": "ЮЗАО-68",
+  "user_id": "sample-user-17",
+  "kind": "access",
+  "value": "cleared",
+  "comment": "Образец: Подход свободный, но после дождя у самой площадки мокрая земля.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T17:55:35.002Z"
+}

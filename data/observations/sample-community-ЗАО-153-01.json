@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-153-01",
+  "spring_id": "ЗАО-153",
+  "user_id": "sample-user-23",
+  "kind": "flow",
+  "value": "weak",
+  "comment": "Образец: Струйка тонкая, но не прерывается. В прошлый визит напор был заметно сильнее.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T15:10:35.002Z"
+}

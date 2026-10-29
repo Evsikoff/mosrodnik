@@ -1,12 +1,12 @@
 {
   "id": "sample-obs-37",
   "spring_id": "ЗелАО-1",
-  "user_id": "sample-user-03",
+  "user_id": "sample-user-05",
   "kind": "location_check",
   "value": "confirmed",
   "comment": "Образец: точка на карте совпадает с родником, ошибки нет.",
   "photo_ids": [],
   "is_sample": true,
   "affects_map": false,
-  "created_at": "2026-10-21T16:00:00.000Z"
+  "created_at": "2026-10-21T16:58:35.002Z"
 }

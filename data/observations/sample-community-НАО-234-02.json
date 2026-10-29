@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-234-02",
+  "spring_id": "НАО-234",
+  "user_id": "sample-user-16",
+  "kind": "flow",
+  "value": "frozen",
+  "comment": "Образец: Подошли к самой трубе: отверстие затянуто льдом, течения не увидели.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-26T04:58:35.002Z"
+}

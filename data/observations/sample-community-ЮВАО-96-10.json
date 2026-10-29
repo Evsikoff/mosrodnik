@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮВАО-96-10",
+  "spring_id": "ЮВАО-96",
+  "user_id": "sample-user-08",
+  "kind": "visit",
+  "value": "visited",
+  "comment": "Образец: Проходили мимо по длинному маршруту, сделали небольшой привал выше по тропе.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-22T11:58:35.002Z"
+}

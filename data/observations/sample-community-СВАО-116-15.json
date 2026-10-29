@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СВАО-116-15",
+  "spring_id": "СВАО-116",
+  "user_id": "sample-user-19",
+  "kind": "location_check",
+  "value": "confirmed",
+  "comment": "Образец: Нашли родник по этой отметке, переносить точку не нужно.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-23T13:58:35.002Z"
+}

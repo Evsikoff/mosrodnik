@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮЗАО-251-02",
+  "spring_id": "ЮЗАО-251",
+  "user_id": "sample-user-11",
+  "kind": "flow",
+  "value": "frozen",
+  "comment": "Образец: В прошлый раз ещё капало, сегодня у выхода только лёд.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-22T05:58:35.002Z"
+}

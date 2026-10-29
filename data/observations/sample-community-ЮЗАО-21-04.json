@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮЗАО-21-04",
+  "spring_id": "ЮЗАО-21",
+  "user_id": "sample-user-02",
+  "kind": "access",
+  "value": "icy",
+  "comment": "Образец: Утром подход обледенел. Дошли медленно, держась за перила.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T18:20:35.002Z"
+}

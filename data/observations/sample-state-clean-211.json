@@ -5,8 +5,8 @@
   "is_sample": true,
   "affects_map": false,
   "id": "sample-state-clean-211",
-  "user_id": "sample-user-10",
+  "user_id": "sample-user-04",
   "kind": "cleanliness",
   "value": "clean",
-  "created_at": "2026-10-26T19:00:00.000Z"
+  "created_at": "2026-10-26T19:58:35.002Z"
 }

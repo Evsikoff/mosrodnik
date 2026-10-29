@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-10-09",
+  "spring_id": "СЗАО-10",
+  "user_id": "sample-user-22",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: На основном спуске лежит большая ветка, пройти напрямую не получилось.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-21T01:58:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮЗАО-110-10",
+  "spring_id": "ЮЗАО-110",
+  "user_id": "sample-user-10",
+  "kind": "visit",
+  "value": "visited",
+  "comment": "Образец: Зашли во время прогулки. Посмотрели на родник и пошли дальше по тропе.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-27T09:58:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-176-10",
+  "spring_id": "СЗАО-176",
+  "user_id": "sample-user-23",
+  "kind": "visit",
+  "value": "visited",
+  "comment": "Образец: Гуляли с семьёй, остановились у родника на несколько минут.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-21T06:58:35.002Z"
+}

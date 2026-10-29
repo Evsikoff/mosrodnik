@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ТАО-222-06",
+  "spring_id": "ТАО-222",
+  "user_id": "sample-user-14",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: Дерево поперёк тропы, обхода по обычной дорожке не нашли.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-26T10:58:35.002Z"
+}

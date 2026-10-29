@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-12-02",
+  "spring_id": "ЗАО-12",
+  "user_id": "sample-user-02",
+  "kind": "flow",
+  "value": "weak",
+  "comment": "Образец: Слышно, как капает, но сильной струи нет. Простояли несколько минут — без изменений.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-18T10:58:35.002Z"
+}

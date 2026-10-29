@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-155-08",
+  "spring_id": "ЗАО-155",
+  "user_id": "sample-user-08",
+  "kind": "cleanliness",
+  "value": "litter",
+  "comment": "Образец: Рядом с площадкой оставили несколько бутылок и пакет. Сам желоб свободен.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-24T17:58:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-51-06",
+  "spring_id": "ЮАО-51",
+  "user_id": "sample-user-10",
+  "kind": "access",
+  "value": "cleared",
+  "comment": "Образец: Ветки с дорожки убрали. Теперь не нужно обходить через кусты.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-20T02:58:35.002Z"
+}

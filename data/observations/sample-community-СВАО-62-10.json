@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СВАО-62-10",
+  "spring_id": "СВАО-62",
+  "user_id": "sample-user-20",
+  "kind": "cleanliness",
+  "value": "clean",
+  "comment": "Образец: Осмотрели площадку и начало ручья, крупных отходов не нашли.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-17T12:58:35.002Z"
+}

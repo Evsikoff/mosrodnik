@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-277-03",
+  "spring_id": "СЗАО-277",
+  "user_id": "sample-user-05",
+  "kind": "flow",
+  "value": "weak",
+  "comment": "Образец: За последние несколько дней напор снизился. Желоб мокрый только посередине.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-23T18:58:35.002Z"
+}

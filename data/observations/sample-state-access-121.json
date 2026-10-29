@@ -5,8 +5,8 @@
   "is_sample": true,
   "affects_map": false,
   "id": "sample-state-access-121",
-  "user_id": "sample-user-05",
+  "user_id": "sample-user-17",
   "kind": "access",
   "value": "cleared",
-  "created_at": "2026-10-28T05:00:00.000Z"
+  "created_at": "2026-10-28T05:58:35.002Z"
 }

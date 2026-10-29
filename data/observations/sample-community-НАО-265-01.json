@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-265-01",
+  "spring_id": "НАО-265",
+  "user_id": "sample-user-21",
+  "kind": "flow",
+  "value": "frozen",
+  "comment": "Образец: В прошлый раз ещё капало, сегодня у выхода только лёд.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T18:00:35.002Z"
+}

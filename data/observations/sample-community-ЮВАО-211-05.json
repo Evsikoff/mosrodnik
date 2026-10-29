@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮВАО-211-05",
+  "spring_id": "ЮВАО-211",
+  "user_id": "sample-user-15",
+  "kind": "access",
+  "value": "cleared",
+  "comment": "Образец: Основной спуск проходим, ступени видны. К самому роднику лучше подходить пешком.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-16T22:58:35.002Z"
+}

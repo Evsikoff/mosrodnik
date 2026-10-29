@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-55-06",
+  "spring_id": "ЮАО-55",
+  "user_id": "sample-user-06",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: Дерево поперёк тропы, обхода по обычной дорожке не нашли.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-23T22:58:35.002Z"
+}

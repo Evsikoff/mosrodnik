@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-236-05",
+  "spring_id": "СЗАО-236",
+  "user_id": "sample-user-01",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: Узкий участок перед родником перекрыт. Остановились у начала спуска.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T17:31:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-291-01",
+  "spring_id": "НАО-291",
+  "user_id": "sample-user-16",
+  "kind": "flow",
+  "value": "flowing",
+  "comment": "Образец: После дождя струя стала шире. На площадке под трубой вода не застаивается.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T15:19:35.002Z"
+}

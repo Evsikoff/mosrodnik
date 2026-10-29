@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-177-06",
+  "spring_id": "СЗАО-177",
+  "user_id": "sample-user-16",
+  "kind": "access",
+  "value": "cleared",
+  "comment": "Образец: На развилке пошли по нижней дорожке, она вывела прямо к роднику.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-19T01:58:35.002Z"
+}

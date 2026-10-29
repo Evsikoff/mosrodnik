@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-162-08",
+  "spring_id": "ЮАО-162",
+  "user_id": "sample-user-05",
+  "kind": "cleanliness",
+  "value": "clean",
+  "comment": "Образец: Забрали несколько старых пакетов, теперь у трубы чисто.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-28T04:58:35.002Z"
+}

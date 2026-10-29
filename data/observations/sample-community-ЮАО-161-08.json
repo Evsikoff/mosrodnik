@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-161-08",
+  "spring_id": "ЮАО-161",
+  "user_id": "sample-user-20",
+  "kind": "cleanliness",
+  "value": "litter",
+  "comment": "Образец: На склоне выше трубы мусор, издалека его скрывают листья.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-19T09:58:35.002Z"
+}

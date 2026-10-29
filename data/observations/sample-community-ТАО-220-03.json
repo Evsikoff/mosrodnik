@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ТАО-220-03",
+  "spring_id": "ТАО-220",
+  "user_id": "sample-user-21",
+  "kind": "flow",
+  "value": "flowing",
+  "comment": "Образец: Сегодня заметно сильнее, чем в прошлый раз. По краю лотка ещё лежат мокрые листья.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-24T02:58:35.002Z"
+}

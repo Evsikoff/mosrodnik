@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮЗАО-21-02",
+  "spring_id": "ЮЗАО-21",
+  "user_id": "sample-user-16",
+  "kind": "flow",
+  "value": "weak",
+  "comment": "Образец: Родник ещё течёт, хотя ручей ниже стал совсем узким.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-18T08:58:35.002Z"
+}

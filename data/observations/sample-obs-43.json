@@ -1,12 +1,12 @@
 {
   "id": "sample-obs-43",
   "spring_id": "НАО-104",
-  "user_id": "sample-user-01",
+  "user_id": "sample-user-23",
   "kind": "flow",
   "value": "weak",
   "comment": "Образец: течёт тонкой струйкой, бутылку на полтора литра набирали минут пять. Летом, говорят, было заметно сильнее.",
   "photo_ids": [],
   "is_sample": true,
   "affects_map": false,
-  "created_at": "2026-10-29T02:00:00.000Z"
+  "created_at": "2026-10-29T02:58:35.002Z"
 }

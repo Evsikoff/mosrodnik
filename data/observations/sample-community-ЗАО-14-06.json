@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-14-06",
+  "spring_id": "ЗАО-14",
+  "user_id": "sample-user-05",
+  "kind": "cleanliness",
+  "value": "damaged",
+  "comment": "Образец: Одна ступень перед площадкой шатается, заметили это на обратном пути.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T17:27:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮАО-152-06",
+  "spring_id": "ЮАО-152",
+  "user_id": "sample-user-13",
+  "kind": "cleanliness",
+  "value": "litter",
+  "comment": "Образец: После выходных появились пакеты у тропы. Вокруг выхода воды пока чище.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T18:07:35.002Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЗАО-103-03",
+  "spring_id": "ЗАО-103",
+  "user_id": "sample-user-14",
+  "kind": "flow",
+  "value": "frozen",
+  "comment": "Образец: На желобе сплошная наледь. Под ней слышно воду, но снаружи всё замёрзло.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-28T15:58:35.002Z"
+}

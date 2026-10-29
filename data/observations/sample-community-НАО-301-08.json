@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-НАО-301-08",
+  "spring_id": "НАО-301",
+  "user_id": "sample-user-01",
+  "kind": "cleanliness",
+  "value": "clean",
+  "comment": "Образец: По сравнению с прошлой прогулкой стало заметно чище. Спасибо тем, кто убирает.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-28T12:58:35.002Z"
+}

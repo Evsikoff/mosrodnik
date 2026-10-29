@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ТАО-292-07",
+  "spring_id": "ТАО-292",
+  "user_id": "sample-user-02",
+  "kind": "cleanliness",
+  "value": "damaged",
+  "comment": "Образец: Крепление трубы выглядит расшатанным, трогать не стали.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T15:40:35.002Z"
+}

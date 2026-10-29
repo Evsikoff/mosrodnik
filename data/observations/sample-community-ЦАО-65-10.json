@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЦАО-65-10",
+  "spring_id": "ЦАО-65",
+  "user_id": "sample-user-14",
+  "kind": "visit",
+  "value": "visited",
+  "comment": "Образец: Давно не был в этой части парка. Хорошо, что точка сохранилась на карте.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-22T21:58:35.002Z"
+}

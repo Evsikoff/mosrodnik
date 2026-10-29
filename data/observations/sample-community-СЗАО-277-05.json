@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-277-05",
+  "spring_id": "СЗАО-277",
+  "user_id": "sample-user-15",
+  "kind": "access",
+  "value": "blocked",
+  "comment": "Образец: Проход к площадке закрыт ограждением. До родника не дошли.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-18T02:58:35.002Z"
+}

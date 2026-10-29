@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-ЮВАО-213-07",
+  "spring_id": "ЮВАО-213",
+  "user_id": "sample-user-08",
+  "kind": "cleanliness",
+  "value": "damaged",
+  "comment": "Образец: Одна ступень перед площадкой шатается, заметили это на обратном пути.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-20T13:58:35.002Z"
+}

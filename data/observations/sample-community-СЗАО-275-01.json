@@ -1,0 +1,12 @@
+{
+  "id": "sample-community-СЗАО-275-01",
+  "spring_id": "СЗАО-275",
+  "user_id": "sample-user-21",
+  "kind": "flow",
+  "value": "flowing",
+  "comment": "Образец: Издалека воду не видно, труба низко. У самого желоба видно, что родник работает.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-29T14:00:35.002Z"
+}
