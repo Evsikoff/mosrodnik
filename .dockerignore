@@ -8,6 +8,7 @@ node_modules
 **/dist
 assets-src
 preview
+presentations
 data/uploads
 data/datamos
 data/springs

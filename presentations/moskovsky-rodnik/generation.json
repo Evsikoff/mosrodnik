@@ -1,0 +1,300 @@
+{
+  "01-intro": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:38:01.985Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nDesign a striking minimal cover. Left half: very large two-line title «Московский родник», below it the line «Открытые данные и наблюдения жителей». Small supporting line «258 родников Москвы» near the bottom left. Right half: a beautiful restrained editorial illustration of a small woodland spring in a Moscow ravine in cold weather, a modest pipe, a thin stream, bare birch trees, subtle mist and frost. Use the supplied winter-ravine artwork only as visual inspiration for the atmosphere, not as evidence of a real place. Smooth transition from deep dusk navy behind the type to the icy wooded scene, generous breathing room, subtle contour lines. Text in warm paper and pale ice. No other text. This is the cover of a coherent six-slide project pitch, not a tourism advertisement.\n\nRequired visible text, copied verbatim:\n\"Московский родник\"\n\"Открытые данные и наблюдения жителей\"\n\"258 родников Москвы\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "web/public/illustrations/hero/hero-winter-ravine.webp"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-01.jpg",
+    "original_sha256": "2af0041058ddf11a942df64d2ae8ade54f70d70bd553616975fc10a589d2a340",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-01.png",
+    "output_sha256": "6edf30f94b250d49ccc182738e8741d70895b5663bbef30b825321f5feb2446d",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "gKDjapC7G53zvdIPlJ_oOA",
+    "usage": {
+      "promptTokenCount": 816,
+      "candidatesTokenCount": 1491,
+      "totalTokenCount": 2594,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 558
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 258
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 287,
+      "serviceTier": "standard"
+    }
+  },
+  "02-problem": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:38:51.867Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nA paper-light editorial data slide, warm paper background with extremely subtle topographic contours. Exact headline at upper left: «Что известно о родниках». Two large typographic facts in an airy asymmetrical composition: huge ink «69» with caption «родников без единой пробы в истории набора» occupying the left center; smaller but prominent ochre «8» with caption «родников со смещением координат между годами более 100 м» on the right. Use a restrained generated detail of a map pin and a faint old field-notebook page as visual texture, never a fake geographic map. The numerals and captions are the visual focus. Bottom source line exactly «Источник: data.mos.ru № 2454. Снимок 17.04.2026». No invented percentages, charts, additional numbers or text. Copy every Russian string exactly and do not confuse lack of a historical sample with a current safety diagnosis.\n\nRequired visible text, copied verbatim:\n\"Что известно о родниках\"\n\"69\"\n\"родников без единой пробы в истории набора\"\n\"8\"\n\"родников со смещением координат между годами более 100 м\"\n\"Источник: data.mos.ru № 2454. Снимок 17.04.2026\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-02.jpg",
+    "original_sha256": "11abf1335fb732c35d266d71185780bc048401ca945f5f39dfac061699e276ad",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-02.png",
+    "output_sha256": "2417895ac4c98c14b165b1aaca60862ced0e9558435192385853e6970189cab4",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "sKDjavD_PIOzkdUPh_qV6QI",
+    "usage": {
+      "promptTokenCount": 903,
+      "candidatesTokenCount": 1503,
+      "totalTokenCount": 2835,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 645
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 258
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 429,
+      "serviceTier": "standard"
+    }
+  },
+  "03-product": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:38:56.398Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nCreate a product demonstration slide in the same environmental editorial system. Large headline at top: «Родник раскрывается на карте». The main subject is the attached ACTUAL application screenshot: place it large, clear and undistorted in a wide centered frame occupying most of the slide, with a fine ice-blue edge and subtle depth. Preserve its real interface, the 3D folded-panel construction, map, existing labels and SAMPLE badges. Do not invent extra charts, percentages, safety verdicts or features inside it. Two short editorial labels outside the screenshot: «Официальные анализы» and «Наблюдения жителей». A single readable note at the bottom: «Работающий прототип. Отзывы и фото с пометкой «Образец» демонстрационные». Frost-paper backdrop, ink type, sparse composition. Do not paint a different app or represent the demonstration examples as real user adoption.\n\nRequired visible text, copied verbatim:\n\"Родник раскрывается на карте\"\n\"Официальные анализы\"\n\"Наблюдения жителей\"\n\"Работающий прототип. Отзывы и фото с пометкой «Образец» демонстрационные\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/references/app-3d.png",
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-03.jpg",
+    "original_sha256": "ff06f47052f030af1f35c1816a868ecf866e42f8fb3779e1f022cf00c6cd31ae",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-03.png",
+    "output_sha256": "29f6bee5e361f1bded2753dda050678760f1a3972cd59d9fe40f30d4cb0b13d9",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "sKDjauCGOtynnsEPxsad0AY",
+    "usage": {
+      "promptTokenCount": 1133,
+      "candidatesTokenCount": 1442,
+      "totalTokenCount": 2994,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 617
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 516
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 419,
+      "serviceTier": "standard"
+    },
+    "postprocessing": {
+      "method": "Actual application screenshot inserted into generated screen frame, no UI text regenerated",
+      "reference": "presentations/moskovsky-rodnik/references/app-3d.png",
+      "frame": {
+        "left": 371,
+        "top": 246,
+        "width": 1181,
+        "height": 687
+      }
+    }
+  },
+  "04-contribution": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:39:18.326Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nCreate an airy product-and-human-contribution slide on warm paper. Exact headline: «Жители дополняют картину на месте». Use the attached ACTUAL mobile form screenshot inside one clean simple phone silhouette on the right, readable enough to recognize the real three selection groups and photo action, without adding imaginary features. On the left create a visually connected flat editorial composition of four restrained generated pictograms, with the exact captions «Течёт ли вода», «Можно ли подойти», «Что вокруг родника», «Фото с места». Use ink outlines, ice-blue touches and one ochre detail, not a dashboard of rounded cards. Bottom supporting line «Дата и автор сохраняются вместе с отметкой». Keep the typography large and the information hierarchy very clear. The attached interface is a real prototype reference, not a template to rewrite. No drinking-water promises, fake avatars, invented ratings, location verification claims or extra text.\n\nRequired visible text, copied verbatim:\n\"Жители дополняют картину на месте\"\n\"Течёт ли вода\"\n\"Можно ли подойти\"\n\"Что вокруг родника\"\n\"Фото с места\"\n\"Дата и автор сохраняются вместе с отметкой\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/references/app-mobile.png",
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-04.jpg",
+    "original_sha256": "5fc6c5eeb8df50713ed59e2a0985adc67a3be0acccbbba7db1641ed9b04fecad",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-04.png",
+    "output_sha256": "93a7cd74f49de431e6e87d0fa366f2d3387ce962b511562d8fe6ae55e6a509c4",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "zKDjaoP0M6ftnsEPrpel6QM",
+    "usage": {
+      "promptTokenCount": 1140,
+      "candidatesTokenCount": 1488,
+      "totalTokenCount": 3001,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 624
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 516
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 373,
+      "serviceTier": "standard"
+    },
+    "postprocessing": {
+      "method": "Actual application screenshot inserted into generated screen frame, no UI text regenerated",
+      "reference": "presentations/moskovsky-rodnik/references/app-mobile.png",
+      "frame": {
+        "left": 1362,
+        "top": 142,
+        "width": 436,
+        "height": 837
+      }
+    }
+  },
+  "05-trust": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:43:02.305Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nCreate a calm authoritative editorial slide, deep dusk navy background with warm paper-white typography and subtle ice-blue topographic contours. Copy exactly the headline «Доверие начинается с прозрачности». On the left, three clearly separated readable statements: «Год анализа и открытый источник», «Наблюдения жителей отдельно от проб», «Образцы помечены явно». On the right, a restrained abstract still-life of three translucent frosted-glass panes floating slightly apart, one delicate water ripple and a single plain frosted rectangle bearing only the large Russian word «ОБРАЗЕЦ». It is an abstract metaphor of transparency. ABSOLUTELY NO sheets, notebooks, laboratory containers, certificates, forms, handwritten text, English words, dates, coordinates, numeric values, stamps or checkmarks anywhere in the illustration. There must be no invented source documents or data. The only visible text on this entire slide is the supplied headline, the three statements, the word «ОБРАЗЕЦ» and this bottom line: «Химические показатели. Микробиология не проверяется». Keep body type at least 40px at 1920x1080. Excellent contrast, minimal clean composition, no extra content.\n\nRequired visible text, copied verbatim:\n\"Доверие начинается с прозрачности\"\n\"Год анализа и открытый источник\"\n\"Наблюдения жителей отдельно от проб\"\n\"Образцы помечены явно\"\n\"Химические показатели. Микробиология не проверяется\"\n\"ОБРАЗЕЦ\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-05.jpg",
+    "original_sha256": "ee6ebbd66b0b2eb45c266906a45b689e08bad3a67671da925dfb36f26b88587c",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-05.png",
+    "output_sha256": "8409a48b092856e64fd2519168514c62a132790d5820e339b3705b8453b4a8af",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "rqHjap6UD7GWvdIPha7C-A8",
+    "usage": {
+      "promptTokenCount": 941,
+      "candidatesTokenCount": 1498,
+      "totalTokenCount": 2640,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 683
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 258
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 201,
+      "serviceTier": "standard"
+    }
+  },
+  "06-next-step": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T19:39:45.915Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nCreate a memorable closing slide that visually echoes the cover without repeating the cover image. Warm paper field with ink title «От карты к городскому мониторингу». On the right a delicate original isometric environmental miniature: a small wooded ravine spring and a few understated urban blocks, linked by subtle water-like contour lines, representing a future civic monitoring workflow. This is a clearly stylized illustration, not a geographic map. On the left two large clear audience labels «Жителям» with caption «Понятная информация о роднике», and «Городу» with caption «Наблюдения для планирования проверок». Give the exact final line prominent bottom placement: «Следующий шаг: пилот с жителями и экологами». An optimistic restrained light-blue accent, generous negative space, one strong visual. No claims of existing city contracts, no fabricated adoption figures, no partner logos, no website URL or QR code, no unrequested thank-you footer or extra text.\n\nRequired visible text, copied verbatim:\n\"От карты к городскому мониторингу\"\n\"Жителям\"\n\"Понятная информация о роднике\"\n\"Городу\"\n\"Наблюдения для планирования проверок\"\n\"Следующий шаг: пилот с жителями и экологами\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-06.jpg",
+    "original_sha256": "07b61c05f26806001e2c2639518cf7ab40f8369dd83d5ca68bf53ca08360e72f",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-06.png",
+    "output_sha256": "9aafa95b1d2183d4b6def6b7b4f580aa76ff31d18a0ce0150d9543ed96deb63c",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "56DjatXFD7CwnsEPiKWR6AQ",
+    "usage": {
+      "promptTokenCount": 881,
+      "candidatesTokenCount": 1533,
+      "totalTokenCount": 2701,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 623
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 258
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 287,
+      "serviceTier": "standard"
+    }
+  }
+}
