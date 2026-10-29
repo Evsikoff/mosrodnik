@@ -1,0 +1,26 @@
+{
+  "slug": "zao-270",
+  "spring_id": "ЗАО-270",
+  "number": "270",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Фили-Давыдково",
+  "location": "Природный заказник Долина р.Сетунь, Кременчугская улица, 42к1, в парке за Центр прогресса бокса, пойма реки.",
+  "lon": 37.461349,
+  "lat": 55.711207,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    1081883668
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "yuzao-148",
+  "spring_id": "ЮЗАО-148",
+  "number": "148",
+  "name": "",
+  "adm_area": "ЮЗАО",
+  "district": "район Котловка",
+  "location": "Нахимовский пр-т, д. 10, школа №517, в 150 м от дома, левый берег р. Котловка",
+  "lon": 37.59722,
+  "lat": 55.66792,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": 2017,
+  "never_sampled": false,
+  "coord_drift_m": 2,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859994104,
+    167615621
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

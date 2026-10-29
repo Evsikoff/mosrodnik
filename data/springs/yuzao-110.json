@@ -1,0 +1,31 @@
+{
+  "slug": "yuzao-110",
+  "spring_id": "ЮЗАО-110",
+  "number": "110",
+  "name": "",
+  "adm_area": "ЮЗАО",
+  "district": "район Ясенево",
+  "location": "Природно-исторический парк «Битцевский лес», Литовский бульвар, д. 3, к. 1, в 150 м на северо-запад от дома, лесопарк, правый борт овражка",
+  "lon": 37.52318,
+  "lat": 55.61031,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 5,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    859994050,
+    906153042
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

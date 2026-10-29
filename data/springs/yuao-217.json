@@ -1,0 +1,31 @@
+{
+  "slug": "yuao-217",
+  "spring_id": "ЮАО-217",
+  "number": "217",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Зябликово",
+  "location": "Задонский проезд, правобережный склон реки Городня",
+  "lon": 37.76703,
+  "lat": 55.61964,
+  "status": "exceed",
+  "status_year": 2022,
+  "last_sample_year": 2022,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2018,
+      "status": "exceed"
+    },
+    {
+      "year": 2022,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    909026360,
+    1027021124
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

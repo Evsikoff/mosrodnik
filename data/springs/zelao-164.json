@@ -1,0 +1,31 @@
+{
+  "slug": "zelao-164",
+  "spring_id": "ЗелАО-164",
+  "number": "164",
+  "name": "",
+  "adm_area": "ЗелАО",
+  "district": "район Крюково",
+  "location": "В 900 м на юг от пересечения улицы Андреевка и Георгиевского проспекта, под высоковольтной ЛЭП, левый берег реки Горетовка, пойма, в 20 м от уреза воды",
+  "lon": 37.15127,
+  "lat": 55.96207,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 11,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994316,
+    167615632
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

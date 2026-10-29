@@ -1,0 +1,10 @@
+{
+  "id": "sample-filling-bottle",
+  "spring_id": "ВАО-123",
+  "user_id": "sample",
+  "file": "/samples/photos/sample-filling-bottle.webp",
+  "season": "winter",
+  "caption": "Образец: Руки в перчатках набирают воду в бутыль.",
+  "is_sample": true,
+  "created_at": "2026-10-29T15:37:35.541Z"
+}

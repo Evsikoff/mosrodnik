@@ -1,0 +1,26 @@
+{
+  "slug": "yuao-237",
+  "spring_id": "ЮАО-237",
+  "number": "237",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Царицыно",
+  "location": "ул. Бехтерева, д. 39, к. 3, Нижний Корнеевский пруд",
+  "lon": 37.650153,
+  "lat": 55.618467,
+  "status": "not_sampled",
+  "status_year": 2019,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2019,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151646
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

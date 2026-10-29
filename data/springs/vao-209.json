@@ -1,0 +1,26 @@
+{
+  "slug": "vao-209",
+  "spring_id": "ВАО-209",
+  "number": "209",
+  "name": "Косинский родник",
+  "adm_area": "ВАО",
+  "district": "район Косино-Ухтомский",
+  "location": "ул. Николая Старостина и Большая Косинская улица, западный берег Черного озера, основание пологого склона котловины Черного озера",
+  "lon": 37.8465,
+  "lat": 55.72953,
+  "status": "not_sampled",
+  "status_year": 2023,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2023,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151233
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

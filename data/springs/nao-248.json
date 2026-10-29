@@ -1,0 +1,26 @@
+{
+  "slug": "nao-248",
+  "spring_id": "НАО-248",
+  "number": "248",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "Филимонковский район",
+  "location": "СНТ Вузсервис, у въезда в СНТ",
+  "lon": 37.255164,
+  "lat": 55.553692,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    1026789706
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "szao-243",
+  "spring_id": "СЗАО-243",
+  "number": "243",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Северное Тушино",
+  "location": "улица Свободы, д.95, корп.2, парк Северное Тушино, пойма реки Грачевка, у велосипедной тропинки",
+  "lon": 37.448417,
+  "lat": 55.870417,
+  "status": "not_sampled",
+  "status_year": 2021,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2018,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2021,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    909026361,
+    1027021125
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "tao-232",
+  "spring_id": "ТАО-232",
+  "number": "232",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Троицк",
+  "location": "д. Фоминское, коттеджный поселок Согласие-1, северная окраина поселка, 50 м на запад от автодороги",
+  "lon": 37.31799,
+  "lat": 55.5207,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    906151653
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

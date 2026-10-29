@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+.env.local
+.env*
+!.env.example
+data/uploads/
+data/datamos/
+*.log
+playwright-report/
+test-results/
+.tmp/
+
+web/public/vendor/

@@ -1,0 +1,10 @@
+{
+  "id": "sample-litter",
+  "spring_id": "СВАО-116",
+  "user_id": "sample",
+  "file": "/samples/photos/sample-litter.webp",
+  "season": "winter",
+  "caption": "Образец: Пакеты и бутылки на снегу у родника.",
+  "is_sample": true,
+  "created_at": "2026-10-29T15:35:53.432Z"
+}

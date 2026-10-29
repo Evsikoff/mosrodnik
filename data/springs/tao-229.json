@@ -1,0 +1,26 @@
+{
+  "slug": "tao-229",
+  "spring_id": "ТАО-229",
+  "number": "229",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Вороново",
+  "location": "СНТ Нефтяник-94, 20 м к югу от СНТ",
+  "lon": 37.24199,
+  "lat": 55.30131,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    906151660
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

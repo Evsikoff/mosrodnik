@@ -1,0 +1,31 @@
+{
+  "slug": "zao-103",
+  "spring_id": "ЗАО-103",
+  "number": "103",
+  "name": "Родник Мученицы Варвары",
+  "adm_area": "ЗАО",
+  "district": "район Ново-Переделкино",
+  "location": "Чоботы, в 50 м южнее д. 22 а, стр. 4 по 1-й Чоботовской аллее, правый берег реки Сетунь, пойма, в 10 м от уреза воды, в 60 м от родника №102",
+  "lon": 37.34947,
+  "lat": 55.65339,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 34,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    860147064,
+    167615597
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

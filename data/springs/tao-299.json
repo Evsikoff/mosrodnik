@@ -1,0 +1,26 @@
+{
+  "slug": "tao-299",
+  "spring_id": "ТАО-299",
+  "number": "299",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Новофедоровское",
+  "location": "деревня Хмырово, дом 7, у реки Милотинка, в 140 м от здания на юго-запад, через реку",
+  "lon": 36.978216,
+  "lat": 55.394844,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    2527800496
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

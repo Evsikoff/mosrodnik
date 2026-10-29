@@ -1,0 +1,26 @@
+{
+  "slug": "tao-292",
+  "spring_id": "ТАО-292",
+  "number": "292",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Троицк",
+  "location": "деревня Десна, второй микрорайон, дом 1, в парке в сторону КП Согласие 1, через реку Десна",
+  "lon": 37.3191,
+  "lat": 55.513424,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    2527802959
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

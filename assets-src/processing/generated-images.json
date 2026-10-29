@@ -1,0 +1,326 @@
+{
+  "hero-winter-ravine": {
+    "source": "assets-src/generated/hero-winter-ravine.png",
+    "native_size": [
+      1774,
+      887
+    ],
+    "generated_at": "2026-10-29T15:10:35Z",
+    "method": "built-in-imagegen"
+  },
+  "spring-pipe-ravine": {
+    "source": "assets-src/generated/spring-pipe-ravine.png",
+    "native_size": [
+      1774,
+      887
+    ],
+    "generated_at": "2026-10-29T15:13:13.483Z",
+    "method": "built-in-imagegen"
+  },
+  "spring-canopy": {
+    "source": "assets-src/generated/spring-canopy.png",
+    "native_size": [
+      1774,
+      887
+    ],
+    "generated_at": "2026-10-29T15:13:51.310Z",
+    "method": "built-in-imagegen"
+  },
+  "spring-brook": {
+    "source": "assets-src/generated/spring-brook.png",
+    "native_size": [
+      1774,
+      887
+    ],
+    "generated_at": "2026-10-29T15:14:12.086Z",
+    "method": "built-in-imagegen"
+  },
+  "spring-forest-park": {
+    "source": "assets-src/generated/spring-forest-park.png",
+    "native_size": [
+      1774,
+      887
+    ],
+    "generated_at": "2026-10-29T15:14:38.801Z",
+    "method": "built-in-imagegen"
+  },
+  "empty-filters": {
+    "source": "assets-src/generated/empty-filters.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:16:44.112Z",
+    "method": "built-in-imagegen"
+  },
+  "empty-reports": {
+    "source": "assets-src/generated/empty-reports.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:17:19.118Z",
+    "method": "built-in-imagegen"
+  },
+  "empty-offline": {
+    "source": "assets-src/generated/empty-offline.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:17:57.578Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-bullfinch": {
+    "source": "assets-src/generated/avatar-bullfinch.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:18:46.069Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-great-tit": {
+    "source": "assets-src/generated/avatar-great-tit.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:20:22.241Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-blue-tit": {
+    "source": "assets-src/generated/avatar-blue-tit.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:20:49.683Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-nuthatch": {
+    "source": "assets-src/generated/avatar-nuthatch.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:21:24.094Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-woodpecker": {
+    "source": "assets-src/generated/avatar-woodpecker.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:22:27.735Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-waxwing": {
+    "source": "assets-src/generated/avatar-waxwing.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:24:18.044Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-magpie": {
+    "source": "assets-src/generated/avatar-magpie.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:24:53.287Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-jackdaw": {
+    "source": "assets-src/generated/avatar-jackdaw.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:25:20.236Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-mallard": {
+    "source": "assets-src/generated/avatar-mallard.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:26:06.307Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-goldeneye": {
+    "source": "assets-src/generated/avatar-goldeneye.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:27:53.991Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-squirrel": {
+    "source": "assets-src/generated/avatar-squirrel.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:28:20.983Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-fox": {
+    "source": "assets-src/generated/avatar-fox.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:28:55.220Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-sparrow": {
+    "source": "assets-src/generated/avatar-sparrow.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:29:46.237Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-goldfinch": {
+    "source": "assets-src/generated/avatar-goldfinch.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:30:16.667Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-crossbill": {
+    "source": "assets-src/generated/avatar-crossbill.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:30:43.363Z",
+    "method": "built-in-imagegen"
+  },
+  "avatar-hare": {
+    "source": "assets-src/generated/avatar-hare.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "generated_at": "2026-10-29T15:31:07.117Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-pipe-flowing": {
+    "source": "assets-src/generated/sample-pipe-flowing.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:32:55.983Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-icy-path": {
+    "source": "assets-src/generated/sample-icy-path.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:33:21.036Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-frozen-pipe": {
+    "source": "assets-src/generated/sample-frozen-pipe.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:33:46.198Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-wooden-canopy": {
+    "source": "assets-src/generated/sample-wooden-canopy.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:34:15.686Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-steam-brook": {
+    "source": "assets-src/generated/sample-steam-brook.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:35:15.981Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-litter": {
+    "source": "assets-src/generated/sample-litter.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:35:53.432Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-broken-tray": {
+    "source": "assets-src/generated/sample-broken-tray.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:36:18.948Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-info-board": {
+    "source": "assets-src/generated/sample-info-board.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:36:56.267Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-filling-bottle": {
+    "source": "assets-src/generated/sample-filling-bottle.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:37:35.541Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-summer-view": {
+    "source": "assets-src/generated/sample-summer-view.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:38:10.862Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-autumn-leaves": {
+    "source": "assets-src/generated/sample-autumn-leaves.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:41:59.203Z",
+    "method": "built-in-imagegen"
+  },
+  "sample-evening-lamp": {
+    "source": "assets-src/generated/sample-evening-lamp.png",
+    "native_size": [
+      1448,
+      1086
+    ],
+    "generated_at": "2026-10-29T15:39:32.175Z",
+    "method": "built-in-imagegen"
+  }
+}

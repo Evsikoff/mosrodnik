@@ -1,0 +1,26 @@
+{
+  "slug": "zao-214",
+  "spring_id": "ЗАО-214",
+  "number": "214",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Очаково-Матвеевское",
+  "location": "Волынский лес, в 150 м к востоку от Староволынской улицы, в 90 м от р. Сетуни, по её правому берегу",
+  "lon": 37.48428,
+  "lat": 55.71744,
+  "status": "not_sampled",
+  "status_year": 2019,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2019,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151240
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

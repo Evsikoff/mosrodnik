@@ -1,0 +1,31 @@
+{
+  "slug": "yuzao-145",
+  "spring_id": "ЮЗАО-145",
+  "number": "145",
+  "name": "",
+  "adm_area": "ЮЗАО",
+  "district": "район Зюзино",
+  "location": "Болотниковская, д. 46, к. 3, в 50 м на север от дома, в 250 м на восток от Севастопольского пр-та, правый берег р. Котловки",
+  "lon": 37.58442,
+  "lat": 55.66553,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 16,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    860147904,
+    906199686
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

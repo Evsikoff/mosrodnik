@@ -1,0 +1,36 @@
+{
+  "slug": "nao-107",
+  "spring_id": "НАО-107",
+  "number": "107",
+  "name": "Родник Петра и Павла",
+  "adm_area": "НАО",
+  "district": "Филимонковский район",
+  "location": "Городок писателей, ул. Погодина, д. 1, в 170 м на северо-восток от дома, в 150 м на север от моста через р. Сетунь, пойма в 0,5 м от уреза воды р. Сетунь, левый берег р. Сетунь",
+  "lon": 37.342056,
+  "lat": 55.58445,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": 2018,
+  "never_sampled": false,
+  "coord_drift_m": 8178,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2018,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    860147076,
+    909026110,
+    167615601
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

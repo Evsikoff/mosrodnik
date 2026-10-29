@@ -1,0 +1,31 @@
+{
+  "slug": "tao-192",
+  "spring_id": "ТАО-192",
+  "number": "192",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Вороново",
+  "location": "д. Лукошкино, в 200 м на запад от д. 44 а, правый берег притока реки Моча",
+  "lon": 37.26322,
+  "lat": 55.32629,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 27,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    860061289,
+    906153055
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

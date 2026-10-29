@@ -1,0 +1,134 @@
+{
+  "sample-pipe-flowing": {
+    "source": "assets-src/generated/sample-pipe-flowing.png",
+    "file": "web/public/samples/photos/sample-pipe-flowing.webp",
+    "source_sha256": "f286d20507f2a841b4ada9e39e2f002d1a0300ff70122dba6138e8765faee087",
+    "output_sha256": "a76ca1b5c13aacdce3540a92ce5d30e893f8eb958d3a707edf907e510f2df39c",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:32:55.983Z",
+    "processed_at": "2026-10-29T15:59:11Z"
+  },
+  "sample-icy-path": {
+    "source": "assets-src/generated/sample-icy-path.png",
+    "file": "web/public/samples/photos/sample-icy-path.webp",
+    "source_sha256": "c7d485e2deae1f223c5b802b1d59eeec21b4428eca88972a18df6de493d40d0f",
+    "output_sha256": "4c825ad59d2833d5f21d8f4e74ce294cab409f5520a13db10927ceb609f1e805",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:33:21.036Z",
+    "processed_at": "2026-10-29T15:59:12Z"
+  },
+  "sample-frozen-pipe": {
+    "source": "assets-src/generated/sample-frozen-pipe.png",
+    "file": "web/public/samples/photos/sample-frozen-pipe.webp",
+    "source_sha256": "0f265e7c2dcb53c1a574383db95db73c4fb125848126b8d4ecac54665d955f37",
+    "output_sha256": "66f498f88592265513b95f2811f1c09cce5b9a3b0f0b272a6ba54e32cdad8252",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:33:46.198Z",
+    "processed_at": "2026-10-29T15:59:13Z"
+  },
+  "sample-wooden-canopy": {
+    "source": "assets-src/generated/sample-wooden-canopy.png",
+    "file": "web/public/samples/photos/sample-wooden-canopy.webp",
+    "source_sha256": "ab5ecaa142c1c554efa860724dd28c24cb66efe2c3c537ea07b9661ff19f30fa",
+    "output_sha256": "d585c7228492dad62e80af46ea3c3d208a246af1e49cfc06d35625df9e96e2a3",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:34:15.686Z",
+    "processed_at": "2026-10-29T15:59:15Z"
+  },
+  "sample-steam-brook": {
+    "source": "assets-src/generated/sample-steam-brook.png",
+    "file": "web/public/samples/photos/sample-steam-brook.webp",
+    "source_sha256": "a9fe5cef3a613cc1c9bddf3996b3ba243e50279afb71968ea8e49490b5707dbd",
+    "output_sha256": "f0a520dabb15506422cfacb8a1e886b7b03e73f708a7186ef7bc416f4d890f42",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:35:15.981Z",
+    "processed_at": "2026-10-29T15:59:16Z"
+  },
+  "sample-litter": {
+    "source": "assets-src/generated/sample-litter.png",
+    "file": "web/public/samples/photos/sample-litter.webp",
+    "source_sha256": "85423e820f89230a207d60215d5950bd5902af37f1c07948c330963c4e8046db",
+    "output_sha256": "731c9d198a074a991c7c3c9fc7f4b39e1156e61ee9a38e64248db39522113bae",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:35:53.432Z",
+    "processed_at": "2026-10-29T15:59:17Z"
+  },
+  "sample-broken-tray": {
+    "source": "assets-src/generated/sample-broken-tray.png",
+    "file": "web/public/samples/photos/sample-broken-tray.webp",
+    "source_sha256": "3bcda8a37607888aec3aeeeb91aa37ae4539e94cec1f10959f1c227f122c42db",
+    "output_sha256": "562cc7ffb104b0d8ff8cab68c6f3ec9322d829622bb094e886f875a82b262321",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:36:18.948Z",
+    "processed_at": "2026-10-29T15:59:18Z"
+  },
+  "sample-info-board": {
+    "source": "assets-src/generated/sample-info-board.png",
+    "file": "web/public/samples/photos/sample-info-board.webp",
+    "source_sha256": "59da489648b21d46b32cec88996a34ab218f650e38830c3bd2b9bf19094009f7",
+    "output_sha256": "88ca8d7f85ebee471bd1ceff71d537e000470dc351eb9e2c43370843f3e0b138",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:36:56.267Z",
+    "processed_at": "2026-10-29T15:59:19Z"
+  },
+  "sample-filling-bottle": {
+    "source": "assets-src/generated/sample-filling-bottle.png",
+    "file": "web/public/samples/photos/sample-filling-bottle.webp",
+    "source_sha256": "d747ff28a0ce94c744849b21cd5c89b99cae03f848d4f1af26b24db72b6dbb71",
+    "output_sha256": "e09e07f0a6494a9a19e98732917156f914446ea47e4a7e6c6485aa0a78630231",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:37:35.541Z",
+    "processed_at": "2026-10-29T15:59:20Z"
+  },
+  "sample-summer-view": {
+    "source": "assets-src/generated/sample-summer-view.png",
+    "file": "web/public/samples/photos/sample-summer-view.webp",
+    "source_sha256": "7184dc3c65e4ea4d7a3e0b4190c25402bbfb38b44fe5204aa9365e25d0d7581c",
+    "output_sha256": "1d1b817f373904bd18a63fb8617b120957995902d42914b7bba9e2cf42899445",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:38:10.862Z",
+    "processed_at": "2026-10-29T15:59:21Z"
+  },
+  "sample-autumn-leaves": {
+    "source": "assets-src/generated/sample-autumn-leaves.png",
+    "file": "web/public/samples/photos/sample-autumn-leaves.webp",
+    "source_sha256": "dc9b941ece02cd97d30151f9da62917ffc769906e4b545d20cdd8e20ceb04971",
+    "output_sha256": "76a20adccca042f129931fdfedbae7752493f593b6a945d777f10c6db2c02f24",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:41:59.203Z",
+    "processed_at": "2026-10-29T15:59:22Z"
+  },
+  "sample-evening-lamp": {
+    "source": "assets-src/generated/sample-evening-lamp.png",
+    "file": "web/public/samples/photos/sample-evening-lamp.webp",
+    "source_sha256": "c93e205051f3034d0fb7b04c9319e0ff8fc9941b410f1ad4656a8c07212c3137",
+    "output_sha256": "a3518353ab4359c8a3b83acae15378ec82049c97fc4ddaf7819f4c8cb00f7560",
+    "recipe": "sample-watermark-v1-golos-bold-diagonal-35-badge",
+    "watermarked": true,
+    "is_sample": true,
+    "generated_at": "2026-10-29T15:39:32.175Z",
+    "processed_at": "2026-10-29T15:59:23Z"
+  }
+}

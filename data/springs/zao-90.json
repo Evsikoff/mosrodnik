@@ -1,0 +1,31 @@
+{
+  "slug": "zao-90",
+  "spring_id": "ЗАО-90",
+  "number": "90",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Филёвский Парк",
+  "location": "Природно-исторический парк «Москворецкий», Суворовский парк, в 400 м на северо-восток от дома 14 корп. 3 по Рублёвскому шоссе, левый борт оврага, в 20 м от уреза воды реки Москвы",
+  "lon": 37.445111,
+  "lat": 55.74175,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994009,
+    906044673
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "szao-126",
+  "spring_id": "СЗАО-126",
+  "number": "126",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Покровское-Стрешнево",
+  "location": "Природно-исторический парк «Покровское – Стрешнево», Иваньковское шоссе, 16с3, в 290 м на С-В от дома в тыловом шве поймы р. Химки, в 30 м от уреза воды , в 16 м от родника №33",
+  "lon": 37.47078,
+  "lat": 55.82672,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": 2017,
+  "never_sampled": false,
+  "coord_drift_m": 10,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859994062,
+    167615611
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

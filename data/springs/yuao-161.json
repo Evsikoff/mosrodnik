@@ -1,0 +1,31 @@
+{
+  "slug": "yuao-161",
+  "spring_id": "ЮАО-161",
+  "number": "161",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Орехово-Борисово Северное",
+  "location": "Природно-исторический парк «Царицыно», Борисовский проезд, 13, в 270 м на север от дома, Борисовский пруд, в 200 м на запад от церкви Троицы Живоначальной, в 10 м от уреза воды ручья",
+  "lon": 37.72292,
+  "lat": 55.6295,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 8,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994185,
+    906199697
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

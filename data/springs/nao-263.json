@@ -1,0 +1,26 @@
+{
+  "slug": "nao-263",
+  "spring_id": "НАО-263",
+  "number": "263",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "район Коммунарка",
+  "location": "дер. Расторопово, Растороповская улица, д.9",
+  "lon": 37.45042,
+  "lat": 55.500549,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    1081883662
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

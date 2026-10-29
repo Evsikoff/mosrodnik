@@ -1,0 +1,82 @@
+[
+  {
+    "id": "bullfinch",
+    "file": "/avatars/avatar-bullfinch.webp",
+    "name": "снегирь"
+  },
+  {
+    "id": "great-tit",
+    "file": "/avatars/avatar-great-tit.webp",
+    "name": "большая синица"
+  },
+  {
+    "id": "blue-tit",
+    "file": "/avatars/avatar-blue-tit.webp",
+    "name": "лазоревка"
+  },
+  {
+    "id": "nuthatch",
+    "file": "/avatars/avatar-nuthatch.webp",
+    "name": "поползень"
+  },
+  {
+    "id": "woodpecker",
+    "file": "/avatars/avatar-woodpecker.webp",
+    "name": "большой пёстрый дятел"
+  },
+  {
+    "id": "waxwing",
+    "file": "/avatars/avatar-waxwing.webp",
+    "name": "свиристель"
+  },
+  {
+    "id": "magpie",
+    "file": "/avatars/avatar-magpie.webp",
+    "name": "сорока"
+  },
+  {
+    "id": "jackdaw",
+    "file": "/avatars/avatar-jackdaw.webp",
+    "name": "галка"
+  },
+  {
+    "id": "mallard",
+    "file": "/avatars/avatar-mallard.webp",
+    "name": "кряква"
+  },
+  {
+    "id": "goldeneye",
+    "file": "/avatars/avatar-goldeneye.webp",
+    "name": "гоголь"
+  },
+  {
+    "id": "squirrel",
+    "file": "/avatars/avatar-squirrel.webp",
+    "name": "белка"
+  },
+  {
+    "id": "fox",
+    "file": "/avatars/avatar-fox.webp",
+    "name": "лиса"
+  },
+  {
+    "id": "sparrow",
+    "file": "/avatars/avatar-sparrow.webp",
+    "name": "воробей"
+  },
+  {
+    "id": "goldfinch",
+    "file": "/avatars/avatar-goldfinch.webp",
+    "name": "щегол"
+  },
+  {
+    "id": "crossbill",
+    "file": "/avatars/avatar-crossbill.webp",
+    "name": "клёст"
+  },
+  {
+    "id": "hare",
+    "file": "/avatars/avatar-hare.webp",
+    "name": "заяц-беляк"
+  }
+]

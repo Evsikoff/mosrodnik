@@ -1,0 +1,24 @@
+{
+  "name": "mosrodn",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n srv,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web && npm run build -w server",
+    "start": "node server/dist/index.js",
+    "test": "npm run test -w server",
+    "lint": "node scripts/lint-no-emoji.mjs && npm run typecheck -w server && npm run typecheck -w web",
+    "sync": "tsx server/scripts/run-sync.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5"
+  }
+}

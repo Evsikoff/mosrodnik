@@ -1,0 +1,26 @@
+{
+  "slug": "nao-268",
+  "spring_id": "НАО-268",
+  "number": "268",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "район Внуково",
+  "location": "дер. Лапшинка, д.28",
+  "lon": 37.31942,
+  "lat": 55.616122,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    1081883663
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

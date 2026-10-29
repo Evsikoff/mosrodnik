@@ -1,0 +1,26 @@
+{
+  "slug": "tao-230",
+  "spring_id": "ТАО-230",
+  "number": "230",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Бекасово",
+  "location": "Хутор Хутора Гуляевы, левый склон долины р. Сохна, 100 м от южной окраины хутора",
+  "lon": 37.00247,
+  "lat": 55.38167,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    906151657
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

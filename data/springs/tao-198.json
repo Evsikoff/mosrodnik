@@ -1,0 +1,31 @@
+{
+  "slug": "tao-198",
+  "spring_id": "ТАО-198",
+  "number": "198",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "Краснопахорский район",
+  "location": "В 200 м на восток от садоводческого товарищества Родник, в лесу, правый берег р. Моча",
+  "lon": 37.407695,
+  "lat": 55.333793,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2018,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    909043345,
+    167615666
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

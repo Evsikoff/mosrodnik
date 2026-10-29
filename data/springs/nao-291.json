@@ -1,0 +1,26 @@
+{
+  "slug": "nao-291",
+  "spring_id": "НАО-291",
+  "number": "291",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "Филимонковский район",
+  "location": "деревня Староселье, дом 26, за домом, в 67 м на юго-запад, по металлической лестнице",
+  "lon": 37.307675,
+  "lat": 55.556653,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    2527800488
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

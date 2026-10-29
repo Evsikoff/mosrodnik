@@ -1,0 +1,31 @@
+{
+  "slug": "tao-195",
+  "spring_id": "ТАО-195",
+  "number": "195",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Вороново",
+  "location": "В 200 м на север от моста на восточной окраине д. Кленово, правый берег реки Моча, основание правого борта склона долины реки Моча",
+  "lon": 37.38247,
+  "lat": 55.31831,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 10,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    860061300,
+    167615663
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "nao-290",
+  "spring_id": "НАО-290",
+  "number": "290",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "Филимонковский район",
+  "location": "деревня Староселье, дом 23/1А, проход вниз по склону перед домом, в58 м на запад от дома",
+  "lon": 37.309102,
+  "lat": 55.555619,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    2527800487
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

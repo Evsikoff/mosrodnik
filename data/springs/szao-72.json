@@ -1,0 +1,31 @@
+{
+  "slug": "szao-72",
+  "spring_id": "СЗАО-72",
+  "number": "72",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Южное Тушино",
+  "location": "Сходненский ковш, , д. (школа), в 130 м на юго-запад от дома 43 корп. 2 по бульвару Яна Райниса, береговой склон долины реки Сходня",
+  "lon": 37.409222,
+  "lat": 55.847666,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859993793,
+    167615577
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

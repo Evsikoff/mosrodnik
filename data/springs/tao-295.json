@@ -1,0 +1,26 @@
+{
+  "slug": "tao-295",
+  "spring_id": "ТАО-295",
+  "number": "295",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Троицк",
+  "location": "деревня Лаптево в поселении Воскресенское, СНТ Весна, дом 30, в 230м от дома на северо-запад, в лесу",
+  "lon": 37.413069,
+  "lat": 55.512071,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    2527802961
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

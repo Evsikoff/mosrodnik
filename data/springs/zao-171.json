@@ -1,0 +1,26 @@
+{
+  "slug": "zao-171",
+  "spring_id": "ЗАО-171",
+  "number": "171",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Очаково-Матвеевское",
+  "location": "Природно-исторический парк «Тушинский», в 165 м на северо-запад от храма Покрова Пресвятой Богородицы на ул. Братцевской долина реки Братовка, правый берег",
+  "lon": 37.470833,
+  "lat": 55.713111,
+  "status": "not_sampled",
+  "status_year": 2016,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2016,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    167615639
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

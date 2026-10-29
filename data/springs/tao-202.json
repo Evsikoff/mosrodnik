@@ -1,0 +1,31 @@
+{
+  "slug": "tao-202",
+  "spring_id": "ТАО-202",
+  "number": "202",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "Краснопахорский район",
+  "location": "КП Гайд-Парк, на пойме, вдоль Родниковой ул., 150 м на юг от КПП",
+  "lon": 37.316056,
+  "lat": 55.429333,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    860062701,
+    906044711
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

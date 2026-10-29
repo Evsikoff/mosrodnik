@@ -1,0 +1,26 @@
+{
+  "slug": "tao-262",
+  "spring_id": "ТАО-262",
+  "number": "262",
+  "name": "источник Ксении Петербуржской",
+  "adm_area": "ТАО",
+  "district": "район Троицк",
+  "location": "за деревней Евсеево, по Евсеевской улице",
+  "lon": 37.4298,
+  "lat": 55.50191,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    1081883665
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

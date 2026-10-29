@@ -1,0 +1,31 @@
+{
+  "slug": "zelao-3",
+  "spring_id": "ЗелАО-3",
+  "number": "3",
+  "name": "",
+  "adm_area": "ЗелАО",
+  "district": "район Савёлки",
+  "location": "Микрорайон 5А (МЖК), в 130 м на запад от корп. 529 (школа), правый берег реки Ржавка, в 0,5 м от уреза воды",
+  "lon": 37.254088,
+  "lat": 55.988086,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 153,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859911161,
+    906044639
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "szao-288",
+  "spring_id": "СЗАО-288",
+  "number": "288",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Митино",
+  "location": "Муравская улица, 42А, в 530 м от здания на юг, Митинский лесопарк",
+  "lon": 37.37536,
+  "lat": 55.852891,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    2527800485
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

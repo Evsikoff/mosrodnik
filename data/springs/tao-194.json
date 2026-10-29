@@ -1,0 +1,26 @@
+{
+  "slug": "tao-194",
+  "spring_id": "ТАО-194",
+  "number": "194",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Кленовское",
+  "location": "В 100 м на север от плотины, к югу от д. Юрово",
+  "lon": 37.403861,
+  "lat": 55.283778,
+  "status": "not_sampled",
+  "status_year": 2019,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2019,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    167615662
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

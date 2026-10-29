@@ -1,0 +1,26 @@
+{
+  "slug": "tao-220",
+  "spring_id": "ТАО-220",
+  "number": "220",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Щаповское",
+  "location": "СНТ Колобянка, в 50 м на юго-восток от участка №49",
+  "lon": 37.375694,
+  "lat": 55.367916,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151254
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

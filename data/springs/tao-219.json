@@ -1,0 +1,26 @@
+{
+  "slug": "tao-219",
+  "spring_id": "ТАО-219",
+  "number": "219",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Роговское",
+  "location": "д. Дмитровка, в центральной части, напротив участка №5",
+  "lon": 37.126,
+  "lat": 55.17108,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151262
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

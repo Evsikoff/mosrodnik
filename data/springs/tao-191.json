@@ -1,0 +1,31 @@
+{
+  "slug": "tao-191",
+  "spring_id": "ТАО-191",
+  "number": "191",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Вороново",
+  "location": "В 60 м направо от Калужского ш., после поворота на д. Безобразово и моста через реку Моча, при движении в сторону г. Калуги",
+  "lon": 37.17133,
+  "lat": 55.34057,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 8,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    860061277,
+    906153054
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

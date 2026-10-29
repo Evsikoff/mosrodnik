@@ -1,0 +1,409 @@
+[
+  {
+    "id": "spring-pipe-ravine",
+    "target_path": "web/public/illustrations/card/spring-pipe-ravine.webp",
+    "size": [
+      1200,
+      600
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nA modest spring pipe emerging from a snowy ravine slope, a narrow dull gray stream, opaque ice around the outlet. Quiet wide composition. Aspect ratio 2:1.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "spring-canopy",
+    "target_path": "web/public/illustrations/card/spring-canopy.webp",
+    "size": [
+      1200,
+      600
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nA modest captured spring under a weathered wooden canopy, small snowy footpath, bare trees, quiet wide composition. Aspect ratio 2:1.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "spring-brook",
+    "target_path": "web/public/illustrations/card/spring-brook.webp",
+    "size": [
+      1200,
+      600
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSmall spring next to an unfrozen dark gray brook, faint steam in freezing air, snow banks and bare shrubs, quiet wide composition. Aspect ratio 2:1.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "spring-forest-park",
+    "target_path": "web/public/illustrations/card/spring-forest-park.webp",
+    "size": [
+      1200,
+      600
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nA small captured spring in a snowy forest park, distant unremarkable Moscow panel apartment blocks, no landmark architecture, quiet wide composition. Aspect ratio 2:1.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "hero-winter-ravine",
+    "target_path": "web/public/illustrations/hero/hero-winter-ravine.webp",
+    "size": [
+      2400,
+      1200
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nWide 2:1 landscape hero artwork, target 2400x1200. A quiet snow-covered ravine at the outskirts of Moscow, a modest captured spring pipe emerging from the earth near lower center-right, small muted dark unfrozen stream with faint rising steam. Layered snow slopes and bare deciduous trees, distant ordinary low-detail panel apartment blocks, deep dusk navy atmosphere. Keep central portion usable for portrait crop. No people, no identifiable landmarks, no Moscow official emblems, no domes, no lettering, no watermark, no drinking vessels. Restrained editorial visual that makes no claim of water purity.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "hero-winter-ravine-mobile",
+    "target_path": "web/public/illustrations/hero/hero-winter-ravine-mobile.webp",
+    "size": [
+      1080,
+      1350
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nPortrait crop of hero-winter-ravine, preserving the spring outlet and ravine. No new content.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Derived with Pillow crop from hero-winter-ravine, not a separate generation. Center at 0.66, 0.53."
+  },
+  {
+    "id": "empty-filters",
+    "target_path": "web/public/illustrations/empty/empty-filters.webp",
+    "size": [
+      800,
+      800
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nAn empty snowy ravine slope, a few footprints disappear beyond the edge, sparse bare shrubs. No spring visible. Calm spacious square illustration.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "empty-reports",
+    "target_path": "web/public/illustrations/empty/empty-reports.webp",
+    "size": [
+      800,
+      800
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nA quiet small spring, untouched snow surrounding it, no footprints, no visitors, muted dark water. Spacious square illustration.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "empty-offline",
+    "target_path": "web/public/illustrations/empty/empty-offline.webp",
+    "size": [
+      800,
+      800
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nAn ordinary isolated streetlamp covered with snow, gently falling snow, sparse bare branches, no buildings or symbols, quiet square illustration.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": ""
+  },
+  {
+    "id": "avatar-bullfinch",
+    "target_path": "web/public/avatars/avatar-bullfinch.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian bullfinch, black cap, muted ochre-red breast. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: снегирь. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-great-tit",
+    "target_path": "web/public/avatars/avatar-great-tit.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of great tit, black head, white cheeks, muted ochre-yellow breast with black stripe. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: большая синица. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-blue-tit",
+    "target_path": "web/public/avatars/avatar-blue-tit.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian blue tit, small ice-blue cap, white face, dark eye stripe, pale yellow breast. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: лазоревка. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-nuthatch",
+    "target_path": "web/public/avatars/avatar-nuthatch.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian nuthatch, slate-blue back, long pointed bill, black eye stripe, buff underside. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: поползень. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-woodpecker",
+    "target_path": "web/public/avatars/avatar-woodpecker.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of great spotted woodpecker, black-white plumage, small muted red undertail. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: большой пёстрый дятел. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-waxwing",
+    "target_path": "web/public/avatars/avatar-waxwing.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Bohemian waxwing, swept crest, black mask, warm gray body, restrained ochre accents. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: свиристель. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-magpie",
+    "target_path": "web/public/avatars/avatar-magpie.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian magpie, long dark tail, black-white plumage. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: сорока. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-jackdaw",
+    "target_path": "web/public/avatars/avatar-jackdaw.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian jackdaw, dark face, slate-gray nape, pale ice-gray eye. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: галка. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-mallard",
+    "target_path": "web/public/avatars/avatar-mallard.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of male mallard duck, subdued dark head, pale neck ring, warm chest, broad bill. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: кряква. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-goldeneye",
+    "target_path": "web/public/avatars/avatar-goldeneye.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of male common goldeneye duck, dark rounded head, white cheek patch, small ochre eye. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: гоголь. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-squirrel",
+    "target_path": "web/public/avatars/avatar-squirrel.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of Eurasian red squirrel in winter coat, tufted ears, fluffy tail, slate and muted russet fur. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: белка. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-fox",
+    "target_path": "web/public/avatars/avatar-fox.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of red fox, pointed ears, ochre winter fur, pale muzzle, dark legs. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: лиса. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-sparrow",
+    "target_path": "web/public/avatars/avatar-sparrow.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of house sparrow, gray crown, brown back, black throat bib, short stout bill. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: воробей. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-goldfinch",
+    "target_path": "web/public/avatars/avatar-goldfinch.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of European goldfinch, small muted red face mask, black-white head, ochre wing bar. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: щегол. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-crossbill",
+    "target_path": "web/public/avatars/avatar-crossbill.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of red crossbill, clearly crossed bill tips, muted ochre-russet plumage. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: клёст. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "avatar-hare",
+    "target_path": "web/public/avatars/avatar-hare.webp",
+    "size": [
+      512,
+      512
+    ],
+    "prompt": "flat editorial illustration, limited palette: snow white #F3F1EC, ink navy #1F2A3A, ice blue #9FC3D6, muted ochre #C8964A, slate grey #8A94A3; subtle paper grain, clean vector shapes, soft winter dusk light, Moscow outskirts nature, no text, no logos, no 3D render, no glossy effects, no sparkling water\nSingle recognizable head-and-upper-body portrait of mountain hare in white winter coat, long black-tipped ears, slate shadow details. One centered circular medallion on solid frost #E3EEF3 background, muted editorial winter style, clean rounded silhouette, no accessories. Identical framing across an animal avatar collection. Square 512x512.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Final export 256x256. Russian name: заяц-беляк. Species identity retained within a restrained palette."
+  },
+  {
+    "id": "sample-pipe-flowing",
+    "target_path": "web/public/samples/photos/sample-pipe-flowing.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA short utilitarian metal pipe in a snow-covered ravine slope with a visible modest flowing stream of dull gray water. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Трубка в заснеженном склоне, вода течёт."
+  },
+  {
+    "id": "sample-icy-path",
+    "target_path": "web/public/samples/photos/sample-icy-path.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nSlippery icy path and uneven concrete steps leading down to a small spring, packed dirty snow, visible dull ice. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Обледенелая тропинка и ступени к роднику."
+  },
+  {
+    "id": "sample-frozen-pipe",
+    "target_path": "web/public/samples/photos/sample-frozen-pipe.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA frozen spring pipe with its outlet sealed by opaque ice, heavy dull icicles around it, no flowing water. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Трубка и выход воды покрыты наледью."
+  },
+  {
+    "id": "sample-wooden-canopy",
+    "target_path": "web/public/samples/photos/sample-wooden-canopy.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA modest weathered wooden canopy over a captured spring, snowy path and posts, ordinary forest park. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Деревянный навес над зимним родником."
+  },
+  {
+    "id": "sample-steam-brook",
+    "target_path": "web/public/samples/photos/sample-steam-brook.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nSmall dark unfrozen brook below a spring in snow, subtle vapor rising into cold humid winter air, no glossy reflections. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Лёгкий пар над ручьём в мороз."
+  },
+  {
+    "id": "sample-litter",
+    "target_path": "web/public/samples/photos/sample-litter.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nLitter problem near a small spring: a few crumpled plastic bags and unbranded bottles on dirty snow. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Пакеты и бутылки на снегу у родника."
+  },
+  {
+    "id": "sample-broken-tray",
+    "target_path": "web/public/samples/photos/sample-broken-tray.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA damaged concrete spring capture trough, cracked broken edges, fallen chunk obstructing approach, snow and rough stone. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Повреждённый бетонный лоток каптажа."
+  },
+  {
+    "id": "sample-info-board",
+    "target_path": "web/public/samples/photos/sample-info-board.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA modest information board next to a snowy spring path, board out of focus, all markings completely illegible abstract blur. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Стенд у родника, надписи не читаются."
+  },
+  {
+    "id": "sample-filling-bottle",
+    "target_path": "web/public/samples/photos/sample-filling-bottle.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nClose candid crop of only two gloved hands holding an unbranded large plastic water bottle under a modest spring pipe, snow; no body or face, no drinking gesture, no purity advertising. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Руки в перчатках набирают воду в бутыль."
+  },
+  {
+    "id": "sample-summer-view",
+    "target_path": "web/public/samples/photos/sample-summer-view.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nSeason override: overcast Moscow SUMMER day, green foliage, bare damp earth, no snow or ice. Modest metal pipe spring and concrete trough in a leafy ravine. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Season override takes precedence over the winter baseline. Летний вид небольшого родника."
+  },
+  {
+    "id": "sample-autumn-leaves",
+    "target_path": "web/public/samples/photos/sample-autumn-leaves.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nSeason override: overcast Moscow AUTUMN day. Close-up of a small natural water spring: a metal outlet pipe embedded in an earthy forest ravine bank, dripping dull gray water into a shallow rough concrete drainage trough in the foreground. Many brown fallen autumn leaves visibly clog the trough around the pipe. Sparse yellow foliage, damp soil, no snow. The pipe, flowing water and leaf-clogged trough must be clearly visible and occupy most of the frame. Forest ravine setting only, no city sidewalk, road, parked cars, apartment courtyard or buildings. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Season override takes precedence over the winter baseline. Осенние листья в лотке родника."
+  },
+  {
+    "id": "sample-evening-lamp",
+    "target_path": "web/public/samples/photos/sample-evening-lamp.webp",
+    "size": [
+      1600,
+      1200
+    ],
+    "prompt": "candid smartphone photo, overcast Moscow winter day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nTime override: winter evening under an ordinary warm streetlamp, light snow falling, a small spring and path, no dramatic cinematic staging. Landscape 4:3. Unstaged ordinary smartphone photograph.",
+    "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+    "notes": "Synthetic sample, not evidence of any actual spring. Add mandatory watermark in code before public export. Вечерний родник под фонарём."
+  }
+]

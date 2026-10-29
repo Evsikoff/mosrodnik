@@ -1,0 +1,31 @@
+{
+  "slug": "zelao-4",
+  "spring_id": "ЗелАО-4",
+  "number": "4",
+  "name": "",
+  "adm_area": "ЗелАО",
+  "district": "район Старое Крюково",
+  "location": "7-й микрорайон, в 90 м на юго-запад от дома 3 по Озёрной аллее, в 50 м на юго-запад от лыжной трассы стадиона «Ангстрем», по железной лестнице вниз, основание правого борта оврага, долина реки Сходня",
+  "lon": 37.2233,
+  "lat": 55.9818,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859911175,
+    906044640
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

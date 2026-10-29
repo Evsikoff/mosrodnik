@@ -1,0 +1,26 @@
+{
+  "slug": "tao-226",
+  "spring_id": "ТАО-226",
+  "number": "226",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Вороновское",
+  "location": "50 м к востоку от въезда в СНТ Ворсино-2",
+  "lon": 37.26677,
+  "lat": 55.341685,
+  "status": "not_sampled",
+  "status_year": 2021,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2021,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151663
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

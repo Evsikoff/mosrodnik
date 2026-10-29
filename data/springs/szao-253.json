@@ -1,0 +1,26 @@
+{
+  "slug": "szao-253",
+  "spring_id": "СЗАО-253",
+  "number": "253",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Куркино",
+  "location": "Природный парк Долина реки Сходня в Куркино, при съезде с Ландышевой улицы, в 160 м от дома 6Б по Сходненской улице, рядом с деревянным мостиком через приток реки Сходня",
+  "lon": 37.3838,
+  "lat": 55.878989,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    1026792070
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

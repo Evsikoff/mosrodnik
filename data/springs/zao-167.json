@@ -1,0 +1,31 @@
+{
+  "slug": "zao-167",
+  "spring_id": "ЗАО-167",
+  "number": "167",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Очаково-Матвеевское",
+  "location": "Природный заказник «Долина реки Сетунь», ул. Староволынская, д. 10, к. 3, больница №1, в 100 м на юго-восток от дома, пойма р. Сетунь, в 30 м от родника №155",
+  "lon": 37.47128,
+  "lat": 55.71325,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994314,
+    906199702
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

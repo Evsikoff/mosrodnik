@@ -1,0 +1,31 @@
+{
+  "slug": "yuzao-169",
+  "spring_id": "ЮЗАО-169",
+  "number": "169",
+  "name": "",
+  "adm_area": "ЮЗАО",
+  "district": "Гагаринский район",
+  "location": "Природный заказник «Воробьевы горы», родник на банном дворе Андреевского монастыря, Андреевская наб., д. 2",
+  "lon": 37.574085,
+  "lat": 55.711281,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 51,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994320,
+    906199704
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

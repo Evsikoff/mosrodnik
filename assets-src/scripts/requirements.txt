@@ -1,0 +1,5 @@
+Pillow>=10.4,<13
+numpy>=1.26,<3
+matplotlib>=3.8,<4
+resvg-py>=0.2,<1
+fonttools>=4.50,<5

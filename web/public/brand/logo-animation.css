@@ -1,0 +1,48 @@
+/* Original logo sprite: 24 frames, 6 columns, 4 rows, 2 seconds. */
+.mr-logo {
+  display: inline-block;
+  width: var(--logo-width, 128px);
+  max-width: 100%;
+  aspect-ratio: 1;
+  vertical-align: middle;
+  background-image: url('./logo-mark-sprite-color.png');
+  background-repeat: no-repeat;
+  background-size: 600% 400%;
+  background-position: 0% 0%;
+}
+.mr-logo--mono { background-image: url('./logo-mark-sprite-mono.png'); }
+.mr-logo--inverse { background-image: url('./logo-mark-sprite-inverse.png'); }
+.mr-logo--lockup { --logo-width: 384px; aspect-ratio: 24 / 7; background-image: url('./logo-lockup-sprite-color.png'); }
+.mr-logo--lockup.mr-logo--mono { background-image: url('./logo-lockup-sprite-mono.png'); }
+.mr-logo--lockup.mr-logo--inverse { background-image: url('./logo-lockup-sprite-inverse.png'); }
+.mr-logo--animated { animation: mr-logo-ripples 2s steps(1, end) infinite; }
+@keyframes mr-logo-ripples {
+  0.000000% { background-position: 0.000000% 0.000000%; }
+  4.166667% { background-position: 20.000000% 0.000000%; }
+  8.333333% { background-position: 40.000000% 0.000000%; }
+  12.500000% { background-position: 60.000000% 0.000000%; }
+  16.666667% { background-position: 80.000000% 0.000000%; }
+  20.833333% { background-position: 100.000000% 0.000000%; }
+  25.000000% { background-position: 0.000000% 33.333333%; }
+  29.166667% { background-position: 20.000000% 33.333333%; }
+  33.333333% { background-position: 40.000000% 33.333333%; }
+  37.500000% { background-position: 60.000000% 33.333333%; }
+  41.666667% { background-position: 80.000000% 33.333333%; }
+  45.833333% { background-position: 100.000000% 33.333333%; }
+  50.000000% { background-position: 0.000000% 66.666667%; }
+  54.166667% { background-position: 20.000000% 66.666667%; }
+  58.333333% { background-position: 40.000000% 66.666667%; }
+  62.500000% { background-position: 60.000000% 66.666667%; }
+  66.666667% { background-position: 80.000000% 66.666667%; }
+  70.833333% { background-position: 100.000000% 66.666667%; }
+  75.000000% { background-position: 0.000000% 100.000000%; }
+  79.166667% { background-position: 20.000000% 100.000000%; }
+  83.333333% { background-position: 40.000000% 100.000000%; }
+  87.500000% { background-position: 60.000000% 100.000000%; }
+  91.666667% { background-position: 80.000000% 100.000000%; }
+  95.833333% { background-position: 100.000000% 100.000000%; }
+  100% { background-position: 0% 0%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mr-logo--animated { animation: none; background-position: 0% 0%; }
+}

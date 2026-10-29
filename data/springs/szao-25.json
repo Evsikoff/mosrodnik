@@ -1,0 +1,31 @@
+{
+  "slug": "szao-25",
+  "spring_id": "СЗАО-25",
+  "number": "25",
+  "name": "Царевна Лебедь",
+  "adm_area": "СЗАО",
+  "district": "район Покровское-Стрешнево",
+  "location": "Природно-исторический парк «Покровское – Стрешнево», в 200 м на северо-восток от дома 16 стр. 3 по Иваньковскому шоссе, оползневой цирк (средняя часть), в 150 м от уреза воды реки Химка",
+  "lon": 37.473166,
+  "lat": 55.826694,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": 2017,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    860147037,
+    167615543
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

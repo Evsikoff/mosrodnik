@@ -1,0 +1,31 @@
+{
+  "slug": "szao-114",
+  "spring_id": "СЗАО-114",
+  "number": "114",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Северное Тушино",
+  "location": "пос. Новобутаково, в 80 м на восток от дома 44, стр. 1, Бутаковский залив, основание правого борта оврага, долина реки Грачёвка",
+  "lon": 37.437755,
+  "lat": 55.875463,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 11,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859994054,
+    167615607
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

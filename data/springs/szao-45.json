@@ -1,0 +1,31 @@
+{
+  "slug": "szao-45",
+  "spring_id": "СЗАО-45",
+  "number": "45",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Хорошёво-Мнёвники",
+  "location": "Природно-исторический парк «Москворецкий», в 190 м на юго-запад от дома 56 по Карамышевская набережной, пойма реки Москвы, в 30 м от уреза воды реки Москвы",
+  "lon": 37.459861,
+  "lat": 55.773055,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859993734,
+    167615559
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

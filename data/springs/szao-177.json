@@ -1,0 +1,31 @@
+{
+  "slug": "szao-177",
+  "spring_id": "СЗАО-177",
+  "number": "177",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Куркино",
+  "location": "Ландшафтный заказник «Долина реки Сходни в Куркино», территория ГБУ Спортивная школа олимпийского резерва Московская школа гольфа, Москомспорт, Юровская пойма, в 20 м от родника №176, левый берег р. Сходни",
+  "lon": 37.36872,
+  "lat": 55.90069,
+  "status": "not_sampled",
+  "status_year": 2021,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 18,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2021,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859994326,
+    167615644
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

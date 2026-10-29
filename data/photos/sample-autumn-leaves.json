@@ -1,0 +1,10 @@
+{
+  "id": "sample-autumn-leaves",
+  "spring_id": "ЗелАО-1",
+  "user_id": "sample",
+  "file": "/samples/photos/sample-autumn-leaves.webp",
+  "season": "autumn",
+  "caption": "Образец: Осенние листья в лотке родника.",
+  "is_sample": true,
+  "created_at": "2026-10-29T15:41:59.203Z"
+}

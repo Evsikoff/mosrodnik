@@ -1,0 +1,26 @@
+{
+  "slug": "tao-231",
+  "spring_id": "ТАО-231",
+  "number": "231",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Михайлово-Ярцевское",
+  "location": "СНТ Ярцевские Поляны-1, южная окраина СНТ, в лесу",
+  "lon": 37.15048,
+  "lat": 55.39787,
+  "status": "ok",
+  "status_year": 2022,
+  "last_sample_year": 2022,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    906151656
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

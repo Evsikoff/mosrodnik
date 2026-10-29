@@ -1,0 +1,26 @@
+{
+  "slug": "tao-197",
+  "spring_id": "ТАО-197",
+  "number": "197",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "Краснопахорский район",
+  "location": "д. Батыбино, в 70 м на северо-восток от д. 36, правый берег реки Моча",
+  "lon": 37.427278,
+  "lat": 55.381972,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    167615665
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

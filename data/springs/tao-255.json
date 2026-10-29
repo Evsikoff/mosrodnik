@@ -1,0 +1,26 @@
+{
+  "slug": "tao-255",
+  "spring_id": "ТАО-255",
+  "number": "255",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Троицк",
+  "location": "СНТ Пыхчево, ул. Родниковая, д.70, вниз от площадки в тупике улицы",
+  "lon": 37.3563,
+  "lat": 55.45993,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    1081883670
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

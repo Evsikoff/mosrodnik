@@ -1,0 +1,26 @@
+{
+  "slug": "yuao-282",
+  "spring_id": "ЮАО-282",
+  "number": "282",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Чертаново Южное",
+  "location": "Дорожная улица, 7к3, Покровский парк, в 130 м от здания, у Покровского пруда",
+  "lon": 37.626794,
+  "lat": 55.602187,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    2527800479
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "szao-10",
+  "spring_id": "СЗАО-10",
+  "number": "10",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Хорошёво-Мнёвники",
+  "location": "Природно-исторический парк «Москворецкий», Карамышевская набережная, д. 31, в 100 м на юг от дома, в 200 м ниже по течению р. Москвы от Карамышевского моста, в 15 м от уреза воды р. Москвы",
+  "lon": 37.47897,
+  "lat": 55.76828,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 12,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859911503,
+    167615531
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

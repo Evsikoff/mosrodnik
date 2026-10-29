@@ -1,0 +1,31 @@
+{
+  "slug": "yuzao-77",
+  "spring_id": "ЮЗАО-77",
+  "number": "77",
+  "name": "",
+  "adm_area": "ЮЗАО",
+  "district": "Гагаринский район",
+  "location": "Природный заказник «Воробьёвы горы», в 100 м на запад от дома 4 корп. 1 по ул. Косыгина, в 600 м на восток от ст. м. «Воробьёвы горы», крутой береговой склон реки Москвы",
+  "lon": 37.564916,
+  "lat": 55.708555,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859993796,
+    167615580
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

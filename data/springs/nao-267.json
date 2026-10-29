@@ -1,0 +1,26 @@
+{
+  "slug": "nao-267",
+  "spring_id": "НАО-267",
+  "number": "267",
+  "name": "",
+  "adm_area": "НАО",
+  "district": "Филимонковский район",
+  "location": "дер.Мешково, ул. Родниковая, д.70, за мостом через приток р.Ликова",
+  "lon": 37.325116,
+  "lat": 55.59559,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    1081883651
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

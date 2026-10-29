@@ -1,0 +1,36 @@
+{
+  "slug": "yuao-135",
+  "spring_id": "ЮАО-135",
+  "number": "135",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Орехово-Борисово Северное",
+  "location": "Природно-исторический парк Царицыно, ул. Дольская, д.1, стр.3, в 200 м на север от дома, восточный берег Нижнего Царицынского пруда, набережная, в 60 м на север от родника 43",
+  "lon": 37.68003,
+  "lat": 55.61911,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 4,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2018,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994080,
+    909026139,
+    1027031571
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

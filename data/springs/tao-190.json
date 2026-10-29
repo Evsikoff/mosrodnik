@@ -1,0 +1,31 @@
+{
+  "slug": "tao-190",
+  "spring_id": "ТАО-190",
+  "number": "190",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Вороновское",
+  "location": "Деревня Семенково, в 60 м на северо-восток от д.2а, по улице Центральная, пойма реки Вороновка",
+  "lon": 37.127028,
+  "lat": 55.294639,
+  "status": "not_sampled",
+  "status_year": 2022,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2018,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2022,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    909026161,
+    167615658
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

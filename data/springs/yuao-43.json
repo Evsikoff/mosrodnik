@@ -1,0 +1,31 @@
+{
+  "slug": "yuao-43",
+  "spring_id": "ЮАО-43",
+  "number": "43",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Орехово-Борисово Северное",
+  "location": "Природно-исторический парк «Царицыно», в 140 м на север от дома 1 стр. 3 по Дольской улице, долина реки Городня, в средней части правого берега Верхнего Царицынского пруда, набережная",
+  "lon": 37.679277,
+  "lat": 55.618472,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": 2017,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859993724,
+    906044659
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

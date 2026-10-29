@@ -1,0 +1,26 @@
+{
+  "slug": "tao-293",
+  "spring_id": "ТАО-293",
+  "number": "293",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "Краснопахорский район",
+  "location": "коттеджный поселок Цветочный, ул. Земляничная, дом 47, в пойме реки Жилетовка",
+  "lon": 37.206871,
+  "lat": 55.460925,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    2527802960
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

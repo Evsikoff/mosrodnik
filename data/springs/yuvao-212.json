@@ -1,0 +1,26 @@
+{
+  "slug": "yuvao-212",
+  "spring_id": "ЮВАО-212",
+  "number": "212",
+  "name": "",
+  "adm_area": "ЮВАО",
+  "district": "район Кузьминки",
+  "location": "Правый берег р. Пономарки, в 20 м от уреза воды, в 490 м на восток от восточного выхода станции метро Волжская, ниже основных выходов воды Кузьминского родника, вблизи родника №94",
+  "lon": 37.76397,
+  "lat": 55.69089,
+  "status": "exceed",
+  "status_year": 2021,
+  "last_sample_year": 2021,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2021,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    906151237
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

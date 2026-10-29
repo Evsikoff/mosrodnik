@@ -1,0 +1,31 @@
+{
+  "slug": "tao-227",
+  "spring_id": "ТАО-227",
+  "number": "227",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Вороново",
+  "location": "Западная часть деревни Свитино, левый берег реки Трешня",
+  "lon": 37.37414,
+  "lat": 55.30944,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2018,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    909026363,
+    1027021128
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

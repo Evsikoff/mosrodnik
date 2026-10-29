@@ -1,0 +1,31 @@
+{
+  "slug": "yuao-152",
+  "spring_id": "ЮАО-152",
+  "number": "152",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Орехово-Борисово Северное",
+  "location": "Природно-исторический парк «Царицыно», ул. Баженова, д. 4 а, в 100 м на север от дома, Нижний Царицынский пруд, устье оврага (Садово-Крестьянская ул.), в 10 м от уреза воды",
+  "lon": 37.68408,
+  "lat": 55.62331,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 4,
+  "history": [
+    {
+      "year": 2017,
+      "status": "exceed"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994113,
+    906199691
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

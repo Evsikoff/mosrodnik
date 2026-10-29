@@ -1,0 +1,26 @@
+{
+  "slug": "tao-222",
+  "spring_id": "ТАО-222",
+  "number": "222",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "поселение Михайлово-Ярцевское",
+  "location": "СНТ Рыжово, 60 м на запад от северо-западного угла забора СНТ",
+  "lon": 37.12379,
+  "lat": 55.36922,
+  "status": "not_sampled",
+  "status_year": 2021,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2021,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    906151261
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

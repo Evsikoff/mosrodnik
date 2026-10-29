@@ -1,0 +1,31 @@
+{
+  "slug": "yuao-51",
+  "spring_id": "ЮАО-51",
+  "number": "51",
+  "name": "",
+  "adm_area": "ЮАО",
+  "district": "район Нагатинский Затон",
+  "location": "Музей-заповедник «Коломенское», в 110 м на восток от церкви Вознесения Господня (пр-т Андропова, д. 39 стр. 1), пойма реки Москвы, в 2 м от уреза воды реки Москвы",
+  "lon": 37.672805,
+  "lat": 55.667111,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 8,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859993778,
+    167615565
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

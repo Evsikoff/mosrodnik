@@ -1,0 +1,10 @@
+{
+  "id": "sample-pipe-flowing",
+  "spring_id": "ВАО-123",
+  "user_id": "sample",
+  "file": "/samples/photos/sample-pipe-flowing.webp",
+  "season": "winter",
+  "caption": "Образец: Трубка в заснеженном склоне, вода течёт.",
+  "is_sample": true,
+  "created_at": "2026-10-29T15:32:55.983Z"
+}

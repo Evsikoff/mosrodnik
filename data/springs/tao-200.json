@@ -1,0 +1,31 @@
+{
+  "slug": "tao-200",
+  "spring_id": "ТАО-200",
+  "number": "200",
+  "name": "",
+  "adm_area": "ТАО",
+  "district": "район Бекасово",
+  "location": "СНТ Нива-3, в 10 м от уреза воды р. Ладырки",
+  "lon": 36.884814,
+  "lat": 55.425114,
+  "status": "ok",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2025,
+      "status": "ok"
+    }
+  ],
+  "source_global_ids": [
+    860062693,
+    906044709
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

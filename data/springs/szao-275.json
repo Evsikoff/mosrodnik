@@ -1,0 +1,26 @@
+{
+  "slug": "szao-275",
+  "spring_id": "СЗАО-275",
+  "number": "275",
+  "name": "",
+  "adm_area": "СЗАО",
+  "district": "район Митино",
+  "location": "первая Муравская улица, дом 41, стр.1, в 165м от здания на юг, территория Митинского лесопарка, грот купель",
+  "lon": 37.365283,
+  "lat": 55.85827,
+  "status": "exceed",
+  "status_year": 2025,
+  "last_sample_year": 2025,
+  "never_sampled": false,
+  "coord_drift_m": 0,
+  "history": [
+    {
+      "year": 2025,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    2527802957
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

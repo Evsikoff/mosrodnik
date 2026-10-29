@@ -1,0 +1,31 @@
+{
+  "slug": "zelao-165",
+  "spring_id": "ЗелАО-165",
+  "number": "165",
+  "name": "",
+  "adm_area": "ЗелАО",
+  "district": "район Крюково",
+  "location": "деревня Рожки, на юго-запад от д. 17, левый берег реки Горетовка, пойма, в 15 м от уреза воды",
+  "lon": 37.21702,
+  "lat": 55.94871,
+  "status": "exceed",
+  "status_year": 2022,
+  "last_sample_year": 2022,
+  "never_sampled": false,
+  "coord_drift_m": 6,
+  "history": [
+    {
+      "year": 2017,
+      "status": "ok"
+    },
+    {
+      "year": 2022,
+      "status": "exceed"
+    }
+  ],
+  "source_global_ids": [
+    859994315,
+    906199700
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}

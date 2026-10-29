@@ -1,0 +1,31 @@
+{
+  "slug": "zao-13",
+  "spring_id": "ЗАО-13",
+  "number": "13",
+  "name": "",
+  "adm_area": "ЗАО",
+  "district": "район Раменки",
+  "location": "Природный заказник «Воробьевы горы», ниже стелы Герцену и Огареву, в 350 м на восток от смотровой площадки",
+  "lon": 37.544,
+  "lat": 55.71142,
+  "status": "not_sampled",
+  "status_year": 2025,
+  "last_sample_year": null,
+  "never_sampled": true,
+  "coord_drift_m": 35,
+  "history": [
+    {
+      "year": 2017,
+      "status": "not_sampled"
+    },
+    {
+      "year": 2025,
+      "status": "not_sampled"
+    }
+  ],
+  "source_global_ids": [
+    859911536,
+    906198716
+  ],
+  "updated_from_source_at": "2026-10-29T17:06:16.169Z"
+}
