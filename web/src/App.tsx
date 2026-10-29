@@ -375,8 +375,8 @@ export default function App() {
       {!mobile && (
         <aside className="panel" ref={panelEl}>
           <header className="panel-head">
-            <a className="brand" href="/" onClick={(e) => { e.preventDefault(); if (selected) closeSpring(); }}>
-              <img src="/brand/logo-mark-512.png" alt="" />
+            <a className="brand" href="/" aria-label="Московский родник: к списку" onClick={(e) => { e.preventDefault(); if (selected) closeSpring(); }}>
+              <span className="mr-logo mr-logo--auto mr-logo--animated" style={{ ["--logo-width" as string]: "44px" }} aria-hidden="true" />
               <b>Московский<br />родник</b>
             </a>
             {userBtn}
@@ -440,7 +440,7 @@ export default function App() {
         <>
           <div className="m-top">
             <button className="pill" onClick={() => { setSheetOpen(true); setTall(false); }} aria-label="Поиск и фильтры">
-              <img src="/brand/logo-mark-512.png" alt="" />
+              <span className="mr-logo mr-logo--auto mr-logo--animated" style={{ ["--logo-width" as string]: "32px" }} aria-hidden="true" />
               <span>{hasFilters(filters) ? `Показано ${visible.length} из ${features.length}` : 'Поиск и фильтры'}</span>
               <SlidersHorizontal size={18} aria-hidden />
             </button>

@@ -92,7 +92,7 @@ a { color: var(--accent-strong); }
 
 .panel-head { display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px; }
 .brand { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; text-decoration: none; color: inherit; }
-.brand img { width: 40px; height: 40px; }
+
 .brand b { font-size: 17px; font-weight: 700; line-height: 1.1; }
 .user-btn {
   display: flex; align-items: center; gap: 8px; max-width: 190px; padding: 4px 10px 4px 4px;
@@ -366,3 +366,8 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 12px; }
 @media (max-width: 1023px) {
   .sheet .search { margin-right: 62px; }
 }
+
+/* Логотип: анимированный спрайт, WebP; на тёмной теме светлый вариант */
+.mr-logo--auto { background-image: url('/brand/logo-mark-sprite-color.webp'); flex: none; }
+[data-theme='night'] .mr-logo--auto { background-image: url('/brand/logo-mark-sprite-inverse.webp'); }
+.m-top .pill .mr-logo { width: 32px; height: 32px; }
