@@ -1,0 +1,13 @@
+{
+  "id": "sample-review-access-trail",
+  "spring_id": "САО-235",
+  "user_id": "sample-user-01",
+  "file": "/samples/photos/sample-review-access-trail.webp",
+  "thumb": "/samples/thumbs/sample-review-access-trail.webp",
+  "width": 1600,
+  "height": 1200,
+  "season": "autumn",
+  "caption": "Образец: Открытая тропа вдоль ручья. Синтетическое изображение.",
+  "created_at": "2026-10-29T19:13:11.559Z",
+  "is_sample": true
+}

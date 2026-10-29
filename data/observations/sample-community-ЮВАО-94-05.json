@@ -5,7 +5,9 @@
   "kind": "access",
   "value": "cleared",
   "comment": "Образец: Дошли по обычной тропе от парка. Проход открыт, ограждений нет.",
-  "photo_ids": [],
+  "photo_ids": [
+    "sample-review-access-cleared"
+  ],
   "is_sample": true,
   "affects_map": false,
   "created_at": "2026-10-29T16:13:35.002Z"

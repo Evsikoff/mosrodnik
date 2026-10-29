@@ -1,0 +1,13 @@
+{
+  "id": "sample-review-clean-stream",
+  "spring_id": "ЮВАО-211",
+  "user_id": "sample-user-01",
+  "file": "/samples/photos/sample-review-clean-stream.webp",
+  "thumb": "/samples/thumbs/sample-review-clean-stream.webp",
+  "width": 1600,
+  "height": 1200,
+  "season": "autumn",
+  "caption": "Образец: Берег ручья без бытового мусора. Синтетическое изображение.",
+  "created_at": "2026-10-29T19:13:33.681Z",
+  "is_sample": true
+}

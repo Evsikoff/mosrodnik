@@ -1,0 +1,13 @@
+{
+  "id": "sample-review-access-barrier",
+  "spring_id": "ЗАО-91",
+  "user_id": "sample-user-13",
+  "file": "/samples/photos/sample-review-access-barrier.webp",
+  "thumb": "/samples/thumbs/sample-review-access-barrier.webp",
+  "width": 1600,
+  "height": 1200,
+  "season": "autumn",
+  "caption": "Образец: Ограждение на подходе к площадке. Синтетическое изображение.",
+  "created_at": "2026-10-29T19:13:25.492Z",
+  "is_sample": true
+}

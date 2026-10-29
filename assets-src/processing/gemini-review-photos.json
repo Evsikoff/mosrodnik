@@ -1,0 +1,1106 @@
+{
+  "sample-review-flow-pipe": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-flow-pipe.jpg",
+    "spring_id": "ВАО-123",
+    "observation_id": "sample-community-ВАО-123-01",
+    "user_id": "sample-user-23",
+    "kind": "flow",
+    "value": "flowing",
+    "season": "autumn",
+    "caption": "Ровная струя из трубы в осеннем овраге.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Close eye-level view of a modest rusty steel spring pipe emerging from a mossy concrete bank. A continuous narrow stream falls into a weathered concrete channel. Damp brown maple leaves, bare birches, late October overcast daylight. The pipe and falling stream occupy the middle of the frame.\nThe demonstration review says: \"Образец: Струя ровная, вода уходит по желобу. Пока стояли у родника, напор не менялся.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:11:40.027Z",
+    "source_sha256": "901c434de3a856d123ccdd8ffcdaa45a2e65879de88b512a877b75c6c392b375",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "Y5rjapC9HoaX3boPruay-Qg",
+    "usage": {
+      "promptTokenCount": 243,
+      "candidatesTokenCount": 1559,
+      "totalTokenCount": 1802,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 243
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:17Z",
+    "file": "/samples/photos/sample-review-flow-pipe.webp",
+    "thumb": "/samples/thumbs/sample-review-flow-pipe.webp"
+  },
+  "sample-review-flow-stones": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-flow-stones.jpg",
+    "spring_id": "СЗАО-285",
+    "observation_id": "sample-community-СЗАО-285-01",
+    "user_id": "sample-user-12",
+    "kind": "flow",
+    "value": "flowing",
+    "season": "autumn",
+    "caption": "Действующий выход воды и каменистое русло.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A low spring outlet between rough stones in a deciduous park ravine, visibly running water feeding a shallow rocky channel, wet yellow leaves, handheld slightly tilted framing from a visitor crouching beside the spring.\nThe demonstration review says: \"Образец: Вода идёт без перерывов. Проверили оба выхода, основной работает.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:38.927Z",
+    "source_sha256": "b95fc5b9350d1e19d03b07f91eb4d865b2f73dacce3547fa7f4536b28ca633a6",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "nZrjaoyrMtD7nsEPt56h6AI",
+    "usage": {
+      "promptTokenCount": 214,
+      "candidatesTokenCount": 1539,
+      "totalTokenCount": 1753,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 214
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:22Z",
+    "file": "/samples/photos/sample-review-flow-stones.webp",
+    "thumb": "/samples/thumbs/sample-review-flow-stones.webp"
+  },
+  "sample-review-flow-gutter": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-flow-gutter.jpg",
+    "spring_id": "НАО-300",
+    "observation_id": "sample-community-НАО-300-01",
+    "user_id": "sample-user-03",
+    "kind": "flow",
+    "value": "flowing",
+    "season": "autumn",
+    "caption": "Вода стекает по старому бетонному желобу.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: View from above of running spring water in an old concrete gutter, a short unpainted metal outlet and fallen alder leaves. Uneven muddy ground and weathered stones, quiet flat autumn light. Clearly visible continuous flow, ordinary unpolished park infrastructure.\nThe demonstration review says: \"Образец: Сначала из-за листьев показалось, что родник пересох. Подошли ближе — струя есть.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:39.650Z",
+    "source_sha256": "b1aded553cd9905138f8e223bedb1671db7f9043c4e75bb76a478f58b541d8c0",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "nZrjapTFMo3wnsEP1I3h6QE",
+    "usage": {
+      "promptTokenCount": 232,
+      "candidatesTokenCount": 1515,
+      "totalTokenCount": 1747,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 232
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:27Z",
+    "file": "/samples/photos/sample-review-flow-gutter.webp",
+    "thumb": "/samples/thumbs/sample-review-flow-gutter.webp"
+  },
+  "sample-review-flow-wide": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-flow-wide.jpg",
+    "spring_id": "ТАО-308",
+    "observation_id": "sample-community-ТАО-308-01",
+    "user_id": "sample-user-12",
+    "kind": "flow",
+    "value": "flowing",
+    "season": "autumn",
+    "caption": "Общий вид работающего родника на склоне.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Medium-wide visitor photograph of an unadorned working spring on a wooded slope. Water visibly pours from a low metal pipe into a drainage channel. Bare deciduous trees and wet brown leaf litter, cloudy late autumn afternoon, a modest park path in the background.\nThe demonstration review says: \"Образец: Вода идёт без перерывов. Проверили оба выхода, основной работает.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:42.061Z",
+    "source_sha256": "6e61b4c1f69789db44b724f691daa5c31da2961a4c21723bb23e8a2bae6e3f83",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "nZrjarrSOKPknsEPsNPdmQI",
+    "usage": {
+      "promptTokenCount": 229,
+      "candidatesTokenCount": 1563,
+      "totalTokenCount": 1792,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 229
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:32Z",
+    "file": "/samples/photos/sample-review-flow-wide.webp",
+    "thumb": "/samples/thumbs/sample-review-flow-wide.webp"
+  },
+  "sample-review-weak-close": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-weak-close.jpg",
+    "spring_id": "ЗАО-9",
+    "observation_id": "sample-community-ЗАО-9-01",
+    "user_id": "sample-user-07",
+    "kind": "flow",
+    "value": "weak",
+    "season": "autumn",
+    "caption": "Тонкая струйка у края трубы.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Very close smartphone photograph of an old metal spring pipe with only a thin thread of water at the bottom lip, damp concrete immediately beneath, dark wet leaves, low natural light. Show weak flow unmistakably, with no strong stream or splash.\nThe demonstration review says: \"Образец: Вода идёт у самой стенки трубы, с дорожки её почти не заметно.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:49.072Z",
+    "source_sha256": "24edb92ae0dc6b2653239812c9001ba1d5325e469c12898fb4d480a29043dbc7",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "p5rjarDmF7K3xdIPhI-6yAo",
+    "usage": {
+      "promptTokenCount": 225,
+      "candidatesTokenCount": 1447,
+      "totalTokenCount": 1672,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 225
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:37Z",
+    "file": "/samples/photos/sample-review-weak-close.webp",
+    "thumb": "/samples/thumbs/sample-review-weak-close.webp"
+  },
+  "sample-review-weak-drips": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-weak-drips.jpg",
+    "spring_id": "СВАО-62",
+    "observation_id": "sample-community-СВАО-62-01",
+    "user_id": "sample-user-04",
+    "kind": "flow",
+    "value": "weak",
+    "season": "autumn",
+    "caption": "Редкие капли из выхода родника.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Close oblique view of a worn pipe outlet with a few visible drops, a small wet patch in a largely dry channel, moss and brown leaves, ordinary autumn forest ravine. Imperfect focus and slight phone-camera noise.\nThe demonstration review says: \"Образец: Слышно, как капает, но сильной струи нет. Простояли несколько минут — без изменений.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:48.726Z",
+    "source_sha256": "4a89fcf024195edbf3e4063886742972b849745b247e77c76b030f564f55137f",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "qJrjatyTAdqe3boPmezJqQI",
+    "usage": {
+      "promptTokenCount": 228,
+      "candidatesTokenCount": 1543,
+      "totalTokenCount": 1771,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 228
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:42Z",
+    "file": "/samples/photos/sample-review-weak-drips.webp",
+    "thumb": "/samples/thumbs/sample-review-weak-drips.webp"
+  },
+  "sample-review-weak-runnel": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-weak-runnel.jpg",
+    "spring_id": "ЮЗАО-21",
+    "observation_id": "sample-community-ЮЗАО-21-01",
+    "user_id": "sample-user-11",
+    "kind": "flow",
+    "value": "weak",
+    "season": "autumn",
+    "caption": "Слабый поток и узкий ручей ниже выхода.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Low angle showing a very thin spring flow coming from a small pipe into a narrow mostly dry stone runnel. Surrounding concrete is damp only along the center. Fallen ochre leaves, late October park, overcast daylight.\nThe demonstration review says: \"Образец: За последние несколько дней напор снизился. Желоб мокрый только посередине.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:52.131Z",
+    "source_sha256": "ba53d04ad7fe5c1102d0cf4dffbab3680c903671b0688202b86efdf2f81896dd",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "qprjavvvHdeJvdIPx5TNgQ8",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1531,
+      "totalTokenCount": 1755,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:47Z",
+    "file": "/samples/photos/sample-review-weak-runnel.webp",
+    "thumb": "/samples/thumbs/sample-review-weak-runnel.webp"
+  },
+  "sample-review-dry-pipe": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-dry-pipe.jpg",
+    "spring_id": "ЮАО-210",
+    "observation_id": "sample-community-ЮАО-210-01",
+    "user_id": "sample-user-22",
+    "kind": "flow",
+    "value": "dry",
+    "season": "autumn",
+    "caption": "Сухой выход воды, листья под трубой.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Dry empty steel spring pipe in a cracked concrete bank, no stream and no dripping, curled dry brown leaves gathered directly under the outlet and a dry concrete gutter. Close documentary phone photograph, cloudy autumn afternoon.\nThe demonstration review says: \"Образец: Были здесь раньше, тогда текло. Сейчас под трубой лежат сухие листья.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:57.343Z",
+    "source_sha256": "793087a85722779820991f79b2f13d98ac7ea3354f40e7f383b9864fd5917393",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "sZrjaquXCbPlnsEPwtHi0QI",
+    "usage": {
+      "promptTokenCount": 219,
+      "candidatesTokenCount": 1527,
+      "totalTokenCount": 1746,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 219
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:52Z",
+    "file": "/samples/photos/sample-review-dry-pipe.webp",
+    "thumb": "/samples/thumbs/sample-review-dry-pipe.webp"
+  },
+  "sample-review-dry-channel": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-dry-channel.jpg",
+    "spring_id": "ЗелАО-1",
+    "observation_id": "sample-community-ЗелАО-1-01",
+    "user_id": "sample-user-07",
+    "kind": "flow",
+    "value": "dry",
+    "season": "autumn",
+    "caption": "Пересохший желоб и пустое русло.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A non-flowing spring outlet at the head of an empty stone-lined channel, damp moss on the bank but no open water and no drops from the pipe. Leaves resting undisturbed in the empty channel, bare trees, subdued autumn colors.\nThe demonstration review says: \"Образец: У выхода сухо. Подождал несколько минут, вода так и не появилась.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:12:57.716Z",
+    "source_sha256": "c41c3dbe88177dd4ee7327325e197b406096c73b9ce36fb1a5dea189e7692faf",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "sZrjapWpGv21nsEPjP7kMA",
+    "usage": {
+      "promptTokenCount": 223,
+      "candidatesTokenCount": 1517,
+      "totalTokenCount": 1740,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 223
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:14:57Z",
+    "file": "/samples/photos/sample-review-dry-channel.webp",
+    "thumb": "/samples/thumbs/sample-review-dry-channel.webp"
+  },
+  "sample-review-frozen-mouth": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-frozen-mouth.jpg",
+    "spring_id": "ТАО-203",
+    "observation_id": "sample-community-ТАО-203-01",
+    "user_id": "sample-user-10",
+    "kind": "flow",
+    "value": "frozen",
+    "season": "autumn",
+    "caption": "Отверстие трубы затянуто льдом.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Tight close view of a small metal spring outlet sealed with opaque ice, short irregular icicles on its rim, a thin layer of frozen water on the gutter, brown leaves with hoarfrost, early cold morning in late autumn, no flowing stream.\nThe demonstration review says: \"Образец: На желобе сплошная наледь. Под ней слышно воду, но снаружи всё замёрзло.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:01.427Z",
+    "source_sha256": "a0c2ee19c47467928eb652cd7564096654a9e59b286ff0519ff22924225d4952",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "tJrjav3yI9OX3boPs4SRqQI",
+    "usage": {
+      "promptTokenCount": 234,
+      "candidatesTokenCount": 1558,
+      "totalTokenCount": 1792,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 234
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:03Z",
+    "file": "/samples/photos/sample-review-frozen-mouth.webp",
+    "thumb": "/samples/thumbs/sample-review-frozen-mouth.webp"
+  },
+  "sample-review-frozen-gutter": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-frozen-gutter.jpg",
+    "spring_id": "ЮЗАО-251",
+    "observation_id": "sample-community-ЮЗАО-251-01",
+    "user_id": "sample-user-06",
+    "kind": "flow",
+    "value": "frozen",
+    "season": "winter",
+    "caption": "Наледь у выхода и на желобе.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Unadorned woodland spring pipe and concrete gutter encased in irregular cloudy ice, patchy light snow on brown forest floor, bare birch trunks, diffused cold daylight. The outlet is visibly frozen, restrained ordinary smartphone documentation.\nThe demonstration review says: \"Образец: На желобе сплошная наледь. Под ней слышно воду, но снаружи всё замёрзло.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:06.082Z",
+    "source_sha256": "717eccd14ffbd61d2e11647b6d54b4ce1d1e811550a689c96b2da067b4442d62",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "uZrjauyuLfiXkdUPo-DigQI",
+    "usage": {
+      "promptTokenCount": 227,
+      "candidatesTokenCount": 1489,
+      "totalTokenCount": 1716,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 227
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:08Z",
+    "file": "/samples/photos/sample-review-frozen-gutter.webp",
+    "thumb": "/samples/thumbs/sample-review-frozen-gutter.webp"
+  },
+  "sample-review-access-cleared": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-cleared.jpg",
+    "spring_id": "ЮВАО-94",
+    "observation_id": "sample-community-ЮВАО-94-05",
+    "user_id": "sample-user-11",
+    "kind": "access",
+    "value": "cleared",
+    "season": "autumn",
+    "caption": "Свободный спуск к площадке родника.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Phone photograph looking down an unobstructed park footpath and a few rough concrete steps towards a small spring landing. Brown fallen leaves at the edges, clear walkable center, a simple metal handrail, bare deciduous woodland, overcast late October.\nThe demonstration review says: \"Образец: Дошли по обычной тропе от парка. Проход открыт, ограждений нет.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:07.583Z",
+    "source_sha256": "34887b878ba104f7e85c7d3453f68f86835df9a1b2fc9e13186b4e15a9b4cfba",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "uprjav3XCtjBxN8Pp42qGQ",
+    "usage": {
+      "promptTokenCount": 223,
+      "candidatesTokenCount": 1613,
+      "totalTokenCount": 1836,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 223
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:14Z",
+    "file": "/samples/photos/sample-review-access-cleared.webp",
+    "thumb": "/samples/thumbs/sample-review-access-cleared.webp"
+  },
+  "sample-review-access-trail": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-trail.jpg",
+    "spring_id": "САО-235",
+    "observation_id": "sample-community-САО-235-06",
+    "user_id": "sample-user-01",
+    "kind": "access",
+    "value": "cleared",
+    "season": "autumn",
+    "caption": "Открытая тропа вдоль ручья.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: An ordinary narrow but clear pedestrian path along a small ravine stream leading to a low spring outlet. No branches obstruct the path. Damp autumn leaves, exposed roots at the edges, natural overcast daylight, casual standing-height phone photograph.\nThe demonstration review says: \"Образец: Дошли по обычной тропе от парка. Проход открыт, ограждений нет.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:11.559Z",
+    "source_sha256": "e92f5422a405e83edbb9a50a1c9669025f6728aaab6ee76d5914222308c9381a",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "vZrjatHIM9qe3boPmezJqQI",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1531,
+      "totalTokenCount": 1755,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:20Z",
+    "file": "/samples/photos/sample-review-access-trail.webp",
+    "thumb": "/samples/thumbs/sample-review-access-trail.webp"
+  },
+  "sample-review-access-landing": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-landing.jpg",
+    "spring_id": "ЦАО-65",
+    "observation_id": "sample-community-ЦАО-65-05",
+    "user_id": "sample-user-15",
+    "kind": "access",
+    "value": "cleared",
+    "season": "autumn",
+    "caption": "Проходимый подход к роднику после дождя.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Unobstructed modest spring landing at the end of a short dirt path, wet ground after rain, no deep puddles on the walking line, low pipe and channel in the background. Realistic untidy autumn park, flat natural light.\nThe demonstration review says: \"Образец: Подход свободный, но после дождя у самой площадки мокрая земля.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:15.884Z",
+    "source_sha256": "aef993d680513a3782930de39a91033f229cb9dec822a13c43ab91d3b4c1b194",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "wprjap-VHZKW3boP6-rIsAI",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1542,
+      "totalTokenCount": 1766,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:27Z",
+    "file": "/samples/photos/sample-review-access-landing.webp",
+    "thumb": "/samples/thumbs/sample-review-access-landing.webp"
+  },
+  "sample-review-access-ice-steps": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-ice-steps.jpg",
+    "spring_id": "ВАО-123",
+    "observation_id": "sample-community-ВАО-123-05",
+    "user_id": "sample-user-14",
+    "kind": "access",
+    "value": "icy",
+    "season": "autumn",
+    "caption": "Тонкий лёд на ступенях перед родником.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Downward visitor view of several concrete steps and the small landing in front of a spring pipe, both covered with a thin translucent layer of ice and a few stuck brown leaves. An unpainted metal handrail along the steps. Cold late-autumn morning, patchy frost rather than deep snow.\nThe demonstration review says: \"Образец: Утром подход обледенел. Дошли медленно, держась за перила.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:15.639Z",
+    "source_sha256": "77b4d5a16004f326166786e2988a7bba5b303e5053ba41403f375e44d15eb096",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "w5rjaq39OZvGnsEPwIWo4AI",
+    "usage": {
+      "promptTokenCount": 237,
+      "candidatesTokenCount": 1581,
+      "totalTokenCount": 1818,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 237
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:34Z",
+    "file": "/samples/photos/sample-review-access-ice-steps.webp",
+    "thumb": "/samples/thumbs/sample-review-access-ice-steps.webp"
+  },
+  "sample-review-access-ice-path": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-ice-path.jpg",
+    "spring_id": "СЗАО-245",
+    "observation_id": "sample-community-СЗАО-245-05",
+    "user_id": "sample-user-07",
+    "kind": "access",
+    "value": "icy",
+    "season": "winter",
+    "caption": "Скользкий участок тропы у выхода воды.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A narrow glazed icy section of a park trail immediately beside a low spring pipe and channel. Small patches of snow and brown leaves around the ice, no visitors. Camera tilted down as if a walker is documenting the slippery surface.\nThe demonstration review says: \"Образец: Самая скользкая часть — площадка перед трубой. На спуске тоже есть наледь.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:20.305Z",
+    "source_sha256": "e3c3b80aa6eacf1bd431d9c2b4ad8a2e51569d9dafa8b0d6bd1f0e934a5f21f0",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "yJrjapg43_vBtQ-ol46xCg",
+    "usage": {
+      "promptTokenCount": 226,
+      "candidatesTokenCount": 1436,
+      "totalTokenCount": 1662,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 226
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:40Z",
+    "file": "/samples/photos/sample-review-access-ice-path.webp",
+    "thumb": "/samples/thumbs/sample-review-access-ice-path.webp"
+  },
+  "sample-review-access-branch": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-branch.jpg",
+    "spring_id": "ЮАО-135",
+    "observation_id": "sample-community-ЮАО-135-05",
+    "user_id": "sample-user-21",
+    "kind": "access",
+    "value": "blocked",
+    "season": "autumn",
+    "caption": "Упавшее дерево перекрыло тропу.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A fallen deciduous tree trunk lying across the narrow approach path to an ordinary woodland spring, clearly obstructing the way, many brown leaves, broken twigs, the spring outlet barely visible farther down the path. Unstaged handheld phone view.\nThe demonstration review says: \"Образец: Узкий участок перед родником перекрыт. Остановились у начала спуска.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:24.175Z",
+    "source_sha256": "21905ce8d595ef8dce4aee300fa3d000a890b5fc971699ef9d73c210dabb5932",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "zJrjarxSo_WR1Q_Zm4WoDQ",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1530,
+      "totalTokenCount": 1754,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:46Z",
+    "file": "/samples/photos/sample-review-access-branch.webp",
+    "thumb": "/samples/thumbs/sample-review-access-branch.webp"
+  },
+  "sample-review-access-barrier": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-access-barrier.jpg",
+    "spring_id": "ЗАО-91",
+    "observation_id": "sample-community-ЗАО-91-05",
+    "user_id": "sample-user-13",
+    "kind": "access",
+    "value": "blocked",
+    "season": "autumn",
+    "caption": "Ограждение на подходе к площадке.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A simple temporary metal barrier physically closing the narrow footpath to a spring landing in a wooded ravine. Plain unmarked barrier with no signs or lettering. Damp autumn ground, weathered steps behind the barrier, cloudy afternoon.\nThe demonstration review says: \"Образец: Узкий участок перед родником перекрыт. Остановились у начала спуска.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:25.492Z",
+    "source_sha256": "5a3b31bc03ac96dbb855f82e7afda10ccff0465d99fcad6c1353ca5656a25d34",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "zJrjatTvFMa9xdIPnfGG-AM",
+    "usage": {
+      "promptTokenCount": 219,
+      "candidatesTokenCount": 1533,
+      "totalTokenCount": 1752,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 219
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:51Z",
+    "file": "/samples/photos/sample-review-access-barrier.webp",
+    "thumb": "/samples/thumbs/sample-review-access-barrier.webp"
+  },
+  "sample-review-clean-landing": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-clean-landing.jpg",
+    "spring_id": "НАО-234",
+    "observation_id": "sample-community-НАО-234-07",
+    "user_id": "sample-user-17",
+    "kind": "cleanliness",
+    "value": "clean",
+    "season": "autumn",
+    "caption": "Убранная площадка у родника.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A modest concrete spring landing and the beginning of its channel, free from bottles or rubbish, with only natural fallen leaves at the edge. Bare birches and damp soil, ordinary old infrastructure, soft overcast autumn daylight, documentary phone photo rather than scenic tourism.\nThe demonstration review says: \"Образец: Забрали несколько старых пакетов, теперь у трубы чисто.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:28.803Z",
+    "source_sha256": "5e813795e64991f8723abb0232e0d850a4cb02a5beb0670f78cd6c589bbf51f4",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "0JrjasjCKs2hnsEP7LDXkQI",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1449,
+      "totalTokenCount": 1673,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:15:57Z",
+    "file": "/samples/photos/sample-review-clean-landing.webp",
+    "thumb": "/samples/thumbs/sample-review-clean-landing.webp"
+  },
+  "sample-review-clean-stream": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-clean-stream.jpg",
+    "spring_id": "ЮВАО-211",
+    "observation_id": "sample-community-ЮВАО-211-07",
+    "user_id": "sample-user-01",
+    "kind": "cleanliness",
+    "value": "clean",
+    "season": "autumn",
+    "caption": "Берег ручья без бытового мусора.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: View down at a short stretch of a shallow spring-fed runnel and the adjacent footpath, ordinary stones and natural leaves but no litter, a small plain pipe at the top edge. Unpolished local park, brown late-autumn palette, handheld framing.\nThe demonstration review says: \"Образец: По сравнению с прошлой прогулкой стало заметно чище. Спасибо тем, кто убирает.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:33.681Z",
+    "source_sha256": "2ff59bb5210e3f6007411dbec2c04432a341d7b3c9cb64f07c8cd0a4edaf77f6",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "1Jrjaqn0IomUkdUPh8uLwAQ",
+    "usage": {
+      "promptTokenCount": 231,
+      "candidatesTokenCount": 1523,
+      "totalTokenCount": 1754,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 231
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:16:02Z",
+    "file": "/samples/photos/sample-review-clean-stream.webp",
+    "thumb": "/samples/thumbs/sample-review-clean-stream.webp"
+  },
+  "sample-review-litter-leaves": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-litter-leaves.jpg",
+    "spring_id": "ВАО-123",
+    "observation_id": "sample-community-ВАО-123-09",
+    "user_id": "sample-user-05",
+    "kind": "cleanliness",
+    "value": "litter",
+    "season": "autumn",
+    "caption": "Пакеты и пластик возле тропы.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A few discarded unbranded plastic bottles, an empty plain cup and a crumpled carrier bag in brown leaves just beside the path to a woodland spring. The immediate pipe outlet remains unobstructed in the background. Small believable amount of litter, not an enormous dump, overcast late autumn.\nThe demonstration review says: \"Образец: После выходных появились пакеты у тропы. Вокруг выхода воды пока чище.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:33.888Z",
+    "source_sha256": "9a4d6dab38f78092d48e28e16344fa465b46adbda7c5c74074222bdb73a2c5d9",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "1Zrjaoj1No-N7M8P4e6O4AI",
+    "usage": {
+      "promptTokenCount": 231,
+      "candidatesTokenCount": 1405,
+      "totalTokenCount": 1636,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 231
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:16:08Z",
+    "file": "/samples/photos/sample-review-litter-leaves.webp",
+    "thumb": "/samples/thumbs/sample-review-litter-leaves.webp"
+  },
+  "sample-review-litter-bench": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-litter-bench.jpg",
+    "spring_id": "ЗелАО-215",
+    "observation_id": "sample-community-ЗелАО-215-07",
+    "user_id": "sample-user-16",
+    "kind": "cleanliness",
+    "value": "litter",
+    "season": "autumn",
+    "caption": "Упаковки у скамейки возле родника.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Low phone photograph of a worn park bench near a small spring landing, with two unbranded discarded wrappers and a plastic bottle underneath. Wet brown leaves, bare trees, modest spring infrastructure in the background, no readable print.\nThe demonstration review says: \"Образец: Рядом с площадкой оставили несколько бутылок и пакет. Сам желоб свободен.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:39.425Z",
+    "source_sha256": "6f921d119e32b01d94c5adaa52405b59252196cbaef2beb862651b79fa6a80e3",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "2ZrjarqZC5mVkdUPt6S50QQ",
+    "usage": {
+      "promptTokenCount": 224,
+      "candidatesTokenCount": 1571,
+      "totalTokenCount": 1795,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 224
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:16:13Z",
+    "file": "/samples/photos/sample-review-litter-bench.webp",
+    "thumb": "/samples/thumbs/sample-review-litter-bench.webp"
+  },
+  "sample-review-damaged-gutter": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-damaged-gutter.jpg",
+    "spring_id": "ЮЗАО-77",
+    "observation_id": "sample-community-ЮЗАО-77-08",
+    "user_id": "sample-user-20",
+    "kind": "cleanliness",
+    "value": "damaged",
+    "season": "autumn",
+    "caption": "Отколотый край бетонного желоба.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: Close documentary phone image of a visibly chipped and cracked concrete spring gutter, a broken side edge letting a little water escape onto the ground, a plain steel outlet nearby. Damp brown leaves and moss, believable weathering, flat cloudy late-autumn light.\nThe demonstration review says: \"Образец: Крепление трубы выглядит расшатанным, трогать не стали.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:42.007Z",
+    "source_sha256": "0ffe27e8b94db42cae159a266862c22a6d9c3af411a91eef45711e95b2daebcc",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "3prjaoHJBfq-nsEPrdmg-Q4",
+    "usage": {
+      "promptTokenCount": 222,
+      "candidatesTokenCount": 1481,
+      "totalTokenCount": 1703,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 222
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:16:19Z",
+    "file": "/samples/photos/sample-review-damaged-gutter.webp",
+    "thumb": "/samples/thumbs/sample-review-damaged-gutter.webp"
+  },
+  "sample-review-damaged-steps": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-image",
+    "source": "assets-src/generated/sample-review-damaged-steps.jpg",
+    "spring_id": "ЗАО-166",
+    "observation_id": "sample-community-ЗАО-166-07",
+    "user_id": "sample-user-09",
+    "kind": "cleanliness",
+    "value": "damaged",
+    "season": "autumn",
+    "caption": "Повреждённая ступень на подходе.",
+    "prompt": "Use case: photorealistic-natural. Generate ONE landscape 4:3 smartphone photograph as a fictional demonstration attachment for a Moscow woodland spring review.\nScene: A broken concrete step and leaning plain metal handrail immediately before an ordinary spring landing, clearly visible crack and displaced concrete piece, no dramatic destruction. Bare woodland, wet leaf litter, casually framed documentary smartphone photograph.\nThe demonstration review says: \"Образец: Перила на последнем участке наклонены, одна опора не держится.\". Match its visible physical details where applicable.\nStyle: ordinary visitor snapshot, imperfect casual framing, muted natural colors, realistic worn materials, subtle phone camera noise. No beauty-advertising lighting, no illustration, no 3D render, no collage, no frame.\nDo not show recognizable people, faces, drinking, drinking vessels, landmarks, logos, official emblems, lettering or claims about water purity. No added text or graphic watermark; a visible SAMPLE watermark will be applied locally before publication. This is fictional generic scenery, not a reconstruction or evidence of the named real spring.",
+    "is_sample": true,
+    "aspect_ratio": "4:3",
+    "image_size": "1K",
+    "status": "generated",
+    "generated_at": "2026-10-29T19:13:43.243Z",
+    "source_sha256": "3bf3b9f55cbdc445708de03927da8822e6500239cb998cd90601de243b9ffab1",
+    "native_size": [
+      1200,
+      896
+    ],
+    "mime_type": "image/jpeg",
+    "response_id": "3prjavbAEv-_nsEP-quj2AE",
+    "usage": {
+      "promptTokenCount": 218,
+      "candidatesTokenCount": 1516,
+      "totalTokenCount": 1734,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 218
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "published_at": "2026-10-29T19:16:26Z",
+    "file": "/samples/photos/sample-review-damaged-steps.webp",
+    "thumb": "/samples/thumbs/sample-review-damaged-steps.webp"
+  }
+}

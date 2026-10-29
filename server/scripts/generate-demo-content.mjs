@@ -49,8 +49,12 @@ const pool = [
 const write = (dir, name, obj) => {
   fs.mkdirSync(path.join(root, 'data', dir), { recursive: true });
   const file = path.join(root, 'data', dir, `${name}.json`);
-  if (fs.existsSync(file) && !JSON.parse(fs.readFileSync(file, 'utf8')).is_sample) {
+  const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+  if (previous && !previous.is_sample) {
     throw new Error(`Генератор не перезаписывает реальные записи: ${name}`);
+  }
+  if (dir === 'observations' && previous?.spring_id === obj.spring_id && previous?.user_id === obj.user_id) {
+    obj.photo_ids = [...new Set([...(previous.photo_ids ?? []), ...obj.photo_ids])];
   }
   writeFileAtomic.sync(file, JSON.stringify(obj, null, 2) + '\n');
 };

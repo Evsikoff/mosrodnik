@@ -1,0 +1,13 @@
+{
+  "id": "sample-review-flow-gutter",
+  "spring_id": "НАО-300",
+  "user_id": "sample-user-03",
+  "file": "/samples/photos/sample-review-flow-gutter.webp",
+  "thumb": "/samples/thumbs/sample-review-flow-gutter.webp",
+  "width": 1600,
+  "height": 1200,
+  "season": "autumn",
+  "caption": "Образец: Вода стекает по старому бетонному желобу. Синтетическое изображение.",
+  "created_at": "2026-10-29T19:12:39.650Z",
+  "is_sample": true
+}

@@ -1,0 +1,13 @@
+{
+  "id": "sample-review-litter-bench",
+  "spring_id": "ЗелАО-215",
+  "user_id": "sample-user-16",
+  "file": "/samples/photos/sample-review-litter-bench.webp",
+  "thumb": "/samples/thumbs/sample-review-litter-bench.webp",
+  "width": 1600,
+  "height": 1200,
+  "season": "autumn",
+  "caption": "Образец: Упаковки у скамейки возле родника. Синтетическое изображение.",
+  "created_at": "2026-10-29T19:13:39.425Z",
+  "is_sample": true
+}

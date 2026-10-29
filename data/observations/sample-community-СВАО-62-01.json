@@ -5,7 +5,9 @@
   "kind": "flow",
   "value": "weak",
   "comment": "Образец: Слышно, как капает, но сильной струи нет. Простояли несколько минут — без изменений.",
-  "photo_ids": [],
+  "photo_ids": [
+    "sample-review-weak-drips"
+  ],
   "is_sample": true,
   "affects_map": false,
   "created_at": "2026-10-29T18:27:35.002Z"
