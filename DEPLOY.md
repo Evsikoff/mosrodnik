@@ -81,3 +81,10 @@ curl -X POST https://<адрес>/api/admin/hide \
 docker build -t mosrodn .
 docker run --rm -p 3000:3000 -v mosrodn-data:/data -e SESSION_SECRET=test -e SESSION_SALT=test -e ADMIN_TOKEN=test mosrodn
 ```
+
+## Образцы перед запуском
+
+В продакшене образцы не влияют на карту и фильтры (флаг `SAMPLES_AFFECT_MAP` выключен автоматически). Они
+остаются в ленте карточек с плашкой «Образец» до 3 реальных записей у родника. Чтобы убрать их совсем, удалите
+файлы `sample*.json` из `data/users`, `data/observations`, `data/photos` перед сборкой образа, а на уже
+работающем томе удалите те же файлы в `/data` и перезапустите сервис.

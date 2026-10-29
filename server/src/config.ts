@@ -28,4 +28,6 @@ export const config = {
   publicUrl: env.PUBLIC_URL ?? '',
   syncOnStart: env.SYNC_ON_START !== '0',
   isProd: env.NODE_ENV === 'production',
+  /** Образцы влияют на маркеры и фильтры. По умолчанию только вне продакшена; SAMPLES_AFFECT_MAP=0|1 переопределяет. */
+  samplesAffectMap: env.SAMPLES_AFFECT_MAP ? env.SAMPLES_AFFECT_MAP === '1' : env.NODE_ENV !== 'production',
 };

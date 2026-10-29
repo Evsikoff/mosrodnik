@@ -1,3 +1,4 @@
+import { config } from './config.js';
 import type { Database } from './db/index.js';
 import type { Observation, Spring } from './db/schemas.js';
 
@@ -24,12 +25,19 @@ export function frostLevel(lastSampleYear: number | null): 0 | 1 | 2 | 3 {
   return 2;
 }
 
-/** Учитываются только реальные, не скрытые записи с affects_map. */
+/** Реальные, не скрытые записи с affects_map: для статистики и экспорта. */
 export function countsForMap(db: Database, o: Observation): boolean {
   return !o.is_sample && o.affects_map && !db.isHidden('observations', o.id);
 }
 
-function compute(db: Database, now: number): Map<string, Aggregate> {
+/** Для маркеров и фильтров: плюс образцы, если включён SAMPLES_AFFECT_MAP (демонстрация до запуска). */
+function countsForMarkers(db: Database, o: Observation, strict: boolean): boolean {
+  if (strict) return countsForMap(db, o);
+  if (db.isHidden('observations', o.id)) return false;
+  return o.is_sample ? config.samplesAffectMap : o.affects_map;
+}
+
+function compute(db: Database, now: number, strict: boolean): Map<string, Aggregate> {
   const out = new Map<string, Aggregate>();
   const get = (s: Spring) => {
     let a = out.get(s.spring_id);
@@ -46,7 +54,7 @@ function compute(db: Database, now: number): Map<string, Aggregate> {
   };
   for (const s of db.springs.all()) get(s);
 
-  const obs = db.observations.all().filter((o) => countsForMap(db, o))
+  const obs = db.observations.all().filter((o) => countsForMarkers(db, o, strict))
     .sort((a, b) => a.created_at.localeCompare(b.created_at));
   for (const o of obs) {
     const s = db.springBySpringId(o.spring_id);
@@ -63,7 +71,7 @@ function compute(db: Database, now: number): Map<string, Aggregate> {
     }
   }
   for (const p of db.photos.all()) {
-    if (p.is_sample || db.isHidden('photos', p.id)) continue;
+    if ((p.is_sample && (strict || !config.samplesAffectMap)) || db.isHidden('photos', p.id)) continue;
     const s = db.springBySpringId(p.spring_id);
     if (!s) continue;
     const a = get(s);
@@ -73,14 +81,20 @@ function compute(db: Database, now: number): Map<string, Aggregate> {
   return out;
 }
 
-let cache: { rev: number; at: number; data: Map<string, Aggregate> } | null = null;
+const caches: Record<string, { rev: number; at: number; data: Map<string, Aggregate> } | undefined> = {};
 
-/** Кэш на ревизию базы и минуту: окна 14/30 дней сдвигаются со временем. */
-export function aggregates(db: Database): Map<string, Aggregate> {
+/**
+ * Кэш на ревизию базы и минуту: окна 14/30 дней сдвигаются со временем.
+ * strict = только реальные данные (статистика и экспорт), иначе как для карты и фильтров.
+ */
+export function aggregates(db: Database, strict = false): Map<string, Aggregate> {
   const now = Date.now();
-  if (cache && cache.rev === db.rev && now - cache.at < 60_000) return cache.data;
-  cache = { rev: db.rev, at: now, data: compute(db, now) };
-  return cache.data;
+  const key = strict ? 'strict' : 'map';
+  const c = caches[key];
+  if (c && c.rev === db.rev && now - c.at < 60_000) return c.data;
+  const data = compute(db, now, strict);
+  caches[key] = { rev: db.rev, at: now, data };
+  return data;
 }
 
 export function springFeature(s: Spring, a: Aggregate) {

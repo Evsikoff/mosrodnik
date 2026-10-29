@@ -29,7 +29,7 @@ export function registerMiscRoutes(app: FastifyInstance, { db }: Ctx) {
     const photos = db.photos.all().filter((p) => !p.is_sample && !db.isHidden('photos', p.id));
     const byKind: Record<string, number> = { flow: 0, access: 0, cleanliness: 0, visit: 0, location_check: 0 };
     for (const o of obs) byKind[o.kind]++;
-    const agg = aggregates(db);
+    const agg = aggregates(db, true);
     const withObs = [...agg.values()].filter((a) => a.observations_count > 0 || a.photos_count > 0).length;
     return {
       users: db.users.all().filter((u) => !u.is_sample).length,
@@ -42,7 +42,7 @@ export function registerMiscRoutes(app: FastifyInstance, { db }: Ctx) {
   });
 
   app.get('/api/export/springs.geojson', async (_req, reply) => {
-    const agg = aggregates(db);
+    const agg = aggregates(db, true);
     reply
       .header('Content-Type', 'application/geo+json; charset=utf-8')
       .header('Content-Disposition', 'attachment; filename="springs.geojson"');
