@@ -27,26 +27,35 @@ export interface SceneSpring {
 }
 
 export interface StageEls {
-  left: HTMLElement;
-  center: HTMLElement;
-  right: HTMLElement;
-  /** Контейнер панелей: ему ставится прозрачность по зуму и класс оттаивания. */
+  /** Контейнер карточек: ему ставится прозрачность по зуму и класс оттаивания. */
   root: HTMLElement;
+  /** Карточки складня. Створка задаётся атрибутом data-col (от -2 до 2), порядок в DOM внутри створки — сверху вниз. */
+  cards: HTMLElement[];
+  /** Карточки отметок жителей: кольцо вокруг родника на земле, новые первыми. */
+  ring: HTMLElement[];
 }
 
 /** 'stage' — панели карточки стоят над родником (широкий экран); 'ground' — только сцена на земле (телефон). */
 export type SceneMode = 'stage' | 'ground';
 
 const DEG = Math.PI / 180;
-const BASE_Z = 150;
-const ALPHA_OPEN = 24 * DEG;
-const ALPHA_SHUT_L = 176 * DEG;
-const ALPHA_SHUT_R = 170 * DEG;
-const SLAB_T = 20;
+const BASE_Z = 112;
+/** Угол каждой следующей створки к предыдущей в раскрытом складне и в сложенном (створка лежит на соседней). */
+const LEAF_OPEN = 19 * DEG;
+const LEAF_SHUT = [0, 172 * DEG, 175 * DEG];
+const LEAF_GAP = 8;
+const CARD_GAP = 10;
+const SLAB_T = 16;
 const DISC_R = 165;
-const HIST_R = 128;
+const HIST_R = 100;
+/** Кольцо отметок: радиус на земле и угол между соседними карточками. */
+const RING_R = 345;
+const RING_STEP = 40 * DEG;
+const RING_MAX = 150 * DEG;
 const STAGE_DELAY = 620;
-const STAGE_MS = 1050;
+const STAGE_MS = 1500;
+const ZERO: V3 = [0, 0, 0];
+const UP: V3 = [0, 0, 1];
 const GROUND_MS = 900;
 const CLOSE_MS = 430;
 const MAX_ORBIT = 30;
@@ -74,6 +83,21 @@ interface Variant {
   born: number;
   update(t: number, appear: number): void;
   dispose(): void;
+}
+
+interface CardFrame {
+  el: HTMLElement;
+  w: number;
+  h: number;
+  /** Масштаб карточки (раскрытие, появление). */
+  k: number;
+  u: V3;
+  down: V3;
+  /** Левый верхний угол. */
+  p: V3;
+  op: number;
+  thick: number;
+  ring: boolean;
 }
 
 interface HistItem {
@@ -146,6 +170,11 @@ export class SpringScene implements CustomLayerInterface {
   private basin!: THREE.Mesh;
   private shadow!: THREE.Mesh;
   private slabs: THREE.Mesh[] = [];
+  private slabGeo = new THREE.BoxGeometry(1, 1, 1).translate(0.5, 0.5, 0.5);
+  private track!: THREE.Mesh;
+  private ringPos = 0;
+  private ringTarget = 0;
+  private placed = new Set<HTMLElement>();
   private emitter!: THREE.Mesh;
   private orbit!: THREE.Points;
   private uOrbit!: Uniforms;
@@ -210,6 +239,8 @@ export class SpringScene implements CustomLayerInterface {
       this.orbitCount = 0;
       this.histKey = '';
       this.frostKey = '';
+      this.ringPos = 0;
+      this.ringTarget = 0;
     }
     this.onClosed = null;
     this.mode = mode;
@@ -249,17 +280,23 @@ export class SpringScene implements CustomLayerInterface {
   }
 
   attach(els: StageEls | null) {
-    if (this.els) {
-      for (const el of [this.els.left, this.els.center, this.els.right]) this.ro.unobserve(el);
+    const before = new Set(this.els ? [...this.els.cards, ...this.els.ring] : []);
+    const after = new Set(els ? [...els.cards, ...els.ring] : []);
+    for (const el of before) if (!after.has(el)) this.ro.unobserve(el);
+    for (const el of after) {
+      if (before.has(el)) continue;
+      this.sizes.set(el, { w: el.offsetWidth, h: el.offsetHeight });
+      this.ro.observe(el);
     }
     this.els = els;
-    if (els) {
-      for (const el of [els.left, els.center, els.right]) {
-        this.sizes.set(el, { w: el.offsetWidth, h: el.offsetHeight });
-        this.ro.observe(el);
-      }
-      if (this.thawed) els.root.classList.add('thaw');
-    }
+    if (els && this.thawed) els.root.classList.add('thaw');
+    this.map?.triggerRepaint();
+  }
+
+  /** Повернуть кольцо отметок так, чтобы карточка с этим номером оказалась перед родником. */
+  ringTo(i: number) {
+    this.ringTarget = i;
+    if (this.rm) this.ringPos = i;
     this.map?.triggerRepaint();
   }
 
@@ -380,7 +417,8 @@ export class SpringScene implements CustomLayerInterface {
     this.renderer.setViewport(0, 0, cv.width, cv.height);
     this.renderer.render(this.scene, this.camera);
 
-    const animating = this.ground !== this.groundTarget || this.stage !== this.stageTarget || this.dropAt || this.splashAt;
+    const animating = this.ground !== this.groundTarget || this.stage !== this.stageTarget || this.dropAt || this.splashAt
+      || Math.abs(this.ringPos - this.ringTarget) > 0.001;
     if (!document.hidden && (!this.rm || animating)) map.triggerRepaint();
   }
 
@@ -399,7 +437,10 @@ export class SpringScene implements CustomLayerInterface {
         this.stage = towards(this.stage, this.stageTarget, this.stageTarget ? STAGE_MS : CLOSE_MS);
       }
     }
-    if (!this.thawed && this.stage > 0.42 && this.stageTarget === 1) {
+    // Кольцо отметок доезжает до выбранной карточки с мягким торможением.
+    this.ringPos = this.rm ? this.ringTarget : this.ringPos + (this.ringTarget - this.ringPos) * (1 - Math.exp(-dt * 8));
+    if (Math.abs(this.ringPos - this.ringTarget) < 0.0005) this.ringPos = this.ringTarget;
+    if (!this.thawed && this.stage > 0.34 && this.stageTarget === 1) {
       this.thawed = true;
       this.els?.root.classList.add('thaw');
     }
@@ -423,98 +464,181 @@ export class SpringScene implements CustomLayerInterface {
     this.map?.triggerRepaint();
   }
 
-  // ---------- панели карточки в 3D ----------
+  // ---------- карточки в 3D ----------
 
-  /** Положение трёх панелей складня при прогрессе открытия q (0 — спрятан в роднике, 1 — раскрыт). */
+  /**
+   * Раскладка при прогрессе открытия q (0 — спрятано в роднике, 1 — раскрыто).
+   * Складень: центральная створка и по две с каждой стороны, створки раскрываются по очереди от центра;
+   * карточки стоят в створке стопкой снизу вверх. Отметки: кольцо вокруг родника на земле.
+   */
   private frames(q: number) {
-    const rise = easeOutCubic(q / 0.45);
-    const unfold = easeOutBack((q - 0.36) / 0.64);
+    const rise = easeOutCubic(q / 0.35);
     const rs = 0.05 + 0.95 * rise;
     const baseZ = BASE_Z * Math.pow(rise, 0.8);
     const b = this.yaw;
     const R: V3 = [Math.cos(b), -Math.sin(b), 0];
     const T: V3 = [-Math.sin(b), -Math.cos(b), 0];
-    const up: V3 = comb([0, 0, 0], [0, 0, 1], Math.cos(this.tilt), T, -Math.sin(this.tilt));
-    const down: V3 = scale(up, -1);
+    const up = comb(ZERO, UP, Math.cos(this.tilt), T, -Math.sin(this.tilt));
+    const down = scale(up, -1);
     const N = cross(R, up);
+    const leafE = [1, easeOutBack((q - 0.26) / 0.4), easeOutBack((q - 0.46) / 0.4)];
+    const rel = [0, 1, 2].map((k) => (k ? LEAF_SHUT[k] + (LEAF_OPEN - LEAF_SHUT[k]) * leafE[k] : 0));
 
-    const els = this.els;
-    const size = (el: HTMLElement | undefined, w: number, h: number) => (el && this.sizes.get(el)) || { w, h };
-    const c = size(els?.center, 356, 500);
-    const l = size(els?.left, 296, 440);
-    const r = size(els?.right, 296, 440);
-    const B: V3 = [0, 0, baseZ];
-    const P0 = comb(B, R, -c.w / 2 * rs, up, c.h * rs);
-    const aL = ALPHA_SHUT_L + (ALPHA_OPEN - ALPHA_SHUT_L) * unfold;
-    const aR = ALPHA_SHUT_R + (ALPHA_OPEN - ALPHA_SHUT_R) * unfold;
-    const uL = comb([0, 0, 0], R, Math.cos(aL), N, -Math.sin(aL));
-    const uR = comb([0, 0, 0], R, Math.cos(aR), N, Math.sin(aR));
-    const list = [
-      { el: els?.center, sz: c, u: R, p: P0, slab: this.slabs[1] },
-      // Створки ниже центральной панели и выровнены по её нижнему краю, как у складня.
-      { el: els?.left, sz: l, u: uL, p: comb(comb(P0, down, (c.h - l.h) * rs), uL, -l.w * rs), slab: this.slabs[0] },
-      { el: els?.right, sz: r, u: uR, p: comb(P0, R, c.w * rs, down, (c.h - r.h) * rs), slab: this.slabs[2] },
-    ];
-    return { list, rise, rs, baseZ, down, c, l };
+    const size = (el: HTMLElement) => this.sizes.get(el) ?? { w: el.offsetWidth, h: el.offsetHeight };
+    const cols = new Map<number, HTMLElement[]>();
+    for (const el of this.els?.cards ?? []) {
+      const c = Number(el.dataset.col ?? 0);
+      if (!cols.has(c)) cols.set(c, []);
+      cols.get(c)!.push(el);
+    }
+    const width = (c: number) => Math.max(0, ...(cols.get(c) ?? []).map((el) => size(el).w));
+    // Поворот вокруг оси петли (наклонённая вертикаль) к зрителю: справа +, слева -.
+    const rot = (a: number, side: number) => comb(ZERO, R, Math.cos(a), N, side * Math.sin(a));
+    const W0 = width(0) || 300;
+    const L0 = comb([0, 0, baseZ], R, (-W0 / 2) * rs);
+    const leaves = new Map<number, { L: V3; u: V3; w: number }>([[0, { L: L0, u: R, w: W0 }]]);
+    let totalW = W0;
+    for (const side of [1, -1]) {
+      let edge = side > 0 ? comb(L0, R, W0 * rs) : L0;
+      let ang = 0;
+      for (let k = 1; k <= 2; k++) {
+        const c = side * k;
+        const w = width(c);
+        if (!w) continue;
+        ang += rel[k];
+        const u = rot(ang, side);
+        const L = side > 0 ? comb(edge, u, LEAF_GAP * rs) : comb(edge, u, -(w + LEAF_GAP) * rs);
+        leaves.set(c, { L, u, w });
+        edge = side > 0 ? comb(L, u, w * rs) : L;
+        totalW += w + LEAF_GAP;
+      }
+    }
+
+    const list: CardFrame[] = [];
+    for (const [c, els] of cols) {
+      const leaf = leaves.get(c);
+      if (!leaf) continue;
+      const k = Math.abs(c);
+      const op = k === 0 ? smoothstep(0.26, 0.48, q) : smoothstep(0.32 + k * 0.17, 0.56 + k * 0.17, q);
+      let y = 0;
+      for (let i = els.length - 1; i >= 0; i--) {
+        const el = els[i];
+        const sz = size(el);
+        const p = comb(comb(leaf.L, leaf.u, ((leaf.w - sz.w) / 2) * rs), up, (y + sz.h) * rs);
+        y += sz.h + CARD_GAP;
+        list.push({ el, w: sz.w, h: sz.h, k: rs, u: leaf.u, down, p, op, thick: SLAB_T, ring: false });
+      }
+    }
+
+    // Кольцо отметок: карточки стоят на земле вокруг родника и лицом наружу; передняя смотрит в камеру.
+    const re = easeOutCubic((q - 0.55) / 0.45);
+    const rr = rs * (0.35 + 0.65 * re);
+    (this.els?.ring ?? []).forEach((el, i) => {
+      // При появлении карточки облетают родник и встают на место.
+      const th = (i - this.ringPos) * RING_STEP + (1 - re) * 110 * DEG;
+      if (Math.abs(th) > RING_MAX) return;
+      const sz = size(el);
+      const n = comb(ZERO, T, Math.cos(th), R, Math.sin(th));
+      const u = comb(ZERO, R, Math.cos(th), T, -Math.sin(th));
+      const upi = comb(ZERO, UP, Math.cos(this.tilt), n, -Math.sin(this.tilt));
+      const P = comb([0, 0, 6], n, RING_R * rs);
+      const p = comb(comb(P, u, (-sz.w / 2) * rr), upi, sz.h * rr);
+      const op = re * smoothstep(RING_MAX, 95 * DEG, Math.abs(th));
+      list.push({ el, w: sz.w, h: sz.h, k: rr, u, down: scale(upi, -1), p, op, thick: SLAB_T * 0.7, ring: true });
+    });
+    return { list, rise, rs, baseZ, totalW, re };
   }
 
-  /** Во сколько раз можно увеличить (больше 1) или нужно уменьшить складень, чтобы он поместился в кадр. */
+  /** Во сколько раз можно увеличить (больше 1) или нужно уменьшить сцену, чтобы она поместилась в кадр. */
   private measure(F0: Float64Array, W: number, H: number) {
-    const { list, rs, down } = this.frames(1);
+    const { list } = this.frames(1);
     const a = apply(F0, [0, 0, 0]);
     let half = 1;
     let top = 1;
+    let bottom = 1;
     for (const f of list) {
-      for (const [x, y] of [[0, 0], [f.sz.w, 0], [0, f.sz.h], [f.sz.w, f.sz.h]]) {
-        const p = apply(F0, comb(f.p, f.u, x * rs, down, y * rs));
+      // Для кольца важна только передняя карточка: она ближе всех к нижнему краю кадра.
+      if (f.ring && Math.abs(this.dotv(f.u, [Math.cos(this.yaw), -Math.sin(this.yaw), 0])) < 0.97) continue;
+      for (const [x, y] of [[0, 0], [f.w, 0], [0, f.h], [f.w, f.h]]) {
+        const p = apply(F0, comb(f.p, f.u, x * f.k, f.down, y * f.k));
         if (p.w <= 0) return 0.5;
-        half = Math.max(half, Math.abs(p.x - a.x));
-        top = Math.max(top, a.y - p.y);
+        if (f.ring) bottom = Math.max(bottom, p.y - a.y);
+        else {
+          half = Math.max(half, Math.abs(p.x - a.x));
+          top = Math.max(top, a.y - p.y);
+        }
       }
     }
-    return Math.min((W / 2 - 22) / half, (Math.min(a.y, H * 0.82) - 46) / top);
+    return Math.min((W / 2 - 22) / half, (Math.min(a.y, H * 0.82) - 46) / top, (H - 14 - a.y) / bottom);
+  }
+
+  private slabAt(i: number) {
+    while (this.slabs.length <= i) {
+      const mat = new THREE.ShaderMaterial({
+        vertexShader: MESH_VERT, fragmentShader: SLAB_FRAG, transparent: true, depthWrite: false, depthTest: false,
+        uniforms: { ...this.uSlab, uSize: { value: new THREE.Vector2(300, 300) }, uAlpha: { value: 1 } },
+      });
+      const slab = new THREE.Mesh(this.slabGeo, mat);
+      slab.matrixAutoUpdate = false;
+      slab.frustumCulled = false;
+      slab.renderOrder = 8;
+      slab.visible = false;
+      this.slabs.push(slab);
+      this.scene.add(slab);
+    }
+    return this.slabs[i];
   }
 
   private layoutStage(F0: Float64Array, toCam: V3, zoom: number) {
     const q = this.stage;
-    const { list: frames, rise, rs, baseZ, down, c, l } = this.frames(q);
+    const { list, rise, rs, baseZ, totalW, re } = this.frames(q);
 
     const visible = this.mode === 'stage' && q > 0.001;
     const zoomFade = smoothstep(13.3, 14.3, zoom);
     this.emitter.visible = visible;
     this.shadow.visible = visible;
+    this.track.visible = visible && re > 0;
     (this.emitter.material as THREE.ShaderMaterial).uniforms.uAlpha.value = rise * 0.9;
     this.emitter.position.set(0, 0, baseZ);
     this.emitter.scale.setScalar(26 * rs);
     this.uShadow.uAlpha.value = (this.theme === 'night' ? 0.42 : 0.2) * rise;
-    this.shadow.position.set(0, (c.h * rs * Math.sin(this.tilt)) / 2 + 10, 0.3);
-    this.shadow.scale.set((c.w + 2 * l.w * 0.9) * rs * 0.62, (60 + c.h * Math.sin(this.tilt) * 0.5) * rs, 1);
+    this.shadow.position.set(0, 60 * rs * Math.sin(this.tilt) + 20, 0.3);
+    this.shadow.scale.set(totalW * rs * 0.42, 90 * rs, 1);
+    // Дорожка кольца на земле поворачивается вместе с карточками отметок.
+    this.track.scale.setScalar(RING_R * rs);
+    this.track.rotation.z = -this.ringPos * RING_STEP;
+    (this.track.material as THREE.ShaderMaterial).uniforms.uAlpha.value = 0.7 * re;
 
-    this.uSlab.uAlpha.value = rise;
-    frames.forEach((f, i) => {
-      const behind = norm(cross(f.u, down));
-      const front = scale(behind, -1);
-      const facing = this.dotv(front, toCam);
-      const slab = f.slab;
-      slab.visible = visible;
-      if (visible) {
-        const m = basis(scale(f.u, f.sz.w * rs), scale(down, f.sz.h * rs), scale(behind, SLAB_T * rs), f.p);
-        slab.matrix.fromArray(m);
+    let si = 0;
+    const placed = new Set<HTMLElement>();
+    for (const f of list) {
+      const behind = norm(cross(f.u, f.down));
+      const facing = this.dotv(scale(behind, -1), toCam);
+      if (visible && f.op > 0.01) {
+        const slab = this.slabAt(si++);
+        slab.visible = true;
+        slab.matrix.fromArray(basis(scale(f.u, f.w * f.k), scale(f.down, f.h * f.k), scale(behind, f.thick * f.k), f.p));
         slab.matrixWorldNeedsUpdate = true;
-        (slab.material as THREE.ShaderMaterial).uniforms.uSize.value.set(f.sz.w, f.sz.h);
+        const u = (slab.material as THREE.ShaderMaterial).uniforms;
+        u.uSize.value.set(f.w, f.h);
+        u.uAlpha.value = f.ring ? f.op : rise;
       }
-      if (!f.el) return;
-      const show = visible && facing > 0.06;
-      const op = i === 0 ? smoothstep(0.4, 0.72, q) : smoothstep(0.5, 0.82, q) * smoothstep(0.06, 0.3, facing);
-      if (!show || op <= 0.01) {
-        f.el.style.visibility = 'hidden';
-        return;
-      }
-      const M = mul(F0, basis(scale(f.u, rs), scale(down, rs), behind, f.p));
+      const op = f.op * smoothstep(0.06, 0.3, facing);
+      if (!visible || facing <= 0.06 || op <= 0.01) continue;
+      const M = mul(F0, basis(scale(f.u, f.k), scale(f.down, f.k), behind, f.p));
+      const depth = apply(F0, comb(f.p, f.u, (f.w / 2) * f.k, f.down, (f.h / 2) * f.k)).w;
       f.el.style.visibility = 'visible';
       f.el.style.transform = css(M);
-      f.el.style.opacity = String(op);
-    });
+      f.el.style.opacity = op.toFixed(3);
+      // Ближние карточки поверх дальних: кольцо проходит и перед складнем, и за ним.
+      f.el.style.zIndex = String(Math.round(2e5 / Math.max(1, depth)));
+      f.el.dataset.front = f.ring && op > 0.9 && facing > 0.8 ? '1' : '0';
+      placed.add(f.el);
+    }
+    for (; si < this.slabs.length; si++) this.slabs[si].visible = false;
+    for (const el of this.placed) if (!placed.has(el)) el.style.visibility = 'hidden';
+    this.placed = placed;
+
     const els = this.els;
     if (els) {
       els.root.style.opacity = String(zoomFade);
@@ -534,7 +658,7 @@ export class SpringScene implements CustomLayerInterface {
     this.disc.scale.setScalar(DISC_R * (0.4 + 0.6 * g));
     this.basin.scale.set(15, 15, 15);
     (this.basin.material as THREE.ShaderMaterial).uniforms.uAlpha.value = 0.9 * g;
-    const beamTop = this.mode === 'stage' ? Math.max(40, BASE_Z * Math.pow(easeOutCubic(this.stage / 0.45), 0.8)) : 64;
+    const beamTop = this.mode === 'stage' ? Math.max(40, BASE_Z * Math.pow(easeOutCubic(this.stage / 0.35), 0.8)) : 64;
     this.beam.scale.set(7, 7, beamTop * g);
     this.uBeam.uAlpha.value = g;
 
@@ -607,8 +731,8 @@ export class SpringScene implements CustomLayerInterface {
     const c = Math.cos(-this.yaw);
     const s = Math.sin(-this.yaw);
     for (const h of this.hist) {
-      const lx = Math.sin(h.theta) * (HIST_R + 15);
-      const ly = -Math.cos(h.theta) * (HIST_R + 15);
+      const lx = Math.sin(h.theta) * (HIST_R - 14);
+      const ly = Math.cos(h.theta) * (HIST_R - 14);
       const p = apply(F0, [lx * c - ly * s, lx * s + ly * c, 0]);
       if (p.w <= 0) {
         h.label.style.visibility = 'hidden';
@@ -737,7 +861,7 @@ export class SpringScene implements CustomLayerInterface {
       uColor: { value: new THREE.Color(tk.ice) }, uHi: { value: new THREE.Color(tk.snow) },
     };
 
-    // ледяные плиты под панелями: левая, центральная, правая
+    // ледяные плиты под карточками (создаются по мере надобности, см. slabAt)
     const loader = new THREE.TextureLoader();
     const tex = (url: string) => {
       const t = loader.load(url, () => this.map?.triggerRepaint());
@@ -751,20 +875,12 @@ export class SpringScene implements CustomLayerInterface {
       uIce: { value: new THREE.Color(tk.ice) }, uHi: { value: new THREE.Color(tk.snow) },
       uInk: { value: new THREE.Color(tk.ink) }, uFrostC: { value: new THREE.Color(tk.frost) },
     };
-    const box = new THREE.BoxGeometry(1, 1, 1).translate(0.5, 0.5, 0.5);
-    for (let i = 0; i < 3; i++) {
-      const mat = new THREE.ShaderMaterial({
-        vertexShader: MESH_VERT, fragmentShader: SLAB_FRAG, transparent: true, depthWrite: false, depthTest: false,
-        uniforms: { ...this.uSlab, uSize: { value: new THREE.Vector2(300, 470) } },
-      });
-      const slab = new THREE.Mesh(box, mat);
-      slab.matrixAutoUpdate = false;
-      slab.frustumCulled = false;
-      slab.renderOrder = 8;
-      slab.visible = false;
-      this.slabs.push(slab);
-      sc.add(slab);
-    }
+    // дорожка кольца отметок: пунктир на земле
+    this.track = new THREE.Mesh(new THREE.TorusGeometry(1, 0.008, 4, 160), this.iceMaterial(tk.ice, 0.7, 64, 'track'));
+    this.track.position.z = 1;
+    this.track.renderOrder = 2;
+    this.track.visible = false;
+    this.yawGroup.add(this.track);
 
     // капли посещений
     const r = rnd(7);
@@ -883,7 +999,8 @@ export class SpringScene implements CustomLayerInterface {
     items.forEach((it, i) => {
       const theta = n === 1 ? 0 : (-64 + (128 * i) / (n - 1)) * DEG;
       const group = new THREE.Group();
-      group.position.set(Math.sin(theta) * HIST_R, -Math.cos(theta) * HIST_R, 0);
+      // Дуга за родником (дальше от камеры): спереди её закрыло бы кольцо отметок.
+      group.position.set(Math.sin(theta) * HIST_R, Math.cos(theta) * HIST_R, 0);
       const color = this.statusColor(it.status);
       let crystal: THREE.Mesh;
       if (it.status === 'exceed') {
@@ -896,10 +1013,10 @@ export class SpringScene implements CustomLayerInterface {
         crystal = new THREE.Mesh(this.geo.torusUp, this.iceMaterial(color, 0.95, 14));
         crystal.scale.setScalar(9);
       }
-      crystal.position.z = 30;
+      crystal.position.z = 24;
       crystal.renderOrder = 5;
       const stem = new THREE.Mesh(this.geo.stem, this.iceMaterial(mix(tk.slate, tk.ink, 0.3), 0.55));
-      stem.scale.set(1.1, 1.1, 20);
+      stem.scale.set(1.1, 1.1, 15);
       stem.renderOrder = 4;
       const base = new THREE.Mesh(this.geo.ring, this.iceMaterial(color, 0.7));
       base.scale.setScalar(8);

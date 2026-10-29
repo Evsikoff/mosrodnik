@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
-  ArrowLeft, Camera, Check, Droplet, Eye, EyeOff, MapPin, Navigation, Share2, SquarePen, X,
+  ArrowLeft, Camera, Check, ChevronLeft, ChevronRight, Droplet, Eye, EyeOff, MapPin, Navigation, Share2, SquarePen, X,
 } from 'lucide-react';
 import { api, ApiError } from '../api';
-import type { SpringDetail, SpringFeature, SpringProps, Status, User } from '../types';
+import type { Observation, SpringDetail, SpringFeature, SpringProps, Status, User } from '../types';
 import {
   ACCESS_LABEL, CLEAN_LABEL, FLOW_LABEL, KIND_LABEL, STATUS_LABEL, SEASON_LABEL, ago, cardIllustration, obsText,
   routeUrl, springTitle,
@@ -198,7 +198,7 @@ function Hero({ m, children }: { m: Model; children?: React.ReactNode }) {
   );
 }
 
-function HowToFind({ m }: { m: Model }) {
+function HowToFind({ m, drift = true }: { m: Model; drift?: boolean }) {
   const { lat, lon } = m;
   return (
     <>
@@ -213,20 +213,24 @@ function HowToFind({ m }: { m: Model }) {
           </a>
         </div>
       )}
-      {m.drift > 100 && (
-        <div className="drift">
-          В базе координаты этого родника в разные годы расходятся на {m.drift} м. Если вы знаете, где он находится,
-          помогите уточнить точку.
-        </div>
-      )}
+      {drift && <DriftNote m={m} />}
     </>
   );
 }
 
-function Water({ m }: { m: Model }) {
-  const s = m.detail?.spring;
+function DriftNote({ m }: { m: Model }) {
+  if (m.drift <= 100) return null;
   return (
-    <div className="water">
+    <div className="drift">
+      В базе координаты этого родника в разные годы расходятся на {m.drift} м. Если вы знаете, где он находится,
+      помогите уточнить точку.
+    </div>
+  );
+}
+
+function WaterStatus({ m }: { m: Model }) {
+  return (
+    <>
       <div className="status">
         <img src={SHAPE[m.status]} alt="" />
         <span>
@@ -241,18 +245,41 @@ function Water({ m }: { m: Model }) {
       {m.status !== 'not_sampled' && m.lastSample && (
         <div className="picto"><img src="/pictograms/last-sample.svg" alt="" /><span>Последняя проба: {m.lastSample} год</span></div>
       )}
+    </>
+  );
+}
+
+/** Оговорки, которые показываются у любого родника. */
+function Caveats() {
+  return (
+    <>
       <div className="picto"><img src="/pictograms/chemistry-only.svg" alt="" /><span>Анализ только по химическим показателям</span></div>
       <div className="picto"><img src="/pictograms/no-microbiology.svg" alt="" /><span>Микробиология не проверяется</span></div>
       <div className="picto strong"><img src="/pictograms/boil-water.svg" alt="" />
         <span>Роспотребнадзор рекомендует пить воду из родников только после кипячения</span></div>
-      {(s?.history.length ?? 0) > 0 && (
-        <div className="timeline" role="img"
-          aria-label={`История анализов: ${(s?.history ?? []).map((h) => `${h.year} ${STATUS_LABEL[h.status]}`).join('; ')}`}>
-          {(s?.history ?? []).map((h) => (
-            <span className="y" key={h.year}><img src={SHAPE[h.status]} alt="" />{h.year}</span>
-          ))}
-        </div>
-      )}
+    </>
+  );
+}
+
+function HistoryRow({ m }: { m: Model }) {
+  const h = m.detail?.spring.history ?? [];
+  if (!h.length) return null;
+  return (
+    <div className="timeline" role="img"
+      aria-label={`История анализов: ${h.map((x) => `${x.year} ${STATUS_LABEL[x.status]}`).join('; ')}`}>
+      {h.map((x) => (
+        <span className="y" key={x.year}><img src={SHAPE[x.status]} alt="" />{x.year}</span>
+      ))}
+    </div>
+  );
+}
+
+function Water({ m }: { m: Model }) {
+  return (
+    <div className="water">
+      <WaterStatus m={m} />
+      <Caveats />
+      <HistoryRow m={m} />
     </div>
   );
 }
@@ -336,6 +363,35 @@ function Gallery({ m }: { m: Model }) {
   );
 }
 
+/** Одна отметка жителя: автор, когда, что отмечено, комментарий, фото. */
+function ObsBody({ m, o }: { m: Model; o: Observation }) {
+  const photos = m.detail?.photos.filter((ph) => o.photo_ids.includes(ph.id)) ?? [];
+  return (
+    <>
+      {o.author.avatar ? <img className="av" src={o.author.avatar} alt="" /> : <span className="av" aria-hidden="true" />}
+      <div>
+        <div className="who">
+          {o.author.name}
+          {o.is_sample && <span className="sample-badge">Образец</span>} · {ago(o.created_at)}
+        </div>
+        <div className="what">{KIND_LABEL[o.kind]}: {obsText(o.kind, o.value)}</div>
+        {o.comment && <p className="cm">{o.comment}</p>}
+        {photos.length > 0 && (
+          <div className="thumbs">
+            {photos.slice(0, 3).map((ph) => (
+              <button key={ph.id} onClick={() => m.p.onLightbox(ph.file, ph.caption ?? undefined)} aria-label="Открыть фото">
+                <img src={ph.thumb ?? ph.file} alt={ph.caption ?? 'Фото к отметке'} loading="lazy" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
+}
+
+const showSamplesNote = (d: SpringDetail | null) => !!d?.samples_shown && d.observations.some((o) => o.is_sample);
+
 function Feed({ m }: { m: Model }) {
   const d = m.detail;
   return (
@@ -343,35 +399,11 @@ function Feed({ m }: { m: Model }) {
       {d && d.observations.length === 0 && (
         <p className="sample-note">Отметок пока нет. Будьте первым, кто расскажет о состоянии родника.</p>
       )}
-      {d?.samples_shown && d.observations.some((o) => o.is_sample) && (
+      {showSamplesNote(d) && (
         <p className="sample-note">Образцы: пример того, как будут выглядеть отметки жителей.</p>
       )}
       <ul className="feed">
-        {d?.observations.map((o) => {
-          const photos = d.photos.filter((ph) => o.photo_ids.includes(ph.id));
-          return (
-            <li key={o.id}>
-              {o.author.avatar ? <img className="av" src={o.author.avatar} alt="" /> : <span className="av" aria-hidden="true" />}
-              <div>
-                <div className="who">
-                  {o.author.name}
-                  {o.is_sample && <span className="sample-badge">Образец</span>} · {ago(o.created_at)}
-                </div>
-                <div className="what">{KIND_LABEL[o.kind]}: {obsText(o.kind, o.value)}</div>
-                {o.comment && <p className="cm">{o.comment}</p>}
-                {photos.length > 0 && (
-                  <div className="thumbs">
-                    {photos.map((ph) => (
-                      <button key={ph.id} onClick={() => m.p.onLightbox(ph.file, ph.caption ?? undefined)} aria-label="Открыть фото">
-                        <img src={ph.thumb ?? ph.file} alt={ph.caption ?? 'Фото к отметке'} loading="lazy" />
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </li>
-          );
-        })}
+        {d?.observations.map((o) => <li key={o.id}><ObsBody m={m} o={o} /></li>)}
       </ul>
     </>
   );
@@ -428,40 +460,129 @@ export default function SpringCard(p: Props) {
   );
 }
 
-// ---------- 3D-панели над родником (широкий экран) ----------
+// ---------- 3D-карточки над родником (широкий экран) ----------
+
+/** Фото родника: до четырёх превью, на последнем — сколько ещё. */
+function PhotoGrid({ m }: { m: Model }) {
+  const photos = m.detail?.photos ?? [];
+  const more = photos.length - 4;
+  return (
+    <div className="photo-grid">
+      {photos.slice(0, 4).map((ph, i) => (
+        <button key={ph.id} onClick={() => m.p.onLightbox(ph.file, ph.caption ?? undefined)}
+          aria-label={i === 3 && more > 0 ? `Открыть фото, ещё ${more}` : 'Открыть фото'}>
+          <img src={ph.thumb ?? ph.file} alt={ph.caption ?? `Фото, ${SEASON_LABEL[ph.season] ?? ''}`} loading="lazy" />
+          {i === 3 && more > 0 && <span className="more" aria-hidden="true">+{more}</span>}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+interface StageProps extends Props {
+  onPanels(els: StageEls | null): void;
+  /** Номер отметки, которая должна стоять перед родником. */
+  onRing(i: number): void;
+}
 
 /**
- * Карточка в виде складня из трёх ледяных панелей, которые стоят над родником прямо в сцене карты.
- * Положение и перспективу панелям задаёт 3D-сцена (CSS matrix3d в камере карты), здесь только содержимое.
+ * Карточка родника как раскрывающийся складень над маркером: под каждую функцию своя карточка без прокрутки.
+ * Створка задаётся data-col (от -2 слева до 2 справа), карточки внутри створки идут сверху вниз.
+ * Отметки жителей — отдельное кольцо карточек вокруг родника на земле: его поворачивают колесом мыши,
+ * перетаскиванием, стрелками или кнопками. Положение и перспективу задаёт 3D-сцена (CSS matrix3d в камере карты).
  */
-export function SpringStage(p: Props & { onPanels(els: StageEls | null): void }) {
+export function SpringStage(p: StageProps) {
   const m = useCard(p);
   const root = useRef<HTMLDivElement>(null);
-  const left = useRef<HTMLElement>(null);
-  const center = useRef<HTMLElement>(null);
-  const right = useRef<HTMLElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
-  const { onPanels } = p;
+  const [ring, setRing] = useState(0);
+  const { onPanels, onRing } = p;
+  const obs = m.detail?.observations ?? [];
+  const n = obs.length;
+  const photos = m.detail?.photos.length ?? 0;
+  const history = m.detail?.spring.history.length ?? 0;
+  const shape = `${p.slug}|${obs.map((o) => o.id).join(',')}|${photos}|${history}|${m.drift > 100}|${!!m.error}`;
+
+  // Сцене нужен список карточек; он меняется, когда приходят отметки, фото или история.
+  useLayoutEffect(() => {
+    const r = root.current;
+    if (!r) return;
+    onPanels({
+      root: r,
+      cards: [...r.querySelectorAll<HTMLElement>('.stage-card[data-col]')],
+      ring: [...r.querySelectorAll<HTMLElement>('.ring-card')],
+    });
+  }, [onPanels, shape]);
+  useEffect(() => () => onPanels(null), [onPanels]);
 
   useEffect(() => {
-    if (root.current && left.current && center.current && right.current) {
-      onPanels({ root: root.current, left: left.current, center: center.current, right: right.current });
-    }
-    return () => onPanels(null);
-  }, [onPanels]);
-
-  useEffect(() => {
-    for (const el of [left.current, center.current, right.current]) el?.querySelector('.stage-scroll')?.scrollTo({ top: 0 });
-    const t = window.setTimeout(() => heading.current?.focus({ preventScroll: true }), 900);
+    setRing(0);
+    const t = window.setTimeout(() => heading.current?.focus({ preventScroll: true }), 1300);
     return () => window.clearTimeout(t);
   }, [p.slug]);
 
+  const current = Math.min(ring, Math.max(0, n - 1));
+  useEffect(() => onRing(current), [current, onRing]);
+  const go = (i: number) => setRing(Math.max(0, Math.min(n - 1, i)));
+  const step = (d: number) => setRing((r) => Math.max(0, Math.min(n - 1, r + d)));
+
+  // Колесо: накопленная прокрутка поворачивает кольцо на одну карточку, не чаще чем раз в 140 мс.
+  const wheel = useRef({ acc: 0, at: 0 });
+  const onWheel = (e: React.WheelEvent) => {
+    const d = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    const w = wheel.current;
+    w.acc += d;
+    const now = performance.now();
+    if (Math.abs(w.acc) >= 40 && now - w.at > 140) {
+      step(Math.sign(w.acc));
+      w.acc = 0;
+      w.at = now;
+    }
+  };
+  // Перетаскивание: каждые 70 px по горизонтали — следующая карточка.
+  const drag = useRef<{ x: number; moved: boolean } | null>(null);
+  const ringHandlers = (i: number) => ({
+    onWheel,
+    onFocus: () => go(i),
+    onClick: () => {
+      if (!drag.current?.moved) go(i);
+    },
+    onPointerDown: (e: React.PointerEvent) => {
+      if (e.button === 0) drag.current = { x: e.clientX, moved: false };
+    },
+    onPointerMove: (e: React.PointerEvent) => {
+      const d = drag.current;
+      if (!d || !(e.buttons & 1)) return;
+      const dx = e.clientX - d.x;
+      if (!d.moved && Math.abs(dx) > 8) (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+      if (Math.abs(dx) > 70) {
+        step(dx < 0 ? 1 : -1);
+        d.x = e.clientX;
+        d.moved = true;
+      }
+    },
+    onPointerUp: () => window.setTimeout(() => (drag.current = null)),
+    onKeyDown: (e: React.KeyboardEvent) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const next = Math.max(0, Math.min(n - 1, i + (e.key === 'ArrowRight' ? 1 : -1)));
+        (root.current?.querySelectorAll<HTMLElement>('.ring-card')[next])?.focus({ preventScroll: true });
+      }
+    },
+  });
+
   const frost = <div className="frost-overlay" aria-hidden="true" />;
+  const card = (col: number, label: string, cls: string, body: React.ReactNode) => (
+    <section className={`stage-card ${cls}`} data-col={col} aria-label={label}>
+      {body}
+      {frost}
+    </section>
+  );
 
   return (
     <div className="stage" ref={root} role="region" aria-label={`Карточка родника: ${m.title}`} data-live="0">
-      <section className="stage-panel center" ref={center} aria-label="О роднике и воде">
-        <div className="stage-scroll">
+      {card(0, 'Родник', 'title-card', (
+        <>
           <Hero m={m}>
             <button className="back" onClick={p.onBack} aria-label="Закрыть карточку"><X size={18} aria-hidden /></button>
           </Hero>
@@ -469,49 +590,99 @@ export function SpringStage(p: Props & { onPanels(els: StageEls | null): void })
             <h1 ref={heading} tabIndex={-1}>{m.title}</h1>
             <p className="where">{p.fallback.adm_area}, {m.district}</p>
           </div>
-          <div className="stage-sec">
-            <h2>О воде</h2>
-            <Water m={m} />
-          </div>
-          {m.error && <div className="stage-sec"><p className="err" role="alert">{m.error}</p></div>}
-        </div>
-        {frost}
-      </section>
-
-      <section className="stage-panel left" ref={left} aria-label="Как найти">
-        <div className="stage-scroll">
-          <div className="stage-sec">
-            <h2>Как найти</h2>
-            <HowToFind m={m} />
-          </div>
-          <div className="stage-sec">
-            <PointCheck m={m} />
-            <FollowShare m={m} />
-          </div>
-          {m.detail && m.detail.photos.length > 0 && (
-            <div className="stage-sec">
-              <h2>Фото</h2>
-              <Gallery m={m} />
+        </>
+      ))}
+      {card(0, 'О воде', 'water-card', (
+        <>
+          <h2>О воде</h2>
+          <WaterStatus m={m} />
+          {m.error && <p className="err" role="alert">{m.error}</p>}
+        </>
+      ))}
+      {history > 0 && card(0, 'История анализов', 'history-card', (
+        <>
+          <h2>История анализов</h2>
+          <HistoryRow m={m} />
+        </>
+      ))}
+      {card(-1, 'Важно знать', 'caveats-card', (
+        <>
+          <h2>Важно знать</h2>
+          <Caveats />
+        </>
+      ))}
+      {photos > 0 && card(-1, 'Фото', 'photos-card', (
+        <>
+          <h2>Фото</h2>
+          <PhotoGrid m={m} />
+        </>
+      ))}
+      {card(-2, 'Как найти', 'find-card', (
+        <>
+          <h2>Как найти</h2>
+          <HowToFind m={m} drift={false} />
+        </>
+      ))}
+      {card(-2, 'Точка на карте', 'point-card', (
+        <>
+          <h2>Точка на карте</h2>
+          <DriftNote m={m} />
+          <PointCheck m={m} />
+        </>
+      ))}
+      {card(1, 'Сейчас у родника', 'now-card', (
+        <>
+          <h2>Сейчас у родника</h2>
+          <NowCells m={m} />
+        </>
+      ))}
+      {card(1, 'Отметить', 'actions-card', (
+        <>
+          <h2>Отметить</h2>
+          <Actions m={m} />
+        </>
+      ))}
+      <section className="stage-card feed-ctl" data-col={2} aria-label="Отметки жителей" onWheel={onWheel}>
+        <h2>Отметки жителей</h2>
+        {n > 0 ? (
+          <>
+            <div className="ring-nav">
+              <button className="btn" onClick={() => step(-1)} disabled={current <= 0} aria-label="Предыдущая отметка">
+                <ChevronLeft size={18} aria-hidden />
+              </button>
+              <span className="ring-count" aria-live="polite"><b>{current + 1}</b> из {n}</span>
+              <button className="btn" onClick={() => step(1)} disabled={current >= n - 1} aria-label="Следующая отметка">
+                <ChevronRight size={18} aria-hidden />
+              </button>
             </div>
-          )}
-        </div>
+            {showSamplesNote(m.detail) && (
+              <p className="sample-note">Образцы: пример того, как будут выглядеть отметки жителей.</p>
+            )}
+            <p className="hint">Колесо мыши или перетаскивание поворачивают отметки вокруг родника.</p>
+          </>
+        ) : (
+          <p className="sample-note">
+            {m.detail ? 'Отметок пока нет. Будьте первым, кто расскажет о состоянии родника.' : 'Загружаем отметки…'}
+          </p>
+        )}
         {frost}
       </section>
+      {card(2, 'Следить и делиться', 'follow-card', (
+        <>
+          <h2>Следить и делиться</h2>
+          <FollowShare m={m} />
+        </>
+      ))}
 
-      <section className="stage-panel right" ref={right} aria-label="Сейчас у родника">
-        <div className="stage-scroll">
-          <div className="stage-sec">
-            <h2>Сейчас у родника</h2>
-            <NowCells m={m} />
-            <Actions m={m} />
-          </div>
-          <div className="stage-sec">
-            <h2>Лента</h2>
-            <Feed m={m} />
-          </div>
-        </div>
-        {frost}
-      </section>
+      <div className="stage-ring" role="list" aria-label="Отметки жителей у родника">
+        {obs.map((o, i) => (
+          <article key={o.id} role="listitem" tabIndex={0} aria-current={i === current ? 'true' : undefined}
+            className={`stage-card ring-card${o.is_sample ? ' sample' : ''}`} {...ringHandlers(i)}>
+            <ObsBody m={m} o={o} />
+            {frost}
+          </article>
+        ))}
+      </div>
       {m.markDialog && createPortal(m.markDialog, document.body)}
     </div>
   );

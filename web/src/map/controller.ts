@@ -395,7 +395,8 @@ export class MapController {
   fly(f: SpringFeature, padding: maplibregl.PaddingOptions | number = 0, stage = false) {
     if (!this.map) return;
     const H = this.container.clientHeight;
-    const pad = stage ? { top: Math.round(H * 0.6), bottom: 0, left: 0, right: 0 } : padding;
+    // Родник чуть ниже середины кадра: над ним складень, под ним кольцо отметок.
+    const pad = stage ? { top: Math.round(H * 0.44), bottom: 0, left: 0, right: 0 } : padding;
     this.map.flyTo({
       center: f.geometry.coordinates, zoom: stage ? 16.6 : 16, pitch: stage ? 58 : 55,
       bearing: this.map.getBearing() + 18, duration: this.rm ? 0 : 1200, padding: pad, essential: false,
@@ -432,6 +433,10 @@ export class MapController {
   attachStage(els: StageEls | null) {
     if (!els && !this.scenePromise) return;
     void this.scene().then((sc) => sc.attach(els));
+  }
+
+  ringTo(i: number) {
+    void this.scenePromise?.then((sc) => sc.ringTo(i));
   }
 
   foldScene(on: boolean) {

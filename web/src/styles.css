@@ -372,60 +372,105 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 12px; }
 [data-theme='night'] .mr-logo--auto { background-image: url('/brand/logo-mark-sprite-inverse.webp'); }
 .m-top .pill .mr-logo, .m-top .pill span.mr-logo { width: 32px; height: 32px; flex: none; }
 
-/* ---------- 3D-карточка над родником (широкий экран) ---------- */
+/* ---------- 3D-карточки над родником (широкий экран) ---------- */
+/* Каждая карточка по высоте своего содержимого, прокрутки нет. Ширина задаётся створкой. */
 .stage { position: absolute; inset: 0; z-index: 4; pointer-events: none; overflow: hidden; opacity: 0; }
-.stage-panel {
+.stage-ring { position: absolute; inset: 0; pointer-events: none; }
+.stage-card {
   position: absolute; left: 0; top: 0; transform-origin: 0 0; visibility: hidden; opacity: 0;
-  height: 440px; overflow: hidden; pointer-events: none; border-radius: 5px;
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
-  -webkit-backdrop-filter: blur(9px) saturate(1.15);
-  backdrop-filter: blur(9px) saturate(1.15);
+  width: 268px; padding: 12px 14px 14px; overflow: hidden; pointer-events: none; border-radius: 5px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(7px) saturate(1.15);
+  backdrop-filter: blur(7px) saturate(1.15);
   border: 1px solid color-mix(in srgb, var(--fg) 60%, transparent);
   box-shadow:
     inset 0 1px 0 color-mix(in srgb, var(--snow) 75%, transparent),
     inset 0 0 0 1px color-mix(in srgb, var(--snow) 22%, transparent);
-  -webkit-font-smoothing: subpixel-antialiased;
 }
-.stage[data-live='1'] .stage-panel { pointer-events: auto; }
-.stage-panel.center { width: 356px; height: 500px; z-index: 1; }
-.stage-panel.left, .stage-panel.right { width: 296px; z-index: 2; }
-.stage-panel::before {
-  content: ''; position: absolute; inset: 0 0 auto; height: 120px; pointer-events: none; z-index: 1;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--frost) 45%, transparent), transparent);
+.stage-card::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--frost) 45%, transparent), transparent 80px);
   mix-blend-mode: soft-light;
 }
-.stage-scroll { position: relative; height: 100%; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-bottom: 14px; }
-.stage-sec { padding: 10px 14px 2px; }
-.stage-sec:first-child { padding-top: 14px; }
+.stage-card > * { position: relative; }
+.stage-card > .frost-overlay { position: absolute; }
+.stage[data-live='1'] .stage-card { pointer-events: auto; }
+.stage-card[data-col='0'] { width: 300px; }
+.stage-card[data-col='-2'], .stage-card[data-col='2'] { width: 252px; }
 .stage h1 { margin: 0 0 2px; font-size: 20px; line-height: 1.2; outline: none; }
 .stage h2 {
-  margin: 0 0 8px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+  margin: 0 0 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
   display: flex; align-items: center; gap: 8px;
 }
 .stage h2::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 .stage .where { color: var(--muted); font-size: 13.5px; margin: 0; }
-.stage .hero { height: 92px; }
-.stage .hero .back {
-  left: auto; right: 10px; width: 34px; height: 34px; padding: 0; justify-content: center;
-}
-.stage .water { padding: 10px 12px; background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.stage .title-card { padding: 0; }
+.stage .title-card .stage-sec { padding: 10px 14px 12px; }
+.stage .hero { height: 96px; }
+.stage .hero .back { left: auto; right: 10px; width: 34px; height: 34px; padding: 0; justify-content: center; }
+.stage .status { display: flex; gap: 10px; align-items: center; font-weight: 600; font-size: 14px; }
+.stage .status img { width: 36px; height: 36px; }
 .stage .picto { margin-top: 8px; font-size: 13.5px; }
 .stage .picto img { width: 30px; height: 30px; }
+.stage .timeline { margin-top: 0; overflow: visible; flex-wrap: wrap; }
 .stage .now { grid-template-columns: 1fr; gap: 6px; }
 .stage .now .cell {
-  display: grid; grid-template-columns: 64px 1fr; column-gap: 8px; align-items: center; padding: 6px 10px;
+  display: grid; grid-template-columns: 62px 1fr; column-gap: 8px; align-items: center; padding: 6px 10px;
   background: color-mix(in srgb, var(--surface) 70%, transparent);
 }
 .stage .now .cell small { grid-row: span 2; }
+.stage .visits { margin: 8px 0 0; }
 .stage .btn { font-size: 13.5px; padding: 8px 12px; }
-.stage .btns { gap: 6px; }
+.stage .btns { gap: 6px; margin-top: 8px; }
+.stage .actions-card .btns, .stage .follow-card .btns { margin-top: 0; }
+.stage .actions-card .btn, .stage .follow-card .btn { flex: 1 1 auto; }
 .stage .kv { margin-top: 0; font-size: 13.5px; }
-.stage .drift { font-size: 13.5px; }
-.stage .feed { gap: 9px; }
-.stage .feed .cm { font-size: 13.5px; }
-.stage .thumbs img { width: 84px; height: 62px; }
+.stage .coords { margin: 6px 0 0; }
+.stage .drift { font-size: 13px; margin-top: 0; }
+.stage .point-card .drift + .drift { margin-top: 8px; }
+.stage .point-card .drift.mild { background: none; border: 0; padding: 0; }
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.photo-grid button { position: relative; padding: 0; border: 0; background: none; border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 3; }
+.photo-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-grid .more {
+  position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: 18px;
+  color: var(--snow); background: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+/* Пульт кольца отметок */
+.feed-ctl .ring-nav { display: flex; align-items: center; gap: 8px; }
+.feed-ctl .ring-nav .btn { width: 38px; height: 38px; padding: 0; flex: none; }
+.feed-ctl .ring-count { flex: 1; text-align: center; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.feed-ctl .ring-count b { font-size: 22px; color: var(--fg); }
+.feed-ctl .hint { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+.feed-ctl .sample-note { margin-top: 8px; }
+
+/* Карточки отметок на кольце вокруг родника */
+.ring-card {
+  width: 290px; display: grid; grid-template-columns: 30px 1fr; gap: 9px; padding: 9px 12px 10px;
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+.ring-card:active { cursor: grabbing; }
+.ring-card[aria-current='true'] {
+  border-color: var(--fg);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--snow) 75%, transparent), 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.ring-card.sample { border-style: dashed; }
+.ring-card .av { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; background: var(--frost); }
+.ring-card .who { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ring-card .what { font-weight: 500; font-size: 13.5px; }
+.ring-card .cm {
+  margin: 2px 0 0; font-size: 13px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.ring-card .thumbs { margin-top: 4px; }
+.ring-card .thumbs img { width: 52px; height: 36px; border-radius: 6px; }
+
 .stage .frost-overlay { animation: none; --thaw: 0%; border-radius: inherit; }
 .stage.thaw .frost-overlay { animation: thaw 950ms cubic-bezier(0.3, 0.6, 0.2, 1) forwards; }
+.stage.thaw .ring-card .frost-overlay { animation-delay: 0.45s; }
 
 /* Годы анализов у кристаллов на земле */
 .scene-labels { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }

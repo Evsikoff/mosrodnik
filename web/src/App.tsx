@@ -218,6 +218,7 @@ export default function App() {
     ctl.current?.scene().catch(() => setSceneOk(false));
   }, [ready, selected, mobile]);
   const onPanels = useCallback((els: StageEls | null) => ctl.current?.attachStage(els), []);
+  const onRing = useCallback((i: number) => ctl.current?.ringTo(i), []);
 
   useEffect(() => {
     if (!intro) return;
@@ -422,6 +423,7 @@ export default function App() {
       onLightbox={(src, caption) => setLightbox({ src, caption })}
       onScene={onScene}
       onPanels={onPanels}
+      onRing={onRing}
     />
   );
 
