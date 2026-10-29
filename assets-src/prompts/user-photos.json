@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "purpose": "Промпты для демонстрационных фото «жителей». Фото синтетические и в интерфейсе подписаны «Образец».",
+    "format": "Тот же набор полей, что в assets-src/prompts/images.json, плюс spring_id, season, caption, linked_observation_kind и data_record_path.",
+    "steps": [
+      "1. Сгенерировать изображение по prompt (с учётом negative), размер не меньше 1448x1086, соотношение 4:3.",
+      "2. Сохранить исходник как PNG: assets-src/generated/<id>.png (имя файла = id, латиница, дефисы).",
+      "3. Выложить в публичную папку только через водяной знак: python assets-src/scripts/watermark.py (результат: web/public/samples/photos/<id>.webp, имя обязано начинаться с sample-).",
+      "4. Создать запись data/photos/<id>.json по шаблону data_record_template, подставив spring_id, season и caption из этого файла.",
+      "5. Привязать фото к отметке: добавить id фото в photo_ids нужной отметки data/observations/sample-obs-*.json того же spring_id.",
+      "6. Запустить python assets-src/scripts/check_assets.py."
+    ],
+    "naming": "sample-user-<тема-латиницей-через-дефис>; один и тот же id в имени PNG, WEBP и JSON.",
+    "folders": {
+      "source_png": "assets-src/generated/",
+      "public_webp": "web/public/samples/photos/",
+      "photo_record": "data/photos/",
+      "observations": "data/observations/"
+    },
+    "data_record_template": {
+      "id": "<id>",
+      "spring_id": "<spring_id>",
+      "user_id": "sample",
+      "file": "/samples/photos/<id>.webp",
+      "season": "<season>",
+      "caption": "<caption>",
+      "is_sample": true,
+      "created_at": "<ISO 8601 UTC, фактическое время генерации>"
+    },
+    "rules": [
+      "Без лиц и читаемого текста.",
+      "Не обещать чистоту или пригодность воды для питья.",
+      "Подписи начинаются со слова «Образец»."
+    ]
+  },
+  "images": [
+    {
+      "id": "sample-user-leaf-trough",
+      "spring_id": "ВАО-123",
+      "season": "autumn",
+      "linked_observation_kind": "flow",
+      "caption": "Образец: лоток под трубой, на дне листья, вода идёт ровной струёй.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-leaf-trough.png",
+      "target_path": "web/public/samples/photos/sample-user-leaf-trough.webp",
+      "data_record_path": "data/photos/sample-user-leaf-trough.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA wooden trough under a short metal pipe in a damp ravine, fallen birch and maple leaves on the bottom, a steady modest stream of grayish water. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-muddy-path",
+      "spring_id": "ЗАО-101",
+      "season": "autumn",
+      "linked_observation_kind": "access",
+      "caption": "Образец: тропа к роднику после дождей, грязь и лужи.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-muddy-path.png",
+      "target_path": "web/public/samples/photos/sample-user-muddy-path.webp",
+      "data_record_path": "data/photos/sample-user-muddy-path.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA narrow muddy forest path going downhill to a small stone-lined spring, puddles with reflections of bare trees, wet leaves. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-thin-flow",
+      "spring_id": "ЗелАО-1",
+      "season": "autumn",
+      "linked_observation_kind": "flow",
+      "caption": "Образец: тонкая струйка из трубы, бутылка стоит рядом.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-thin-flow.png",
+      "target_path": "web/public/samples/photos/sample-user-thin-flow.webp",
+      "data_record_path": "data/photos/sample-user-thin-flow.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA thin trickle of water from a rusty pipe in a concrete retaining wall, a plain empty plastic bottle standing on the ground nearby, moss and leaves. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-fallen-tree",
+      "spring_id": "НАО-104",
+      "season": "autumn",
+      "linked_observation_kind": "access",
+      "caption": "Образец: упавшее дерево лежит поперёк тропы к роднику.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-fallen-tree.png",
+      "target_path": "web/public/samples/photos/sample-user-fallen-tree.webp",
+      "data_record_path": "data/photos/sample-user-fallen-tree.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA large fallen birch trunk lying across a footpath in a park, a small spring structure partly visible behind it, wet ground. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-bags-litter",
+      "spring_id": "САО-235",
+      "season": "autumn",
+      "linked_observation_kind": "cleanliness",
+      "caption": "Образец: пакеты и бутылки у воды.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-bags-litter.png",
+      "target_path": "web/public/samples/photos/sample-user-bags-litter.webp",
+      "data_record_path": "data/photos/sample-user-bags-litter.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nPlastic bags and a few empty plastic bottles left on the ground near a small spring outlet in a park, dull light, wet leaves. No brand names. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-cracked-gutter",
+      "spring_id": "СВАО-116",
+      "season": "autumn",
+      "linked_observation_kind": "cleanliness",
+      "caption": "Образец: сломанный желоб, вода уходит в сторону.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-cracked-gutter.png",
+      "target_path": "web/public/samples/photos/sample-user-cracked-gutter.webp",
+      "data_record_path": "data/photos/sample-user-cracked-gutter.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA cracked old concrete gutter below a spring pipe, water spilling sideways onto the soil and eroding a small channel. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-stone-basin",
+      "spring_id": "СЗАО-10",
+      "season": "autumn",
+      "linked_observation_kind": "visit",
+      "caption": "Образец: каменная чаша родника в осеннем парке.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-stone-basin.png",
+      "target_path": "web/public/samples/photos/sample-user-stone-basin.webp",
+      "data_record_path": "data/photos/sample-user-stone-basin.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA modest stone basin and chute of a spring in an autumn park, a few yellow leaves floating, a bare tree behind, no people. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-bench-clean",
+      "spring_id": "ТАО-181",
+      "season": "autumn",
+      "linked_observation_kind": "cleanliness",
+      "caption": "Образец: чистая площадка с лавочкой у родника.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-bench-clean.png",
+      "target_path": "web/public/samples/photos/sample-user-bench-clean.webp",
+      "data_record_path": "data/photos/sample-user-bench-clean.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA tidy small clearing with a plain wooden bench and a spring pipe, swept ground, no litter, bare trees. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-first-snow",
+      "spring_id": "ВАО-123",
+      "season": "winter",
+      "linked_observation_kind": "flow",
+      "caption": "Образец: первый снег вокруг трубы.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-first-snow.png",
+      "target_path": "web/public/samples/photos/sample-user-first-snow.webp",
+      "data_record_path": "data/photos/sample-user-first-snow.json",
+      "prompt": "candid smartphone photo, overcast Moscow early-winter day with thin snow, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nThin first snow on the ground around a short metal pipe with a weak flow of dark water, wet stones, dry grass poking through. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-icicles",
+      "spring_id": "ЗАО-101",
+      "season": "winter",
+      "linked_observation_kind": "flow",
+      "caption": "Образец: сосульки на трубе, воды почти нет.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-icicles.png",
+      "target_path": "web/public/samples/photos/sample-user-icicles.webp",
+      "data_record_path": "data/photos/sample-user-icicles.json",
+      "prompt": "candid smartphone photo, overcast Moscow early-winter day with thin snow, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nIcicles hanging from a short metal pipe, a frozen white crust in the trough below, only a tiny drip of water. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-icy-steps",
+      "spring_id": "ЗелАО-1",
+      "season": "winter",
+      "linked_observation_kind": "access",
+      "caption": "Образец: обледеневшие ступени к воде.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-icy-steps.png",
+      "target_path": "web/public/samples/photos/sample-user-icy-steps.webp",
+      "data_record_path": "data/photos/sample-user-icy-steps.json",
+      "prompt": "candid smartphone photo, overcast Moscow early-winter day with thin snow, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nConcrete steps leading down to a spring, covered with a thin glaze of ice and a few leaves, a metal handrail, grey light. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-cleared-snow",
+      "spring_id": "НАО-104",
+      "season": "winter",
+      "linked_observation_kind": "access",
+      "caption": "Образец: тропа расчищена от снега.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-cleared-snow.png",
+      "target_path": "web/public/samples/photos/sample-user-cleared-snow.webp",
+      "data_record_path": "data/photos/sample-user-cleared-snow.json",
+      "prompt": "candid smartphone photo, overcast Moscow early-winter day with thin snow, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA footpath through a park partly cleared of snow, boot prints, a small spring structure at the end of the path. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-evening-brook",
+      "spring_id": "САО-235",
+      "season": "autumn",
+      "linked_observation_kind": "visit",
+      "caption": "Образец: ручей от родника в сумерках.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-evening-brook.png",
+      "target_path": "web/public/samples/photos/sample-user-evening-brook.webp",
+      "data_record_path": "data/photos/sample-user-evening-brook.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks, dusk light, handheld, slightly blurry\nA narrow brook flowing away from a small spring through wet leaves at dusk, dim cold light, no artificial lights visible. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    },
+    {
+      "id": "sample-user-info-plate",
+      "spring_id": "СВАО-116",
+      "season": "autumn",
+      "linked_observation_kind": "location_check",
+      "caption": "Образец: место, где точка на карте и родник совпали.",
+      "size": [
+        1600,
+        1200
+      ],
+      "source_path": "assets-src/generated/sample-user-info-plate.png",
+      "target_path": "web/public/samples/photos/sample-user-info-plate.webp",
+      "data_record_path": "data/photos/sample-user-info-plate.json",
+      "prompt": "candid smartphone photo, overcast Moscow late-autumn day, natural colors, slight noise, unremarkable composition, no people faces, no text, no signs with readable text, no recognizable landmarks\nA small spring pipe at the foot of a slope next to a path, a smartphone-style plain composition showing the surroundings so the spot can be recognized, no signs with text. Landscape 4:3.",
+      "negative": "No emoji, lettering, readable signage, logos, Moscow government emblems, Saint George, Kremlin, landmark skyscrapers, identifiable faces, shiny blue water, freshness sparkles, drinking glasses, water purity claims, collages, frames, captions or watermarks.",
+      "notes": "Synthetic sample, not evidence of any actual spring. Watermark is added by code (watermark.py), not by the generator."
+    }
+  ]
+}

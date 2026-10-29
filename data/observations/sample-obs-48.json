@@ -1,10 +1,10 @@
 {
   "id": "sample-obs-48",
-  "spring_id": "СВАО-116",
-  "user_id": "sample-user-04",
+  "spring_id": "САО-235",
+  "user_id": "sample-user-05",
   "kind": "visit",
   "value": "visited",
-  "comment": null,
+  "comment": "Образец: помним, что воду из родников нужно кипятить, поэтому просто посмотрели и сфотографировали.",
   "photo_ids": [],
   "is_sample": true,
   "affects_map": false,

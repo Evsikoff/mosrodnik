@@ -3,8 +3,8 @@ import type { Filters, SpringFeature } from './types';
 export const EMPTY_FILTERS: Filters = { status: [], age: [], flow: [], adm: [], photo: false, mine: false, q: '' };
 
 export const STATUS_OPTIONS = [
-  { id: 'exceed', label: 'Есть превышения' },
-  { id: 'ok', label: 'Превышений нет' },
+  { id: 'exceed', label: 'Нормативы превышены' },
+  { id: 'ok', label: 'Нормативы не превышены' },
   { id: 'not_sampled', label: 'Пробы не брали' },
 ];
 export const AGE_OPTIONS = [

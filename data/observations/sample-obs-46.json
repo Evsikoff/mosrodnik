@@ -1,10 +1,10 @@
 {
   "id": "sample-obs-46",
-  "spring_id": "СВАО-116",
-  "user_id": "sample-user-06",
+  "spring_id": "САО-235",
+  "user_id": "sample-user-07",
   "kind": "flow",
   "value": "flowing",
-  "comment": "Образец: струя ровная, набирал полную бутыль.",
+  "comment": null,
   "photo_ids": [],
   "is_sample": true,
   "affects_map": false,
