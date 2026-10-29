@@ -8,6 +8,15 @@ const log = {
   warn: (m: string) => console.warn(`[warn] ${m}`),
 };
 
+if (config.isProd) {
+  const weak = [
+    !process.env.SESSION_SECRET && 'SESSION_SECRET',
+    !process.env.SESSION_SALT && 'SESSION_SALT',
+  ].filter(Boolean);
+  if (weak.length) log.warn(`не заданы ${weak.join(', ')}: используются небезопасные значения по умолчанию`);
+  if (!config.adminToken) log.warn('ADMIN_TOKEN не задан: скрытие записей отключено');
+}
+
 const db = new Database(config.dataDir, log);
 await db.seed(config.seedDir);
 await db.load();

@@ -14,3 +14,14 @@ test-results/
 .tmp/
 
 web/public/vendor/
+
+# Рабочие данные сервера: в репозитории остаются только образцы и опорные файлы
+data/springs/
+data/subscriptions/
+data/hidden/
+data/users/*
+!data/users/sample.json
+data/observations/*
+!data/observations/sample-*.json
+data/photos/*
+!data/photos/sample-*.json

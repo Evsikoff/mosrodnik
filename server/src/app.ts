@@ -107,7 +107,7 @@ export async function buildApp(db: Database, opts: { logger?: boolean } = {}): P
     });
     const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     app.setNotFoundHandler((req, reply) => {
-      if (req.method !== 'GET' || req.url.startsWith('/api/')) {
+      if ((req.method !== 'GET' && req.method !== 'HEAD') || req.url.startsWith('/api/')) {
         return reply.status(404).send({ error: { code: 'not_found', message: 'Не найдено.' } });
       }
       return reply.header('Cache-Control', 'no-cache').type('text/html; charset=utf-8').send(indexHtml);

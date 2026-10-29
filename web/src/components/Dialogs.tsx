@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { api, ApiError } from '../api';
 import type { User } from '../types';
@@ -22,12 +23,13 @@ export function Modal({
       prev?.focus?.();
     };
   }, [onClose]);
-  return (
+  return createPortal(
     <div className={`overlay ${className}`} onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div className="dialog" role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} ref={ref}>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
@@ -115,14 +117,15 @@ export function Lightbox({ src, caption, onClose }: { src: string; caption?: str
     document.addEventListener('keydown', key);
     return () => document.removeEventListener('keydown', key);
   }, [onClose]);
-  return (
+  return createPortal(
     <div className="overlay lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label="Фото">
       <button className="btn x-close" aria-label="Закрыть фото" onClick={onClose}><X size={18} /></button>
       <figure>
         <img src={src} alt={caption ?? 'Фото родника'} />
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
