@@ -3,6 +3,8 @@ import type { Map as MlMap, GeoJSONSource } from 'maplibre-gl';
 import bbox from '@turf/bbox';
 import type { SpringFeature } from '../types';
 import type { Theme } from '../theme';
+import type { SceneMode, SceneSpring, SpringScene, StageEls } from '../scene/SpringScene';
+import { springTitle } from '../labels';
 import { loadStyle, paintFor, paletteFor, readTokens, mix } from './style';
 
 maplibregl.setWorkerUrl('/vendor/maplibre/maplibre-gl-worker.mjs');
@@ -13,6 +15,15 @@ const MARKER_MIN_ZOOM = 11;
 /** Если в выборке не больше стольких родников, кластеры не нужны: маркеры видны на любом зуме. */
 const CLUSTER_THRESHOLD = 60;
 const MARKER_LAYERS = ['springs-glow', 'springs-pulse', 'springs-halo', 'springs-frost', 'springs-shape', 'springs-state'];
+const CLUSTER_LAYERS = ['cluster-glow', 'cluster-circle', 'cluster-count'];
+const SHAPE_SVG: Record<string, string> = {
+  exceed: '/markers/status-exceed.svg', ok: '/markers/status-ok.svg', not_sampled: '/markers/status-not-sampled.svg',
+};
+const STATUS_SHORT: Record<string, string> = {
+  exceed: 'превышения по химии', ok: 'превышений нет', not_sampled: 'пробы не отбирались',
+};
+const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+const esc = (t: string) => t.replace(/[&<>"]/g, (c) => ESC[c]);
 const SRC = 'springs';
 const SRC_CLUSTER = 'springs-cluster';
 const IMAGES = [
@@ -54,9 +65,17 @@ export class MapController {
   private pulseActive = true;
   private rm = reducedMotion();
   private hasFlowing = false;
+  private scenePromise: Promise<SpringScene> | null = null;
+  private loadedPromise: Promise<void>;
+  private resolveLoaded!: () => void;
+  private tag: maplibregl.Marker | null = null;
+  private tagSlug: string | null = null;
+  private intro: boolean;
 
-  constructor(private container: HTMLElement, theme: Theme, private h: MapHandlers) {
+  constructor(private container: HTMLElement, theme: Theme, private h: MapHandlers, opts: { intro?: boolean } = {}) {
     this.theme = theme;
+    this.intro = !!opts.intro && !this.rm;
+    this.loadedPromise = new Promise((r) => (this.resolveLoaded = r));
   }
 
   async init() {
@@ -64,14 +83,21 @@ export class MapController {
     this.map = new maplibregl.Map({
       container: this.container,
       style,
-      center: [37.62, 55.75],
-      zoom: 9.6,
-      maxPitch: 70,
+      // Вступление: камера начинает низко над югом Москвы и пролетает к обзору всех родников.
+      ...(this.intro
+        ? { center: [37.58, 55.5] as [number, number], zoom: 8.6, pitch: 62, bearing: -34 }
+        : { center: [37.62, 55.75] as [number, number], zoom: 9.6 }),
+      maxPitch: 72,
       attributionControl: { compact: true },
       cooperativeGestures: false,
     });
     this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
     this.map.on('zoom', () => this.h.onZoom(this.map.getZoom()));
+    // Дымка у горизонта: чем сильнее наклон, тем гуще (переменная читается в CSS).
+    const wrap = this.container.parentElement;
+    const haze = () => wrap?.style.setProperty('--haze', (Math.max(0, this.map.getPitch() - 20) / 45).toFixed(3));
+    this.map.on('pitch', haze);
+    haze();
     this.map.on('error', (e) => console.warn('[map]', e.error?.message ?? e));
     this.map.on('load', () => this.onLoad());
     document.addEventListener('visibilitychange', () => {
@@ -100,7 +126,14 @@ export class MapController {
 
     const tk = readTokens();
     const pal = paletteFor(this.theme, tk);
-    // Кластеры на мелких зумах
+    // Кластеры на мелких зумах: мягкое свечение, стеклянный круг и число
+    map.addLayer({
+      id: 'cluster-glow', type: 'circle', source: SRC_CLUSTER, maxzoom: MARKER_MIN_ZOOM, filter: ['has', 'point_count'],
+      paint: {
+        'circle-color': tk.ice, 'circle-blur': 0.85, 'circle-opacity': this.theme === 'night' ? 0.7 : 0.55,
+        'circle-radius': ['step', ['get', 'point_count'], 26, 10, 32, 30, 40, 80, 50],
+      },
+    });
     map.addLayer({
       id: 'cluster-circle', type: 'circle', source: SRC_CLUSTER, maxzoom: MARKER_MIN_ZOOM, filter: ['has', 'point_count'],
       paint: {
@@ -167,6 +200,7 @@ export class MapController {
     this.loaded = true;
     this.applyVisibility(this.visible, false);
     this.setSelected(this.selected);
+    this.resolveLoaded();
     this.h.onReady();
   }
 
@@ -236,6 +270,11 @@ export class MapController {
         });
       }
     });
+    map.on('mousemove', 'springs-shape', (e) => {
+      const f = e.features?.find((x) => this.visible.has(String(x.properties?.slug)));
+      this.hover(f ? String(f.properties!.slug) : null);
+    });
+    map.on('mouseleave', 'springs-shape', () => this.hover(null));
     const pointer = (on: boolean) => () => (map.getCanvas().style.cursor = on || this.pickMode ? 'pointer' : '');
     for (const l of ['springs-shape', 'cluster-circle']) {
       map.on('mouseenter', l, pointer(true));
@@ -297,7 +336,7 @@ export class MapController {
   private updateClusterMode() {
     const clustered = this.visible.size > CLUSTER_THRESHOLD;
     for (const id of MARKER_LAYERS) this.map.setLayerZoomRange(id, clustered ? (id === 'springs-halo' ? MARKER_MIN_ZOOM - 1 : MARKER_MIN_ZOOM) : 0, 24);
-    for (const id of ['cluster-circle', 'cluster-count']) {
+    for (const id of CLUSTER_LAYERS) {
       this.map.setLayoutProperty(id, 'visibility', clustered ? 'visible' : 'none');
     }
   }
@@ -325,6 +364,7 @@ export class MapController {
 
   setSelected(slug: string | null) {
     this.selected = slug;
+    if (slug && slug === this.tagSlug) this.hover(null);
     if (!this.loaded) return;
     this.map.setFilter('springs-halo', ['==', ['get', 'slug'], slug ?? '']);
   }
@@ -341,17 +381,96 @@ export class MapController {
   fit(features: SpringFeature[], padding: maplibregl.PaddingOptions | number = 60, maxZoom = 15.5) {
     if (!this.loaded || !features.length) return;
     const [w, s, e, n] = bbox({ type: 'FeatureCollection', features: features as any });
+    const first = this.intro;
+    this.intro = false;
+    // absolutePadding: отступ карты (после пролёта к 3D-карточке он большой сверху) плавно заменяется этим.
     this.map.fitBounds([[w, s], [e, n]], {
-      padding, duration: this.rm ? 0 : 900, maxZoom: features.length === 1 ? 14 : maxZoom, pitch: 0, bearing: 0,
-      essential: false,
+      padding, absolutePadding: true, duration: this.rm ? 0 : first ? 2800 : 900,
+      maxZoom: features.length === 1 ? 14 : maxZoom, pitch: 0, bearing: 0, essential: false,
+      ...(first ? { easing: (t: number) => 1 - Math.pow(1 - t, 3) } : {}),
     });
   }
 
-  fly(f: SpringFeature, padding: maplibregl.PaddingOptions | number = 0) {
+  /** Пролёт к роднику. Для 3D-карточки родник опускается вниз кадра, над ним остаётся место для панелей. */
+  fly(f: SpringFeature, padding: maplibregl.PaddingOptions | number = 0, stage = false) {
+    if (!this.map) return;
+    const H = this.container.clientHeight;
+    const pad = stage ? { top: Math.round(H * 0.6), bottom: 0, left: 0, right: 0 } : padding;
     this.map.flyTo({
-      center: f.geometry.coordinates, zoom: 16, pitch: 55, bearing: this.map.getBearing() + 18,
-      duration: this.rm ? 0 : 1200, padding, essential: false,
+      center: f.geometry.coordinates, zoom: stage ? 16.6 : 16, pitch: stage ? 58 : 55,
+      bearing: this.map.getBearing() + 18, duration: this.rm ? 0 : 1200, padding: pad, essential: false,
     });
+  }
+
+  // ---------- 3D-сцена над родником (three.js грузится только при первом открытии карточки) ----------
+
+  scene(): Promise<SpringScene> {
+    if (!this.scenePromise) {
+      this.scenePromise = this.loadedPromise
+        .then(() => import('../scene/SpringScene'))
+        .then(({ SpringScene }) => {
+          const sc = new SpringScene(this.theme);
+          this.map.addLayer(sc, 'springs-glow');
+          return sc;
+        });
+    }
+    return this.scenePromise;
+  }
+
+  showScene(s: SceneSpring, mode: SceneMode) {
+    void this.scene().then((sc) => sc.show(s, mode)).catch((e) => console.warn('[scene]', e));
+  }
+
+  hideScene(done: () => void) {
+    if (!this.scenePromise) {
+      done();
+      return;
+    }
+    void this.scenePromise.then((sc) => sc.hide(done)).catch(done);
+  }
+
+  attachStage(els: StageEls | null) {
+    if (!els && !this.scenePromise) return;
+    void this.scene().then((sc) => sc.attach(els));
+  }
+
+  foldScene(on: boolean) {
+    void this.scenePromise?.then((sc) => sc.fold(on));
+  }
+
+  sceneFx(kind: 'drop' | 'crystal'): boolean {
+    if (!this.scenePromise) return false;
+    void this.scenePromise.then((sc) => sc.fx(kind));
+    return true;
+  }
+
+  // ---------- подпись при наведении ----------
+
+  hover(slug: string | null) {
+    if (slug === this.tagSlug || !this.loaded) return;
+    this.tagSlug = slug;
+    // Наведение — сигнал, что скоро откроют карточку: заранее подгружаем код 3D-сцены.
+    if (slug && !this.scenePromise) void import('../scene/SpringScene').catch(() => {});
+    const f = slug ? this.features.find((x) => x.properties.slug === slug) : undefined;
+    if (!f || slug === this.selected || !this.visible.has(slug!)) {
+      this.tag?.getElement().classList.remove('on');
+      return;
+    }
+    if (!this.tag) {
+      const el = document.createElement('div');
+      el.className = 'map-tag';
+      el.setAttribute('aria-hidden', 'true');
+      this.tag = new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, -18] });
+      this.tag.setLngLat(f.geometry.coordinates).addTo(this.map);
+    }
+    const p = f.properties;
+    const el = this.tag.getElement();
+    el.innerHTML = `<div class="map-tag-in"><img src="${SHAPE_SVG[p.status]}" alt=""><span><b>${esc(springTitle(p))}</b>`
+      + `<small>${esc(p.district)} · ${STATUS_SHORT[p.status]}</small></span></div>`;
+    this.tag.setLngLat(f.geometry.coordinates);
+    el.classList.remove('on');
+    void el.offsetWidth;
+    el.classList.add('on');
   }
 
   projectToWindow(lon: number, lat: number): { x: number; y: number } {
@@ -412,6 +531,8 @@ export class MapController {
       }
     }
     this.map.setPaintProperty('springs-glow', 'circle-opacity', ['case', hiddenState, 0, pal.glow]);
+    this.map.setPaintProperty('cluster-glow', 'circle-opacity', theme === 'night' ? 0.7 : 0.55);
+    void this.scenePromise?.then((sc) => sc.setTheme(theme));
   }
 
   // ---------- круги на воде ----------

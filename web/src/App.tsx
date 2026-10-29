@@ -9,7 +9,8 @@ import { currentTheme, type Theme } from './theme';
 import { MapController, reducedMotion } from './map/controller';
 import FilterPanel, { SearchBox } from './components/Filters';
 import SpringList, { Summary } from './components/SpringList';
-import SpringCard from './components/SpringCard';
+import SpringCard, { SpringStage, type CardScene } from './components/SpringCard';
+import type { SceneSpring, StageEls } from './scene/SpringScene';
 import Snow from './components/Snow';
 import Fx, { type FxItem } from './components/Fx';
 import { AboutDialog, Lightbox, NameDialog, PrivacyDialog, Toast } from './components/Dialogs';
@@ -51,17 +52,24 @@ export default function App() {
   const [reloadKey, setReloadKey] = useState(0);
   const [pick, setPick] = useState<{ slug: string; point?: { lon: number; lat: number } } | null>(null);
   const [storyStep, setStoryStep] = useState<number | null>(null);
+  /** Родник, чьи 3D-панели стоят над картой (на широком экране). При закрытии живёт, пока панели складываются. */
+  const [stageSlug, setStageSlug] = useState<string | null>(null);
+  const [intro, setIntro] = useState(() => !slugFromPath() && !reducedMotion());
+  const [sceneOk, setSceneOk] = useState(true);
 
   const mapEl = useRef<HTMLDivElement>(null);
-  const panelEl = useRef<HTMLElement>(null);
   const ctl = useRef<MapController | null>(null);
   const zoomRef = useRef(9.6);
-  const origin = useRef({ x: 0, y: 0 });
   const firstVis = useRef(true);
   const toastTimer = useRef<number>(0);
   const filtersRef = useRef(filters);
   filtersRef.current = filters;
   const openRef = useRef<(slug: string) => void>(() => {});
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
+  const mobileRef = useRef(mobile);
+  mobileRef.current = mobile;
+  const sceneData = useRef<SceneSpring | null>(null);
 
   const say = useCallback((text: string) => {
     setToast(text);
@@ -82,6 +90,8 @@ export default function App() {
   }, []);
 
   const bySlug = useMemo(() => new Map(features.map((f) => [f.properties.slug, f])), [features]);
+  const bySlugRef = useRef(bySlug);
+  bySlugRef.current = bySlug;
 
   const visible = useMemo(
     () => features.filter((f) => matches(f, filters, mine)),
@@ -120,7 +130,7 @@ export default function App() {
       onZoom: (z) => { zoomRef.current = z; },
       onReady: () => setReady(true),
       onPick: (point) => setPick((p) => (p ? { ...p, point } : p)),
-    });
+    }, { intro });
     ctl.current = c;
     if (import.meta.env.DEV || location.search.includes('debug')) (window as any).__ctl = c;
     c.init().catch((e) => setLoadError(`Карта не загрузилась: ${e.message}`));
@@ -155,16 +165,30 @@ export default function App() {
 
   // открытие и закрытие карточки
   const prevSelected = useRef<string | null>(null);
+  const flownFor = useRef<string | null>(null);
+  const flyTo = useCallback((f: SpringFeature) => {
+    const m = mobileRef.current;
+    ctl.current?.fly(f, m ? { bottom: Math.round(window.innerHeight * 0.55), top: 0, left: 0, right: 0 } : 0, !m);
+  }, []);
   useEffect(() => {
     if (!ready) return;
     const c = ctl.current!;
     c.setSelected(selected);
     const f = selected ? bySlug.get(selected) : undefined;
     if (selected && f) {
-      c.fly(f, mobile ? { bottom: Math.round(window.innerHeight * 0.55), top: 0, left: 0, right: 0 } : 0);
-      setThaw((n) => n + 1);
-    } else if (!selected && prevSelected.current && visibleFeatures.length) {
-      c.fit(visibleFeatures, padding());
+      if (!mobile) setStageSlug(selected);
+      // Пролёт только при смене родника, а не при каждом обновлении его данных после отметки.
+      if (flownFor.current !== selected) {
+        flownFor.current = selected;
+        flyTo(f);
+        setThaw((n) => n + 1);
+      }
+    } else if (!selected) {
+      flownFor.current = null;
+      if (prevSelected.current) {
+        c.hideScene(() => setStageSlug((s) => (selectedRef.current ? s : null)));
+        if (visibleFeatures.length) c.fit(visibleFeatures, padding());
+      }
     }
     prevSelected.current = selected;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -172,7 +196,39 @@ export default function App() {
 
   useEffect(() => {
     ctl.current?.resize();
+    // Шторка на телефоне и 3D-панели на широком экране: при смене ширины сцена меняет режим.
+    if (selected && sceneData.current) {
+      ctl.current?.showScene(sceneData.current, mobile ? 'ground' : 'stage');
+      setStageSlug(mobile ? null : selected);
+      const f = bySlug.get(selected);
+      if (f) flyTo(f);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mobile]);
+
+  const onScene = useCallback((d: CardScene) => {
+    const f = bySlugRef.current.get(d.slug);
+    if (!f || selectedRef.current !== d.slug) return;
+    const s: SceneSpring = { ...d, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] };
+    sceneData.current = s;
+    ctl.current?.showScene(s, mobileRef.current ? 'ground' : 'stage');
+  }, []);
+  useEffect(() => {
+    if (!ready || !selected || mobile) return;
+    ctl.current?.scene().catch(() => setSceneOk(false));
+  }, [ready, selected, mobile]);
+  const onPanels = useCallback((els: StageEls | null) => ctl.current?.attachStage(els), []);
+
+  useEffect(() => {
+    if (!intro) return;
+    // Иней вступления не должен закрывать карту дольше нескольких секунд, даже если что-то не загрузилось.
+    if (loadError) {
+      setIntro(false);
+      return;
+    }
+    const t = window.setTimeout(() => setIntro(false), ready && features.length ? 2600 : 8000);
+    return () => window.clearTimeout(t);
+  }, [intro, ready, features.length, loadError]);
 
   // тема
   useEffect(() => {
@@ -190,25 +246,23 @@ export default function App() {
 
   const openSpring = useCallback((slug: string) => {
     const f = bySlug.get(slug);
-    const c = ctl.current;
-    if (f && c) {
-      const pt = c.projectToWindow(f.geometry.coordinates[0], f.geometry.coordinates[1]);
-      const r = panelEl.current?.getBoundingClientRect();
-      const cx = Math.min(Math.max(pt.x, 0), window.innerWidth);
-      const cy = Math.min(Math.max(pt.y, 0), window.innerHeight);
-      origin.current = { x: cx - (r?.left ?? 0), y: cy - (r?.top ?? 0) };
+    if (slug === selectedRef.current) {
+      // Повторный клик по открытому роднику возвращает камеру к нему.
+      if (f) flyTo(f);
+      return;
     }
     history.pushState(null, '', `/spring/${slug}${search(filtersRef.current)}`);
     setSelected(slug);
     setSheetOpen(false);
     setTall(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bySlug]);
+  }, [bySlug, flyTo]);
 
   openRef.current = openSpring;
 
   const closeSpring = useCallback(() => {
     ctl.current?.stopPick();
+    ctl.current?.foldScene(false);
     setPick(null);
     history.pushState(null, '', `/${search(filtersRef.current)}`);
     setSelected(null);
@@ -250,6 +304,8 @@ export default function App() {
     const f = selected ? bySlug.get(selected) : null;
     const c = ctl.current;
     if (!f || !c) return;
+    // Капля падает в родник прямо в 3D-сцене; кристалл льда прорастает и в сцене, и поверх маркера.
+    if (c.sceneFx(kind) && kind === 'drop') return;
     const pt = c.projectToWindow(f.geometry.coordinates[0], f.geometry.coordinates[1]);
     const id = Date.now() + Math.random();
     setFx((a) => [...a, { id, kind, x: pt.x, y: pt.y }]);
@@ -260,12 +316,16 @@ export default function App() {
     if (!selected) return;
     const f = bySlug.get(selected);
     setPick({ slug: selected });
+    ctl.current?.foldScene(true);
     ctl.current?.startPick();
     if (f) ctl.current?.map.easeTo({ pitch: 0, bearing: 0, duration: reducedMotion() ? 0 : 500 });
   };
   const cancelPick = () => {
     ctl.current?.stopPick();
+    ctl.current?.foldScene(false);
     setPick(null);
+    const f = selected ? bySlug.get(selected) : undefined;
+    if (f) flyTo(f);
   };
   const submitPick = async () => {
     if (!pick?.point) return;
@@ -323,7 +383,7 @@ export default function App() {
           <p>По этим условиям родников не нашлось. Попробуйте снять часть фильтров.</p>
         </div>
       ) : (
-        <SpringList features={visible} onOpen={openSpring} />
+        <SpringList features={visible} selected={selected} onOpen={openSpring} onHover={(s) => ctl.current?.hover(s)} />
       )}
     </>
   );
@@ -341,17 +401,31 @@ export default function App() {
       onPickLocation={startPick}
       onToast={say}
       onLightbox={(src, caption) => setLightbox({ src, caption })}
+      onScene={onScene}
+    />
+  );
+
+  const stageFeature = !mobile && sceneOk && stageSlug ? bySlug.get(stageSlug) : undefined;
+  const stage = stageFeature && (
+    <SpringStage
+      key="stage"
+      slug={stageFeature.properties.slug}
+      fallback={stageFeature.properties}
+      user={user}
+      reloadKey={reloadKey}
+      onBack={closeSpring}
+      onFeature={onFeature}
+      onSubscribed={onSubscribed}
+      onFx={onFx}
+      onPickLocation={startPick}
+      onToast={say}
+      onLightbox={(src, caption) => setLightbox({ src, caption })}
+      onScene={onScene}
+      onPanels={onPanels}
     />
   );
 
   const rm = reducedMotion();
-  const cardMotion = mobile
-    ? { initial: { y: '100%' }, animate: { y: 0 }, exit: { y: '100%' } }
-    : {
-        initial: { opacity: 0, scale: 0.18 },
-        animate: { opacity: 1, scale: 1 },
-        exit: { opacity: 0, scale: 0.18 },
-      };
 
   const foot = (
     <div className="panel-foot">
@@ -371,9 +445,9 @@ export default function App() {
   const step = storyStep != null ? story[storyStep] : null;
 
   return (
-    <div className="app">
+    <div className={`app${!mobile && selected && sceneOk ? ' focus' : ''}`}>
       {!mobile && (
-        <aside className="panel" ref={panelEl}>
+        <aside className="panel">
           <header className="panel-head">
             <a className="brand" href="/" aria-label="Московский родник: к списку" onClick={(e) => { e.preventDefault(); if (selected) closeSpring(); }}>
               <span className="mr-logo mr-logo--auto mr-logo--animated" style={{ ["--logo-width" as string]: "44px" }} aria-hidden="true" />
@@ -381,33 +455,29 @@ export default function App() {
             </a>
             {userBtn}
           </header>
-          <div className="panel-body">
-            <AnimatePresence mode="wait" initial={false}>
-              {selected ? (
-                <motion.div
-                  key="card"
-                  {...cardMotion}
-                  style={{ transformOrigin: `${origin.current.x}px ${origin.current.y}px` }}
-                  transition={{ duration: rm ? 0 : 0.42, ease: [0.2, 0.8, 0.2, 1] }}
-                >
-                  {card}
-                </motion.div>
-              ) : (
-                <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                  transition={{ duration: rm ? 0 : 0.2 }}>
-                  {filterView}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          {/* Карточка родника на широком экране не в панели, а в 3D над родником на карте.
+              Если WebGL-сцена не загрузилась, карточка остаётся в панели, как запасной вариант. */}
+          <div className="panel-body">{selected && !sceneOk ? card : filterView}</div>
           {foot}
-          {thaw > 0 && selected && !rm && <div key={thaw} className="frost-overlay" aria-hidden="true" />}
         </aside>
       )}
 
       <div className="map-wrap">
         <div ref={mapEl} className="map" role="application" aria-label="Карта родников Москвы" />
+        <div className="haze" aria-hidden="true" />
         <Snow zoomRef={zoomRef} halved={!!selected} />
+        {stage}
+        {!mobile && selected && sceneOk && (
+          <button className="focus-back" onClick={closeSpring}>
+            <span className="mr-logo mr-logo--auto mr-logo--animated" style={{ ['--logo-width' as string]: '30px' }} aria-hidden="true" />
+            <span>Все родники</span>
+          </button>
+        )}
+        {intro && (
+          <div className={`intro${ready && features.length ? ' go' : ''}`} aria-hidden="true">
+            <span className="mr-logo mr-logo--auto mr-logo--animated" style={{ ['--logo-width' as string]: '72px' }} />
+          </div>
+        )}
         {loadError && <div className="map-error" role="alert"><p>{loadError}</p></div>}
 
         {pick && (

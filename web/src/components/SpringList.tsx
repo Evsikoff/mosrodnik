@@ -28,17 +28,23 @@ export function Summary({ shown, total, features }: { shown: number; total: numb
 
 interface Props {
   features: SpringFeature[];
+  selected?: string | null;
   onOpen(slug: string): void;
+  onHover?(slug: string | null): void;
 }
 
-export default function SpringList({ features, onOpen }: Props) {
+export default function SpringList({ features, selected, onOpen, onHover }: Props) {
   return (
     <ul className="list">
       {features.map((f) => {
         const p = f.properties;
         return (
           <li key={p.slug}>
-            <button className="row" onClick={() => onOpen(p.slug)}>
+            <button
+              className="row" onClick={() => onOpen(p.slug)} aria-current={p.slug === selected ? 'true' : undefined}
+              onMouseEnter={() => onHover?.(p.slug)} onMouseLeave={() => onHover?.(null)}
+              onFocus={() => onHover?.(p.slug)} onBlur={() => onHover?.(null)}
+            >
               <img className="mk" src={SHAPE[p.status]} alt="" />
               <span>
                 <span className="t">{springTitle(p)}</span>
