@@ -68,8 +68,8 @@ export default function FilterPanel({ all, filters, mine, onChange }: Props) {
 
   return (
     <div className="filters">
-      {group('Результат анализа', 'status', STATUS_OPTIONS, SHAPE)}
-      {group('Давность анализа', 'age', AGE_OPTIONS)}
+      {group('Что показал химический анализ', 'status', STATUS_OPTIONS, SHAPE)}
+      {group('Когда последний раз брали пробу', 'age', AGE_OPTIONS)}
       {group('Состояние по отметкам жителей', 'flow', FLOW_OPTIONS, STATE)}
       {group('Округ', 'adm', ADM_OPTIONS)}
       <div className="chips">

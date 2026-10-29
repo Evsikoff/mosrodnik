@@ -3,14 +3,14 @@ import type { Filters, SpringFeature } from './types';
 export const EMPTY_FILTERS: Filters = { status: [], age: [], flow: [], adm: [], photo: false, mine: false, q: '' };
 
 export const STATUS_OPTIONS = [
-  { id: 'exceed', label: 'Превышения' },
+  { id: 'exceed', label: 'Есть превышения' },
   { id: 'ok', label: 'Превышений нет' },
-  { id: 'not_sampled', label: 'Не проверялся' },
+  { id: 'not_sampled', label: 'Пробы не брали' },
 ];
 export const AGE_OPTIONS = [
-  { id: '2025', label: '2025 год' },
-  { id: 'old', label: '2017–2024' },
-  { id: 'never', label: 'Ни разу' },
+  { id: '2025', label: 'В 2025 году' },
+  { id: 'old', label: 'В 2017–2024' },
+  { id: 'never', label: 'Никогда' },
 ];
 export const FLOW_OPTIONS = [
   { id: 'flowing', label: 'Течёт' },

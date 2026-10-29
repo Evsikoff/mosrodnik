@@ -16,7 +16,7 @@ data/hidden
 web/public/vendor
 *.log
 data/users/*
-!data/users/sample.json
+!data/users/sample*.json
 data/observations/*
 !data/observations/sample-*.json
 data/photos/*

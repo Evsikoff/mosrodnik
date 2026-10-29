@@ -1,0 +1,12 @@
+{
+  "id": "sample-obs-40",
+  "spring_id": "НАО-104",
+  "user_id": "sample-user-02",
+  "kind": "cleanliness",
+  "value": "clean",
+  "comment": "Образец: вокруг чисто.",
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "created_at": "2026-10-25T09:00:00.000Z"
+}
