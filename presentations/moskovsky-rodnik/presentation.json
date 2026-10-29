@@ -10,7 +10,7 @@
     "height": 1080
   },
   "audience": "Экологические проекты, городские специалисты, потенциальные участники пилота",
-  "estimated_total_seconds": 160,
+  "estimated_total_seconds": 173,
   "timing_policy": "Финальную длительность каждого слайда определить по соответствующему WAV после получения озвучки. Сейчас длительности ориентировочные.",
   "image_generation": {
     "provider": "Google Gemini API",
@@ -27,7 +27,7 @@
     "voiceover_directory": "presentations/moskovsky-rodnik/audio/voiceover",
     "music_directory": "presentations/moskovsky-rodnik/audio/music",
     "preview_file": "presentations/moskovsky-rodnik/preview.html",
-    "powerpoint_file": "presentations/moskovsky-rodnik/outputs/moskovsky-rodnik.pptx",
+    "powerpoint_file": "presentations/moskovsky-rodnik/outputs/moskovsky-rodnik-v2.pptx",
     "contact_sheet_file": "presentations/moskovsky-rodnik/contact-sheet.jpg"
   },
   "voiceover": {
@@ -52,7 +52,7 @@
   },
   "facts": {
     "source": "data/source/springs.geojson",
-    "source_description": "Снимок открытого набора data.mos.ru № 2454 от 17.04.2026, сохранённый в репозитории",
+    "source_description": "Сохранённый снимок от 17.04.2026 набора № 2454 «Состояние родников (за исключением микробиологических показателей качества воды)» портала открытых данных Правительства Москвы. Поставщик данных: Департамент природопользования и охраны окружающей среды города Москвы. Приложение получает базовые данные через интеграцию по API с порталом data.mos.ru",
     "springs_total": 258,
     "never_sampled": 69,
     "coordinate_drift_over_100m": 8,
@@ -62,7 +62,19 @@
       "Сгенерированные отзывы и фото являются образцами. Они не подтверждают участие реальных жителей.",
       "Процентные доли мнений пока представлены только концептом и не заявляются как реализованная возможность.",
       "Пилот, проверка сигналов специалистами и улучшение работы с противоречиями являются следующими шагами."
-    ]
+    ],
+    "portal_name": "Портал открытых данных Правительства Москвы",
+    "portal_url": "https://data.mos.ru/",
+    "dataset_id": 2454,
+    "dataset_title": "Состояние родников (за исключением микробиологических показателей качества воды)",
+    "dataset_url": "https://data.mos.ru/opendata/2454",
+    "provider_name": "Департамент природопользования и охраны окружающей среды города Москвы",
+    "integration": {
+      "method": "API",
+      "endpoint": "https://apidata.mos.ru/v1/datasets/2454",
+      "implementation": "server/src/sync/datamos.ts",
+      "refresh": "При старте и затем раз в сутки при наличии ключа DATAMOS_API_KEY. При ошибке приложение использует последний сохранённый снимок."
+    }
   },
   "slides": [
     {
@@ -80,35 +92,38 @@
         "web/public/illustrations/hero/hero-winter-ravine.webp"
       ],
       "image_file": "presentations/moskovsky-rodnik/slides/slide-01.png",
-      "speaker_text": "В Москве есть родники, к которым люди приходят на прогулке или по привычному маршруту. Но понять, что происходит у конкретного источника сейчас, бывает непросто. «Московский родник» соединяет открытые городские данные и наблюдения посетителей. На одной карте собраны двести пятьдесят восемь родников Москвы.",
+      "speaker_text": "В Москве есть родники, к которым люди приходят на прогулке или по привычному маршруту. Но понять, что происходит у конкретного источника сейчас, бывает непросто. «Московский родник» объединяет базовые данные портала открытых данных Правительства Москвы и наблюдения посетителей. На одной карте собраны двести пятьдесят восемь родников Москвы.",
       "audio_filename": "slide-01.wav",
       "audio_directory": "presentations/moskovsky-rodnik/audio/voiceover",
       "audio_path": "presentations/moskovsky-rodnik/audio/voiceover/slide-01.wav",
-      "estimated_duration_seconds": 25,
+      "estimated_duration_seconds": 28,
       "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nDesign a striking minimal cover. Left half: very large two-line title «Московский родник», below it the line «Открытые данные и наблюдения жителей». Small supporting line «258 родников Москвы» near the bottom left. Right half: a beautiful restrained editorial illustration of a small woodland spring in a Moscow ravine in cold weather, a modest pipe, a thin stream, bare birch trees, subtle mist and frost. Use the supplied winter-ravine artwork only as visual inspiration for the atmosphere, not as evidence of a real place. Smooth transition from deep dusk navy behind the type to the icy wooded scene, generous breathing room, subtle contour lines. Text in warm paper and pale ice. No other text. This is the cover of a coherent six-slide project pitch, not a tourism advertisement.\n\nRequired visible text, copied verbatim:\n\"Московский родник\"\n\"Открытые данные и наблюдения жителей\"\n\"258 родников Москвы\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text."
     },
     {
       "number": 2,
       "id": "02-problem",
-      "title": "Что известно о родниках",
-      "purpose": "Показать пробелы в сохранённых официальных данных",
+      "title": "Интеграция с открытыми данными Москвы",
+      "purpose": "Явно показать интеграцию с порталом Правительства Москвы, конкретный набор и его поставщика",
       "visible_text": [
-        "Что известно о родниках",
-        "69",
-        "родников без единой пробы в истории набора",
-        "8",
-        "родников со смещением координат между годами более 100 м",
-        "Источник: data.mos.ru № 2454. Снимок 17.04.2026"
+        "Интеграция с открытыми данными Москвы",
+        "Портал открытых данных Правительства Москвы",
+        "data.mos.ru",
+        "Интеграция по API",
+        "Набор № 2454 «Состояние родников»",
+        "Поставщик набора данных",
+        "Департамент природопользования и охраны окружающей среды города Москвы",
+        "258 родников",
+        "Снимок данных: 17.04.2026"
       ],
-      "image_prompt": "A paper-light editorial data slide, warm paper background with extremely subtle topographic contours. Exact headline at upper left: «Что известно о родниках». Two large typographic facts in an airy asymmetrical composition: huge ink «69» with caption «родников без единой пробы в истории набора» occupying the left center; smaller but prominent ochre «8» with caption «родников со смещением координат между годами более 100 м» on the right. Use a restrained generated detail of a map pin and a faint old field-notebook page as visual texture, never a fake geographic map. The numerals and captions are the visual focus. Bottom source line exactly «Источник: data.mos.ru № 2454. Снимок 17.04.2026». No invented percentages, charts, additional numbers or text. Copy every Russian string exactly and do not confuse lack of a historical sample with a current safety diagnosis.",
+      "image_prompt": "Revise only the source-data slide in the established warm paper, ink and ice-blue editorial presentation style. Exact headline: «Интеграция с открытыми данными Москвы». This slide must EXPLICITLY communicate that the project obtains its baseline data by API integration with the Moscow Government Open Data Portal and identify the dataset provider in full. Use a clear readable left-to-right composition, with a very restrained generated translucent data-connection motif on the right, not a fake website screenshot. Near the top-left below the headline, display «Портал открытых данных Правительства Москвы» with «data.mos.ru» and the compact label «Интеграция по API». Next display the exact dataset line «Набор № 2454 «Состояние родников»». In a prominent lower-left text group, display «Поставщик набора данных» and then the FULL department name, wrapping into three readable lines: «Департамент природопользования», «и охраны окружающей среды», «города Москвы». This department credit is essential main content, not a tiny footnote. Do not abbreviate or alter it. On the right use one large numeric accent «258 родников» and a delicate abstract frosted-glass data-to-map illustration. At the bottom display «Снимок данных: 17.04.2026». Use only the supplied text, perfectly spelled Cyrillic. At least 42px for the provider name at full HD. No other numbers, no diagrams with invented statistics, no partnership claims, no government emblems, no invented official website UI. Do not include the previous slide statistics 69 or 8; keep this slide focused on the real integration and dataset provenance.",
       "reference_images": [],
       "image_file": "presentations/moskovsky-rodnik/slides/slide-02.png",
-      "speaker_text": "В сохранённом снимке открытой базы у шестидесяти девяти родников нет ни одной пробы за всю доступную историю. У восьми координаты в разные годы расходятся больше чем на сто метров. При этом анализ воды не рассказывает, открыт ли подход и течёт ли источник сегодня. Для этого нужны наблюдения на месте.",
+      "speaker_text": "Базовые данные приложение получает через интеграцию по API с порталом открытых данных Правительства Москвы. Мы используем набор «Состояние родников», который предоставляет Департамент природопользования и охраны окружающей среды города Москвы. Он охватывает двести пятьдесят восемь источников. В сохранённом снимке у шестидесяти девяти нет проб за всю доступную историю, а у восьми координаты между годами расходятся больше чем на сто метров.",
       "audio_filename": "slide-02.wav",
       "audio_directory": "presentations/moskovsky-rodnik/audio/voiceover",
       "audio_path": "presentations/moskovsky-rodnik/audio/voiceover/slide-02.wav",
-      "estimated_duration_seconds": 28,
-      "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nA paper-light editorial data slide, warm paper background with extremely subtle topographic contours. Exact headline at upper left: «Что известно о родниках». Two large typographic facts in an airy asymmetrical composition: huge ink «69» with caption «родников без единой пробы в истории набора» occupying the left center; smaller but prominent ochre «8» with caption «родников со смещением координат между годами более 100 м» on the right. Use a restrained generated detail of a map pin and a faint old field-notebook page as visual texture, never a fake geographic map. The numerals and captions are the visual focus. Bottom source line exactly «Источник: data.mos.ru № 2454. Снимок 17.04.2026». No invented percentages, charts, additional numbers or text. Copy every Russian string exactly and do not confuse lack of a historical sample with a current safety diagnosis.\n\nRequired visible text, copied verbatim:\n\"Что известно о родниках\"\n\"69\"\n\"родников без единой пробы в истории набора\"\n\"8\"\n\"родников со смещением координат между годами более 100 м\"\n\"Источник: data.mos.ru № 2454. Снимок 17.04.2026\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text."
+      "estimated_duration_seconds": 38,
+      "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nRevise only the source-data slide in the established warm paper, ink and ice-blue editorial presentation style. Exact headline: «Интеграция с открытыми данными Москвы». This slide must EXPLICITLY communicate that the project obtains its baseline data by API integration with the Moscow Government Open Data Portal and identify the dataset provider in full. Use a clear readable left-to-right composition, with a very restrained generated translucent data-connection motif on the right, not a fake website screenshot. Near the top-left below the headline, display «Портал открытых данных Правительства Москвы» with «data.mos.ru» and the compact label «Интеграция по API». Next display the exact dataset line «Набор № 2454 «Состояние родников»». In a prominent lower-left text group, display «Поставщик набора данных» and then the FULL department name, wrapping into three readable lines: «Департамент природопользования», «и охраны окружающей среды», «города Москвы». This department credit is essential main content, not a tiny footnote. Do not abbreviate or alter it. On the right use one large numeric accent «258 родников» and a delicate abstract frosted-glass data-to-map illustration. At the bottom display «Снимок данных: 17.04.2026». Use only the supplied text, perfectly spelled Cyrillic. At least 42px for the provider name at full HD. No other numbers, no diagrams with invented statistics, no partnership claims, no government emblems, no invented official website UI. Do not include the previous slide statistics 69 or 8; keep this slide focused on the real integration and dataset provenance.\n\nRequired visible text, copied verbatim:\n\"Интеграция с открытыми данными Москвы\"\n\"Портал открытых данных Правительства Москвы\"\n\"data.mos.ru\"\n\"Интеграция по API\"\n\"Набор № 2454 «Состояние родников»\"\n\"Поставщик набора данных\"\n\"Департамент природопользования и охраны окружающей среды города Москвы\"\n\"258 родников\"\n\"Снимок данных: 17.04.2026\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text."
     },
     {
       "number": 3,
@@ -204,5 +219,16 @@
       "estimated_duration_seconds": 29,
       "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nCreate a memorable closing slide that visually echoes the cover without repeating the cover image. Warm paper field with ink title «От карты к городскому мониторингу». On the right a delicate original isometric environmental miniature: a small wooded ravine spring and a few understated urban blocks, linked by subtle water-like contour lines, representing a future civic monitoring workflow. This is a clearly stylized illustration, not a geographic map. On the left two large clear audience labels «Жителям» with caption «Понятная информация о роднике», and «Городу» with caption «Наблюдения для планирования проверок». Give the exact final line prominent bottom placement: «Следующий шаг: пилот с жителями и экологами». An optimistic restrained light-blue accent, generous negative space, one strong visual. No claims of existing city contracts, no fabricated adoption figures, no partner logos, no website URL or QR code, no unrequested thank-you footer or extra text.\n\nRequired visible text, copied verbatim:\n\"От карты к городскому мониторингу\"\n\"Жителям\"\n\"Понятная информация о роднике\"\n\"Городу\"\n\"Наблюдения для планирования проверок\"\n\"Следующий шаг: пилот с жителями и экологами\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text."
     }
-  ]
+  ],
+  "revision": {
+    "version": 2,
+    "change": "Явно указаны интеграция с порталом открытых данных Правительства Москвы, набор № 2454 и полное название поставщика данных.",
+    "updated_slide_numbers": [
+      2
+    ],
+    "updated_speaker_slide_numbers": [
+      1,
+      2
+    ]
+  }
 }

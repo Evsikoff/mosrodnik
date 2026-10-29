@@ -45,52 +45,6 @@
       "serviceTier": "standard"
     }
   },
-  "02-problem": {
-    "status": "generated",
-    "provider": "Google Gemini API",
-    "model": "gemini-3-pro-image",
-    "generated_at": "2026-10-29T19:38:51.867Z",
-    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nA paper-light editorial data slide, warm paper background with extremely subtle topographic contours. Exact headline at upper left: «Что известно о родниках». Two large typographic facts in an airy asymmetrical composition: huge ink «69» with caption «родников без единой пробы в истории набора» occupying the left center; smaller but prominent ochre «8» with caption «родников со смещением координат между годами более 100 м» on the right. Use a restrained generated detail of a map pin and a faint old field-notebook page as visual texture, never a fake geographic map. The numerals and captions are the visual focus. Bottom source line exactly «Источник: data.mos.ru № 2454. Снимок 17.04.2026». No invented percentages, charts, additional numbers or text. Copy every Russian string exactly and do not confuse lack of a historical sample with a current safety diagnosis.\n\nRequired visible text, copied verbatim:\n\"Что известно о родниках\"\n\"69\"\n\"родников без единой пробы в истории набора\"\n\"8\"\n\"родников со смещением координат между годами более 100 м\"\n\"Источник: data.mos.ru № 2454. Снимок 17.04.2026\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
-    "references": [
-      "presentations/moskovsky-rodnik/slides/slide-01.png"
-    ],
-    "original_file": "presentations/moskovsky-rodnik/sources/slide-02.jpg",
-    "original_sha256": "11abf1335fb732c35d266d71185780bc048401ca945f5f39dfac061699e276ad",
-    "original_size": [
-      2752,
-      1536
-    ],
-    "output_file": "presentations/moskovsky-rodnik/slides/slide-02.png",
-    "output_sha256": "2417895ac4c98c14b165b1aaca60862ced0e9558435192385853e6970189cab4",
-    "output_size": [
-      1920,
-      1080
-    ],
-    "response_id": "sKDjavD_PIOzkdUPh_qV6QI",
-    "usage": {
-      "promptTokenCount": 903,
-      "candidatesTokenCount": 1503,
-      "totalTokenCount": 2835,
-      "promptTokensDetails": [
-        {
-          "modality": "TEXT",
-          "tokenCount": 645
-        },
-        {
-          "modality": "IMAGE",
-          "tokenCount": 258
-        }
-      ],
-      "candidatesTokensDetails": [
-        {
-          "modality": "IMAGE",
-          "tokenCount": 1120
-        }
-      ],
-      "thoughtsTokenCount": 429,
-      "serviceTier": "standard"
-    }
-  },
   "03-product": {
     "status": "generated",
     "provider": "Google Gemini API",
@@ -296,5 +250,52 @@
       "thoughtsTokenCount": 287,
       "serviceTier": "standard"
     }
+  },
+  "02-problem": {
+    "status": "generated",
+    "provider": "Google Gemini API",
+    "model": "gemini-3-pro-image",
+    "generated_at": "2026-10-29T20:17:55.804Z",
+    "prompt": "Create ONE complete finished 16:9 presentation slide, not a photo of a slide and not a collage of several slides. Russian Cyrillic typography must be flawless and every supplied text string must be copied exactly. Use a contemporary environmental editorial visual system: warm paper #F3F1EC, deep ink #1F2A3A, pale ice blue #9FC3D6, frost #E3EEF3, dusk #2C3A52, restrained ochre #C8964A. Large clean Golos Text-like Cyrillic sans serif, calm asymmetrical layouts, generous negative space, delicate topographic contours, tactile frosted glass and small water reflections where meaningful. Flat editorial composition, no repetitive grids of rounded cards. Headline roughly 72-110 px at 1920x1080, body 32-44 px, notes at least 24 px. All text stays within a 100 px safe margin. Keep the same type family and restrained art direction across all six slides. No emojis, water purity claims, official government emblems, award badges, fabricated testimonials or adoption metrics. Generated nature imagery is illustrative, not evidence of a real named spring. Where an actual app screenshot is supplied, preserve its interface and its sample labels. Use only the specified visible text, plus unavoidable existing screenshot labels. No extra English labels, arbitrary subtitles, numbered chapter kickers or footers. Render the slide full bleed and ready for projection.\n\nRevise only the source-data slide in the established warm paper, ink and ice-blue editorial presentation style. Exact headline: «Интеграция с открытыми данными Москвы». This slide must EXPLICITLY communicate that the project obtains its baseline data by API integration with the Moscow Government Open Data Portal and identify the dataset provider in full. Use a clear readable left-to-right composition, with a very restrained generated translucent data-connection motif on the right, not a fake website screenshot. Near the top-left below the headline, display «Портал открытых данных Правительства Москвы» with «data.mos.ru» and the compact label «Интеграция по API». Next display the exact dataset line «Набор № 2454 «Состояние родников»». In a prominent lower-left text group, display «Поставщик набора данных» and then the FULL department name, wrapping into three readable lines: «Департамент природопользования», «и охраны окружающей среды», «города Москвы». This department credit is essential main content, not a tiny footnote. Do not abbreviate or alter it. On the right use one large numeric accent «258 родников» and a delicate abstract frosted-glass data-to-map illustration. At the bottom display «Снимок данных: 17.04.2026». Use only the supplied text, perfectly spelled Cyrillic. At least 42px for the provider name at full HD. No other numbers, no diagrams with invented statistics, no partnership claims, no government emblems, no invented official website UI. Do not include the previous slide statistics 69 or 8; keep this slide focused on the real integration and dataset provenance.\n\nRequired visible text, copied verbatim:\n\"Интеграция с открытыми данными Москвы\"\n\"Портал открытых данных Правительства Москвы\"\n\"data.mos.ru\"\n\"Интеграция по API\"\n\"Набор № 2454 «Состояние родников»\"\n\"Поставщик набора данных\"\n\"Департамент природопользования и охраны окружающей среды города Москвы\"\n\"258 родников\"\n\"Снимок данных: 17.04.2026\"\nBefore rendering, carefully check every Cyrillic letter, word ending and number. Never truncate or silently paraphrase Russian text.",
+    "references": [
+      "presentations/moskovsky-rodnik/slides/slide-01.png"
+    ],
+    "original_file": "presentations/moskovsky-rodnik/sources/slide-02.jpg",
+    "original_sha256": "8686a5589d9ba241ecd1c8467328605c7f337d06302a69cc4b62ec8eff7c36c3",
+    "original_size": [
+      2752,
+      1536
+    ],
+    "output_file": "presentations/moskovsky-rodnik/slides/slide-02.png",
+    "output_sha256": "be35ea65f7d3323cf8604b7f73ff04552ae85aaef2b433f66167c050e9c071ea",
+    "output_size": [
+      1920,
+      1080
+    ],
+    "response_id": "26njapOCOPq-nsEPrdmg-Q4",
+    "usage": {
+      "promptTokenCount": 1098,
+      "candidatesTokenCount": 1544,
+      "totalTokenCount": 3033,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 840
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 258
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1120
+        }
+      ],
+      "thoughtsTokenCount": 391,
+      "serviceTier": "standard"
+    },
+    "previous_revisions": []
   }
 }
