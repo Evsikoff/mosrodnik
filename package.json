@@ -16,7 +16,7 @@
     "start": "node server/dist/index.js",
     "test": "npm run test -w server",
     "lint": "node scripts/lint-no-emoji.mjs && npm run typecheck -w server && npm run typecheck -w web",
-    "sync": "tsx server/scripts/run-sync.ts"
+    "sync": "tsx --env-file-if-exists=.env.local server/scripts/run-sync.ts"
   },
   "devDependencies": {
     "concurrently": "^9.2.5"
