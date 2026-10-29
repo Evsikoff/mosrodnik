@@ -124,4 +124,31 @@ describe('API', () => {
     expect((await call('GET', '/api/health')).json().status).toBe('ok');
     expect((await call('GET', '/api/export/springs.geojson')).json().features).toHaveLength(258);
   });
+
+  it('подписка: следить, список, отмена', async () => {
+    expect((await call('PUT', '/api/springs/zao-8/subscription', {})).json().subscribed).toBe(true);
+    const list = (await call('GET', '/api/me/subscriptions')).json().subscriptions;
+    expect(list.map((x: any) => x.slug)).toContain('zao-8');
+    expect((await call('GET', '/api/springs/zao-8')).json().subscribed).toBe(true);
+    expect((await call('DELETE', '/api/springs/zao-8/subscription')).json().subscribed).toBe(false);
+  });
+
+  it('скрытая админом отметка пропадает из агрегатов и ленты', async () => {
+    const created = (await call('POST', '/api/springs/zao-8/observations', { kind: 'flow', value: 'dry' })).json();
+    const id = created.observation.id;
+    expect((await call('GET', '/api/springs/zao-8')).json().aggregate.user_flow).toBe('dry');
+    const res = await call('POST', '/api/admin/hide', { entity: 'observations', id }, { 'x-admin-token': 'test-admin' });
+    expect(res.statusCode).toBe(200);
+    const d = (await call('GET', '/api/springs/zao-8')).json();
+    expect(d.aggregate.user_flow).toBe('unknown');
+    expect(d.observations.some((o: any) => o.id === id)).toBe(false);
+  });
+
+  it('лимит: не больше 30 отметок в час', async () => {
+    let last = 201;
+    for (let i = 0; i < 40 && last === 201; i++) {
+      last = (await call('POST', '/api/springs/zao-8/observations', { kind: 'visit', value: 'visited' })).statusCode;
+    }
+    expect(last).toBe(429);
+  });
 });

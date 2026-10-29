@@ -3,6 +3,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    env: { WEB_PUBLIC: path.resolve(import.meta.dirname, '../web/public'), NODE_ENV: 'test' },
+    env: { WEB_PUBLIC: path.resolve(import.meta.dirname, '../web/public'), NODE_ENV: 'test', ADMIN_TOKEN: 'test-admin' },
   },
 });

@@ -48,7 +48,9 @@ export class Database {
       const target = path.join(this.dir, entity);
       const exists = await fs.stat(target).then(() => true, () => false);
       if (exists) continue;
-      await fs.cp(path.join(seedDir, entity), target, { recursive: true }).catch(() => {});
+      // из образа берём только образцы: рабочие записи разработчика на прод не попадают
+      const onlySamples = (src: string) => entity === 'source' || !path.extname(src) || path.basename(src).startsWith('sample');
+      await fs.cp(path.join(seedDir, entity), target, { recursive: true, filter: onlySamples }).catch(() => {});
     }
   }
 

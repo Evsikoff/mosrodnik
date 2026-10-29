@@ -158,11 +158,56 @@ export class MapController {
       paint: fade,
     });
 
+    void this.addWaterways();
     this.bindEvents();
     this.loaded = true;
     this.applyVisibility(this.visible, false);
     this.setSelected(this.selected);
     this.h.onReady();
+  }
+
+  /** Течение рек: бегущий пунктир по направлению линии, только на средних зумах. */
+  private async addWaterways() {
+    const map = this.map;
+    let data: any;
+    try {
+      data = await (await fetch('/api/waterways')).json();
+    } catch {
+      return;
+    }
+    if (!data?.features?.length || !map.getLayer('springs-glow')) return;
+    map.addSource('waterways', { type: 'geojson', data });
+    const pal = paletteFor(this.theme, readTokens());
+    map.addLayer(
+      {
+        id: 'waterways-flow', type: 'line', source: 'waterways', minzoom: 9, maxzoom: 14.5,
+        layout: { 'line-cap': 'butt' },
+        paint: {
+          'line-color': pal.waterLine, 'line-opacity': 0.85, 'line-dasharray': [0, 4, 3],
+          'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 3],
+        },
+      },
+      'springs-glow',
+    );
+    if (this.rm) return;
+    const seq = [
+      [0, 4, 3], [0.5, 4, 2.5], [1, 4, 2], [1.5, 4, 1.5], [2, 4, 1], [2.5, 4, 0.5], [3, 4, 0],
+      [0, 0.5, 3, 3.5], [0, 1, 3, 3], [0, 1.5, 3, 2.5], [0, 2, 3, 2], [0, 2.5, 3, 1.5], [0, 3, 3, 1], [0, 3.5, 3, 0.5],
+    ];
+    let step = -1;
+    let last = 0;
+    const tick = (now: number) => {
+      requestAnimationFrame(tick);
+      if (document.hidden || this.rm || now - last < 90) return;
+      const z = map.getZoom();
+      if (z < 9 || z > 14.5) return;
+      last = now;
+      const next = Math.floor(now / 90) % seq.length;
+      if (next === step) return;
+      step = next;
+      map.setPaintProperty('waterways-flow', 'line-dasharray', seq[step]);
+    };
+    requestAnimationFrame(tick);
   }
 
   private bindEvents() {

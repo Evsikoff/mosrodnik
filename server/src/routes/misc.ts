@@ -1,4 +1,6 @@
 import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import type { Ctx } from '../app.js';
@@ -56,6 +58,17 @@ export function registerMiscRoutes(app: FastifyInstance, { db }: Ctx) {
         return { ...f, properties: { ...f.properties, history: s.history } };
       }),
     };
+  });
+
+  // Реки и ручьи для анимации течения (одноразовая выгрузка OSM, см. scripts/fetch-waterways.ts)
+  let waterways: string | null = null;
+  app.get('/api/waterways', async (_req, reply) => {
+    if (waterways === null) {
+      waterways = await fs.readFile(path.join(db.dir, 'source', 'waterways.geojson'), 'utf8')
+        .catch(() => JSON.stringify({ type: 'FeatureCollection', features: [] }));
+    }
+    reply.header('Content-Type', 'application/geo+json; charset=utf-8').header('Cache-Control', 'public, max-age=86400');
+    return reply.send(waterways);
   });
 
   app.post('/api/admin/hide', async (req) => {
