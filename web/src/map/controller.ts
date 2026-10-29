@@ -10,6 +10,9 @@ maplibregl.setWorkerUrl('/vendor/maplibre/maplibre-gl-worker.mjs');
 export const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const MARKER_MIN_ZOOM = 11;
+/** Если в выборке не больше стольких родников, кластеры не нужны: маркеры видны на любом зуме. */
+const CLUSTER_THRESHOLD = 60;
+const MARKER_LAYERS = ['springs-glow', 'springs-pulse', 'springs-halo', 'springs-frost', 'springs-shape', 'springs-state'];
 const SRC = 'springs';
 const SRC_CLUSTER = 'springs-cluster';
 const IMAGES = [
@@ -30,6 +33,7 @@ export interface MapHandlers {
 /** Размер маркера: интерполяция по зуму, внутри каждого значения множитель sz (анимация появления). */
 const sized = (a: number, b: number): any => [
   'interpolate', ['linear'], ['zoom'],
+  8, ['*', a * 0.7, ['get', 'sz']],
   MARKER_MIN_ZOOM, ['*', a, ['get', 'sz']],
   16, ['*', b, ['get', 'sz']],
 ];
@@ -278,6 +282,7 @@ export class MapController {
       this.map.setFeatureState({ source: SRC, id: s }, { hidden: !now });
     }
     (this.map.getSource(SRC_CLUSTER) as GeoJSONSource).setData(this.collection(true));
+    this.updateClusterMode();
     this.map.setPaintProperty('springs-glow', 'circle-opacity-transition', { duration: this.rm ? 0 : 300 });
     for (const id of ['springs-halo', 'springs-frost', 'springs-shape', 'springs-state', 'springs-pulse']) {
       this.map.setPaintProperty(id, 'icon-opacity-transition', { duration: this.rm || !animate ? 0 : 300 });
@@ -287,6 +292,14 @@ export class MapController {
       return;
     }
     this.animateSizes(leaving, entering);
+  }
+
+  private updateClusterMode() {
+    const clustered = this.visible.size > CLUSTER_THRESHOLD;
+    for (const id of MARKER_LAYERS) this.map.setLayerZoomRange(id, clustered ? (id === 'springs-halo' ? MARKER_MIN_ZOOM - 1 : MARKER_MIN_ZOOM) : 0, 24);
+    for (const id of ['cluster-circle', 'cluster-count']) {
+      this.map.setLayoutProperty(id, 'visibility', clustered ? 'visible' : 'none');
+    }
   }
 
   private animateSizes(leaving: string[], entering: string[]) {
