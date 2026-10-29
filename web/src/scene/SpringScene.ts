@@ -58,6 +58,9 @@ const ZERO: V3 = [0, 0, 0];
 const UP: V3 = [0, 0, 1];
 const GROUND_MS = 900;
 const CLOSE_MS = 430;
+// Разные пороги не дают конструкции открываться и закрываться от мелких колебаний масштаба.
+const FOLD_ZOOM = 15.8;
+const UNFOLD_ZOOM = 16;
 const MAX_ORBIT = 30;
 
 const rnd = (seed: number) => {
@@ -136,6 +139,8 @@ export class SpringScene implements CustomLayerInterface {
   private stageTarget = 0;
   private stageAt = 0;
   private folded = false;
+  private zoomFolded = false;
+  private zoomVisibility = 1;
   private yaw = 0;
   private tilt = 0;
   private fresh = true;
@@ -223,6 +228,8 @@ export class SpringScene implements CustomLayerInterface {
     const same = this.spring?.slug === s.slug && this.groundTarget === 1;
     const now = performance.now();
     if (!same) {
+      this.zoomFolded = this.map.getZoom() < FOLD_ZOOM;
+      this.zoomVisibility = this.zoomFolded ? 0 : 1;
       const m = MercatorCoordinate.fromLngLat([s.lon, s.lat], 0);
       this.origin = { x: m.x, y: m.y };
       this.ground = this.rm ? 1 : 0;
@@ -345,11 +352,13 @@ export class SpringScene implements CustomLayerInterface {
     const dt = Math.min(0.05, (now - this.last) / 1000);
     this.last = now;
     if (!this.spring) return;
+    const zoom = this.map.getZoom();
+    if (zoom < FOLD_ZOOM) this.zoomFolded = true;
+    else if (zoom >= UNFOLD_ZOOM) this.zoomFolded = false;
     this.step(now, dt);
     if (!this.spring) return;
 
     const map = this.map;
-    const zoom = map.getZoom();
     const W = map.getContainer().clientWidth;
     const H = map.getContainer().clientHeight;
     const bearing = map.getBearing() * DEG;
@@ -415,10 +424,11 @@ export class SpringScene implements CustomLayerInterface {
     this.renderer.resetState();
     const cv = map.getCanvas();
     this.renderer.setViewport(0, 0, cv.width, cv.height);
+    this.scene.visible = this.zoomVisibility > 0.001;
     this.renderer.render(this.scene, this.camera);
 
     const animating = this.ground !== this.groundTarget || this.stage !== this.stageTarget || this.dropAt || this.splashAt
-      || Math.abs(this.ringPos - this.ringTarget) > 0.001;
+      || Math.abs(this.ringPos - this.ringTarget) > 0.001 || this.zoomVisibility !== (this.zoomFolded ? 0 : 1);
     if (!document.hidden && (!this.rm || animating)) map.triggerRepaint();
   }
 
@@ -430,7 +440,9 @@ export class SpringScene implements CustomLayerInterface {
     if (this.rm) {
       this.ground = this.groundTarget;
       this.stage = this.stageTarget;
+      this.zoomVisibility = this.zoomFolded ? 0 : 1;
     } else {
+      this.zoomVisibility = towards(this.zoomVisibility, this.zoomFolded ? 0 : 1, this.zoomFolded ? CLOSE_MS : STAGE_MS);
       const closing = this.groundTarget === 0;
       this.ground = towards(this.ground, this.groundTarget, closing ? CLOSE_MS : GROUND_MS);
       if (this.stageTarget === 0 || now >= this.stageAt) {
@@ -590,7 +602,7 @@ export class SpringScene implements CustomLayerInterface {
   }
 
   private layoutStage(F0: Float64Array, toCam: V3, zoom: number) {
-    const q = this.stage;
+    const q = this.stage * this.zoomVisibility;
     const { list, rise, rs, baseZ, totalW, re } = this.frames(q);
 
     const visible = this.mode === 'stage' && q > 0.001;
@@ -653,12 +665,13 @@ export class SpringScene implements CustomLayerInterface {
   // ---------- земля, вода, история ----------
 
   private layoutGround(t: number, now: number) {
-    const g = easeOutCubic(this.ground);
+    const ground = this.ground * this.zoomVisibility;
+    const g = easeOutCubic(ground);
     this.uDisc.uAlpha.value = g;
     this.disc.scale.setScalar(DISC_R * (0.4 + 0.6 * g));
     this.basin.scale.set(15, 15, 15);
     (this.basin.material as THREE.ShaderMaterial).uniforms.uAlpha.value = 0.9 * g;
-    const beamTop = this.mode === 'stage' ? Math.max(40, BASE_Z * Math.pow(easeOutCubic(this.stage / 0.35), 0.8)) : 64;
+    const beamTop = this.mode === 'stage' ? Math.max(40, BASE_Z * Math.pow(easeOutCubic(this.stage * this.zoomVisibility / 0.35), 0.8)) : 64;
     this.beam.scale.set(7, 7, beamTop * g);
     this.uBeam.uAlpha.value = g;
 
@@ -682,14 +695,14 @@ export class SpringScene implements CustomLayerInterface {
 
     // иней по давности данных
     if (this.frostSpikes) {
-      this.frostSpikes.scale.set(1, 1, easeOutBack(this.ground));
+      this.frostSpikes.scale.set(1, 1, easeOutBack(ground));
       (this.frostSpikes.material as THREE.ShaderMaterial).uniforms.uAlpha.value = 0.85 * g;
     }
 
     // кристаллы истории
     const span = this.hist.length;
     this.hist.forEach((h, i) => {
-      const a = this.rm ? 1 : easeOutBack((this.ground * (1 + span * 0.12) - h.delay));
+      const a = this.rm ? 1 : easeOutBack((ground * (1 + span * 0.12) - h.delay));
       h.group.scale.setScalar(Math.max(0.0001, a) * (h.latest ? 1.3 : 1));
       h.crystal.rotation.z = t * (0.6 + (i % 3) * 0.15);
       h.label.style.opacity = String(clamp01(a) * g);
