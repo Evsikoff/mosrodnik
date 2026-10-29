@@ -550,3 +550,54 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 12px; }
   }
 }
 @keyframes focus-back-in { from { opacity: 0; transform: translateX(-16px); } }
+
+/* ---------- презентация «О проекте» ---------- */
+.deck {
+  position: fixed; inset: 0; z-index: 60; display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; gap: 16px;
+  padding: max(14px, env(safe-area-inset-top)) clamp(14px, 3vw, 40px) max(18px, env(safe-area-inset-bottom));
+  color: var(--snow); background: radial-gradient(120% 90% at 50% 15%, var(--dusk), var(--ink) 72%);
+}
+.deck-top { display: flex; align-items: center; gap: 14px; }
+.deck-bars { flex: 1; display: flex; gap: 6px; }
+.deck-bar { flex: 1; padding: 10px 0; background: none; border: 0; cursor: pointer; }
+.deck-bar span { display: block; height: 4px; border-radius: 2px; overflow: hidden; background: color-mix(in srgb, var(--snow) 22%, transparent); }
+.deck-bar:hover span { background: color-mix(in srgb, var(--snow) 38%, transparent); }
+.deck-bar i { display: block; height: 100%; background: var(--ice); transition: width 0.3s linear; }
+.deck-count { min-width: 3.2em; text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; color: color-mix(in srgb, var(--snow) 70%, transparent); }
+.deck-icon, .deck-ctl {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: var(--snow);
+  background: color-mix(in srgb, var(--snow) 8%, transparent); border: 1px solid color-mix(in srgb, var(--snow) 28%, transparent);
+  transition: background-color 0.2s, transform 0.12s;
+}
+.deck-icon { width: 42px; height: 42px; padding: 0; border-radius: 50%; flex: none; }
+.deck-icon.big { width: 56px; height: 56px; color: var(--ink); background: var(--ice); border-color: var(--ice); }
+.deck-ctl { height: 44px; padding: 0 18px; border-radius: 22px; font-size: 15px; font-weight: 500; }
+.deck-ctl.primary { color: var(--ink); background: var(--ice); border-color: var(--ice); }
+.deck-icon:hover, .deck-ctl:hover { background: color-mix(in srgb, var(--snow) 16%, transparent); }
+.deck-icon.big:hover, .deck-ctl.primary:hover { background: color-mix(in srgb, var(--ice) 82%, var(--snow)); }
+.deck-icon:active, .deck-ctl:active { transform: scale(0.96); }
+.deck-ctl[disabled] { opacity: 0.35; cursor: default; transform: none; }
+.deck :focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+.deck-stage {
+  display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; min-height: 0;
+  touch-action: pan-y; user-select: none;
+}
+.deck-stage > img {
+  grid-area: 1 / 1; max-width: 100%; max-height: 100%; border-radius: 12px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--snow) 12%, transparent), 0 30px 80px color-mix(in srgb, var(--ink) 80%, transparent);
+}
+.deck-text {
+  width: min(100%, 1000px); margin: 0 auto; max-height: 30dvh; overflow-y: auto;
+  font-size: clamp(15px, 0.6vw + 11px, 19px); line-height: 1.55;
+}
+.deck-text span { color: color-mix(in srgb, var(--snow) 42%, transparent); transition: color 0.5s; }
+.deck-text span.past { color: color-mix(in srgb, var(--snow) 66%, transparent); }
+.deck-text span.on { color: var(--snow); }
+.deck-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+@media (max-width: 600px) {
+  .deck { gap: 12px; }
+  .deck-ctl { padding: 0 14px; }
+}
+@media (max-height: 520px) {
+  .deck-text { display: none; }
+}

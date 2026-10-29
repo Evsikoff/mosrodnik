@@ -59,6 +59,18 @@ node presentations/moskovsky-rodnik/scripts/build-pptx.mjs
 в Windows 11. Golos Text не используется: встроенный в pptx шрифт PowerPoint при отрисовке без установленного
 Golos заменяет на Arial. Картинки слайдов: в PowerPoint «Файл — Экспорт — PNG», 1920 × 1080.
 
+## В приложении
+
+Кнопка «О проекте» проигрывает презентацию: слайды, текст докладчика, озвучка и музыка по кругу.
+После изменения слайдов или звука обновите файлы приложения (нужен ffmpeg):
+
+```powershell
+node presentations/moskovsky-rodnik/scripts/publish-web.mjs
+```
+
+Скрипт берёт экспорт слайдов из `slides/` (номер слайда в конце имени файла), `audio/voiceover/*.wav`
+и `audio/music/background.mp3`, а тексты из `presentation.json`. Результат: `web/src/presentation/`.
+
 ## Генерация версии 2
 
 Слайды созданы через Gemini 3 Pro Image (Nano Banana Pro), а не нарисованы программно.

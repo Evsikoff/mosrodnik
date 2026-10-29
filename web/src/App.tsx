@@ -13,7 +13,9 @@ import SpringCard, { SpringStage, type CardScene } from './components/SpringCard
 import type { SceneSpring, StageEls } from './scene/SpringScene';
 import Snow from './components/Snow';
 import Fx, { type FxItem } from './components/Fx';
-import { AboutDialog, Lightbox, NameDialog, PrivacyDialog, Toast } from './components/Dialogs';
+import { Lightbox, NameDialog, PrivacyDialog, Toast } from './components/Dialogs';
+import Presentation, { startDeckAudio } from './components/Presentation';
+import type { DeckAudio } from './presentation/audio';
 import { springTitle } from './labels';
 
 const slugFromPath = () => /^\/spring\/([\w-]+)/.exec(location.pathname)?.[1] ?? null;
@@ -40,7 +42,9 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(slugFromPath());
   const [user, setUser] = useState<User | null>(null);
   const [mine, setMine] = useState<Set<string>>(new Set());
-  const [dialog, setDialog] = useState<null | 'name' | 'about' | 'privacy'>(null);
+  const [dialog, setDialog] = useState<null | 'name' | 'privacy'>(null);
+  /** Звук открытой презентации «О проекте»; null, когда она закрыта. */
+  const [deck, setDeck] = useState<DeckAudio | null>(null);
   const [toast, setToast] = useState('');
   const [lightbox, setLightbox] = useState<{ src: string; caption?: string } | null>(null);
   const [theme, setTheme] = useState<Theme>(() => (FORCED_THEME as Theme) || currentTheme());
@@ -290,11 +294,11 @@ export default function App() {
 
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && selected && !dialog && !lightbox) closeSpring();
+      if (e.key === 'Escape' && selected && !dialog && !lightbox && !deck) closeSpring();
     };
     window.addEventListener('keydown', key);
     return () => window.removeEventListener('keydown', key);
-  }, [selected, dialog, lightbox, closeSpring]);
+  }, [selected, dialog, lightbox, deck, closeSpring]);
 
   // ---------- действия ----------
   const onFeature = (f: SpringFeature) => {
@@ -371,6 +375,16 @@ export default function App() {
     ctl.current?.fit(features.filter((f) => matches(f, filters, mine)), padding());
   };
 
+  // ---------- презентация «О проекте» ----------
+  // Звук стартует прямо в обработчике нажатия: иначе браузер его заблокирует.
+  const openDeck = () => {
+    if (!deck) setDeck(startDeckAudio());
+  };
+  const closeDeck = () => {
+    deck?.stop();
+    setDeck(null);
+  };
+
   // ---------- разметка ----------
   const selectedFeature = selected ? bySlug.get(selected) : undefined;
   const filterView = (
@@ -431,7 +445,7 @@ export default function App() {
 
   const foot = (
     <div className="panel-foot">
-      <button className="link-btn" onClick={() => setDialog('about')}>О проекте</button>
+      <button className="link-btn" onClick={openDeck}>О проекте</button>
       <button className="link-btn" onClick={() => setDialog('privacy')}>Конфиденциальность</button>
       <span>Источник данных: <a href="https://data.mos.ru/opendata/2454" target="_blank" rel="noopener noreferrer">data.mos.ru, набор 2454</a></span>
     </div>
@@ -554,7 +568,7 @@ export default function App() {
         <NameDialog user={user} onClose={() => setDialog(null)} onSaved={setUser} />
       )}
       {dialog === 'privacy' && <PrivacyDialog onClose={() => setDialog(null)} />}
-      {dialog === 'about' && <AboutDialog onClose={() => setDialog(null)} onStory={startStory} />}
+      {deck && <Presentation audio={deck} onClose={closeDeck} onStory={() => { closeDeck(); startStory(); }} />}
       {lightbox && <Lightbox src={lightbox.src} caption={lightbox.caption} onClose={() => setLightbox(null)} />}
       {toast && <Toast text={toast} />}
     </div>

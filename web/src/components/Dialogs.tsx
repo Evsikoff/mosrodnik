@@ -85,32 +85,6 @@ export function PrivacyDialog({ onClose }: { onClose(): void }) {
   );
 }
 
-export function AboutDialog({ onClose, onStory }: { onClose(): void; onStory(): void }) {
-  const [stats, setStats] = useState<Record<string, any> | null>(null);
-  useEffect(() => {
-    api.stats().then(setStats).catch(() => {});
-  }, []);
-  return (
-    <Modal title="О проекте" onClose={onClose}>
-      <h2>О проекте «Московский родник»</h2>
-      <p>Приложение показывает состояние родников Москвы по открытым данным data.mos.ru (набор 2454) и собирает отметки
-        жителей: течёт ли родник, как к нему подойти, верна ли точка на карте.</p>
-      <p>Анализ в наборе только химический, микробиология не проверяется. Роспотребнадзор рекомендует пить воду из
-        родников только после кипячения. Приложение не делает вывод о пригодности воды для питья.</p>
-      {stats && (
-        <p className="sample-note">
-          Жителями оставлено отметок: {stats.observations}, загружено фото: {stats.photos}, родников с отметками:{' '}
-          {stats.springs_with_observations} из {stats.springs_total}.
-        </p>
-      )}
-      <div className="row-end">
-        <button className="btn ghost" onClick={onClose}>Закрыть</button>
-        <button className="btn primary" onClick={onStory}>Показать рассказ</button>
-      </div>
-    </Modal>
-  );
-}
-
 export function Lightbox({ src, caption, onClose }: { src: string; caption?: string; onClose(): void }) {
   useEffect(() => {
     const key = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
