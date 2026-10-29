@@ -1,0 +1,12 @@
+{
+  "spring_id": "ТАО-223",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-clean-167",
+  "user_id": "sample-user-04",
+  "kind": "cleanliness",
+  "value": "clean",
+  "created_at": "2026-10-25T18:00:00.000Z"
+}

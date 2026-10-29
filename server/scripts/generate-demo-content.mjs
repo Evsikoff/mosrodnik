@@ -64,4 +64,46 @@ for (const [si, spring] of springs.entries()) {
     id++;
   }
 }
+// Состояние у 250 родников из 258: у каждого отметка о течении, у большинства ещё о подходе и чистоте.
+const geo = JSON.parse(fs.readFileSync(path.join(root, 'data/source/springs.geojson'), 'utf8'));
+const ids = geo.features.map((f) => f.properties.spring_id).sort((a, b) => a.localeCompare(b, 'ru'));
+const hash = (str) => {
+  let h = 2166136261;
+  for (const ch of str) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  return h;
+};
+const pick = (r, table) => {
+  let acc = 0;
+  for (const [v, w] of table) { acc += w; if (r < acc) return v; }
+  return table[table.length - 1][0];
+};
+const FLOW = [['flowing', 0.52], ['weak', 0.22], ['frozen', 0.1], ['dry', 0.16]];
+const ACCESS = [['cleared', 0.5], ['icy', 0.35], ['blocked', 0.15]];
+const CLEAN = [['clean', 0.55], ['litter', 0.33], ['damaged', 0.12]];
+let covered = 0;
+ids.forEach((spring, i) => {
+  if (i % 32 === 5) return; // 8 родников остаются без отметок
+  covered++;
+  const h = hash(spring);
+  const author = (n) => `sample-user-${users[(h >>> n) % users.length][0]}`;
+  const when = (n) => new Date(NOW - (3 + ((h >>> n) % 110)) * HOUR).toISOString();
+  const base = { spring_id: spring, comment: null, photo_ids: [], is_sample: true, affects_map: false };
+  write('observations', `sample-state-flow-${i}`, {
+    ...base, id: `sample-state-flow-${i}`, user_id: author(3), kind: 'flow',
+    value: pick((h % 1000) / 1000, FLOW), created_at: when(5),
+  });
+  if ((h >>> 9) % 10 < 7) {
+    write('observations', `sample-state-access-${i}`, {
+      ...base, id: `sample-state-access-${i}`, user_id: author(7), kind: 'access',
+      value: pick(((h >>> 11) % 1000) / 1000, ACCESS), created_at: when(13),
+    });
+  }
+  if ((h >>> 15) % 10 < 6) {
+    write('observations', `sample-state-clean-${i}`, {
+      ...base, id: `sample-state-clean-${i}`, user_id: author(11), kind: 'cleanliness',
+      value: pick(((h >>> 17) % 1000) / 1000, CLEAN), created_at: when(19),
+    });
+  }
+});
+console.log(`родников с состоянием: ${covered}`);
 console.log(`пользователей: ${users.length}, отметок: ${id - 21}`);

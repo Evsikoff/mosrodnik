@@ -1,0 +1,12 @@
+{
+  "spring_id": "ТАО-227",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-access-171",
+  "user_id": "sample-user-02",
+  "kind": "access",
+  "value": "icy",
+  "created_at": "2026-10-25T23:00:00.000Z"
+}

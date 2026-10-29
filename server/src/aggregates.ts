@@ -63,8 +63,9 @@ function compute(db: Database, now: number, strict: boolean): Map<string, Aggreg
     const t = Date.parse(o.created_at);
     a.observations_count++;
     if (!a.last_activity_at || o.created_at > a.last_activity_at) a.last_activity_at = o.created_at;
-    if (o.kind === 'visit' && now - t <= 30 * DAY) a.visits_30d++;
-    if (now - t <= 14 * DAY) {
+    if (o.kind === 'visit' && (o.is_sample || now - t <= 30 * DAY)) a.visits_30d++;
+    // образцы в демо-режиме не «стареют», чтобы состояние на карте не пропадало через 14 дней
+    if (o.is_sample || now - t <= 14 * DAY) {
       if (o.kind === 'flow') { a.user_flow = o.value; a.user_flow_at = o.created_at; }
       if (o.kind === 'access') { a.user_access = o.value; a.user_access_at = o.created_at; }
       if (o.kind === 'cleanliness') { a.user_cleanliness = o.value; a.user_cleanliness_at = o.created_at; }

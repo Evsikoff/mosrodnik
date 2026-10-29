@@ -1,0 +1,12 @@
+{
+  "spring_id": "ЗелАО-215",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-access-51",
+  "user_id": "sample-user-02",
+  "kind": "access",
+  "value": "cleared",
+  "created_at": "2026-10-25T05:00:00.000Z"
+}

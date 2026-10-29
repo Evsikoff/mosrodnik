@@ -1,0 +1,12 @@
+{
+  "spring_id": "СЗАО-245",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-clean-109",
+  "user_id": "sample-user-04",
+  "kind": "cleanliness",
+  "value": "damaged",
+  "created_at": "2026-10-28T04:00:00.000Z"
+}

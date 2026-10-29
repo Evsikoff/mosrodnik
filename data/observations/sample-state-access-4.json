@@ -1,0 +1,12 @@
+{
+  "spring_id": "ЗАО-103",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-access-4",
+  "user_id": "sample-user-05",
+  "kind": "access",
+  "value": "cleared",
+  "created_at": "2026-10-28T18:00:00.000Z"
+}

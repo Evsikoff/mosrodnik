@@ -1,0 +1,12 @@
+{
+  "spring_id": "СЗАО-29",
+  "comment": null,
+  "photo_ids": [],
+  "is_sample": true,
+  "affects_map": false,
+  "id": "sample-state-clean-124",
+  "user_id": "sample-user-08",
+  "kind": "cleanliness",
+  "value": "litter",
+  "created_at": "2026-10-26T12:00:00.000Z"
+}
